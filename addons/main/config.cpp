@@ -34,5 +34,4 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
-//#include "CfgMoves.hpp"
 #include "EMDisable.hpp"
