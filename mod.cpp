@@ -1,0 +1,13 @@
+name = "Enhanced Movement Rework";
+dir = "@EMR";
+author = "Simplex Team";
+description = "Enhanced Movement Rework";
+overview = "Enhanced Movement Rework";
+picture = "emr.paa";
+overviewPicture = "emr.paa";
+logo = "emr.paa";
+logoOver = "emr.paa";
+actionName = "Website";
+action = "emr.paa";
+tooltip = "Enhanced Movement Rework";
+tooltipOwned = "Enhanced Movement Rework Owned";
