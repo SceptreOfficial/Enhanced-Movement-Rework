@@ -31,8 +31,11 @@
 This is a rewrite of BadBenson's "Enhanced Movement."
 Disables all functions in EM to solely use the animations with new lightweight scripts.
 
-Default action key is 'V' (configurable via CBA Keybinding).
+Default climb/drop key is 'V'
 When pressed, script detects whether to climb or drop. If no advanced movements are available, then the vanilla vault function occurs.
+
+Default jump key is 'Shift + V'
+When pressed, unit will perform a jump.
 
 The mod is still under development, with many features yet to be implemented and bugs still to be found.
 Feel free to submit issues or suggest any new features via the [issue tracker](https://github.com/SceptreOfficial/Enhanced-Movement-Rework/issues).
