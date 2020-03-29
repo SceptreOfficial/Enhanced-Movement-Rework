@@ -7,8 +7,9 @@ params ["_unit"];
 private _pos = getPosASLVisual _unit;
 private _dir = vectorDirVisual _unit;
 private _dirVect = _dir vectorMultiply 1.2;
-
 private _height = 0;
+
+if !(lineIntersectsSurfaces [_pos,_pos vectorAdd [0,0,2.9],_unit,objNull,true,-1,"GEOM","GEOM"] isEqualTo []) exitWith {[false,false,_height]};
 
 {
 	private _beg = _pos vectorAdd [0,0,_x];
