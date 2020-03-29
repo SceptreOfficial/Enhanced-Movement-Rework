@@ -36,7 +36,8 @@ if (_canDrop) exitWith {
 		if (_animation == _actionAnim) then {
 			_unit removeEventHandler [_thisType,_thisID];
 			_unit setVariable [QGVAR(isClimbing),true];
-			_unit setPosASL _animPosASL;
+			//_unit setPosASL _animPosASL;
+			[{(_this # 0) setPosASL (_this # 1)},[_unit,_animPosASL]] call CBA_fnc_execNextFrame;
 			
 			[{
 				if (!alive _this || !(_this getVariable [QGVAR(isClimbing),false])) then {
@@ -107,7 +108,8 @@ if (_climbOn) then {
 	if (_animation == _actionAnim) then {
 		_unit removeEventHandler [_thisType,_thisID];
 		_unit setVariable [QGVAR(isClimbing),true];
-		_unit setPosASL _animPosASL;
+		//_unit setPosASL _animPosASL;
+		[{(_this # 0) setPosASL (_this # 1)},[_unit,_animPosASL]] call CBA_fnc_execNextFrame;
 
 		[{
 			if (!alive _this || !(_this getVariable [QGVAR(isClimbing),false])) then {
