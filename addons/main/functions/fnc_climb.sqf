@@ -21,7 +21,7 @@ _unit call FUNC(canDrop) params ["_canDrop","_depth"];
 
 if (_canDrop) exitWith {
 	private _actionAnim = "Babe_drop" + _weaponType;
-	private _animPosASL = getPosASL _unit;
+	private _animPosASL = getPosASLVisual _unit;
 	private _targetPosASL = +_animPosASL;
 	private _dir = vectorDirVisual _unit;
 
@@ -71,7 +71,7 @@ _unit call FUNC(canClimb) params ["_canClimb","_climbOn","_height"];
 if (!_canClimb) exitWith {false};
 
 private _actionAnim = "";
-private _animPosASL = getPosASL _unit;
+private _animPosASL = getPosASLVisual _unit;
 private _targetPosASL = +_animPosASL;
 private _dir = vectorDirVisual _unit;
 

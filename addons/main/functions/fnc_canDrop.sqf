@@ -4,7 +4,7 @@ params ["_unit"];
 	
 //private _debug = [];
 
-private _pos = getPosASL _unit;
+private _pos = getPosASLVisual _unit;
 private _dir = vectorDirVisual _unit;
 private _dirVect = _dir vectorMultiply 1.2;
 private _heightAboveTerrain = getPosATL _unit # 2;
