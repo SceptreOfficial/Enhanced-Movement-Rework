@@ -26,7 +26,7 @@ if (_canDrop) exitWith {
 	private _targetPosASL = +_animPosASL;
 	private _dir = vectorDirVisual _unit;
 
-	_animPosASL = (_animPosASL vectorAdd [0,0,-2]) vectorAdd (_dir vectorMultiply 1);
+	_animPosASL = (_animPosASL vectorAdd [0,0,-2.1]) vectorAdd (_dir vectorMultiply 0.8);
 	_targetPosASL = (_targetPosASL vectorAdd [0,0,_depth]) vectorAdd (_dir vectorMultiply 1.3);
 
 	[_unit,"AnimChanged",{
@@ -78,26 +78,30 @@ private _targetPosASL = +_animPosASL;
 private _dir = vectorDirVisual _unit;
 
 if (_climbOn) then {
-	_animPosASL = (_animPosASL vectorAdd [0,0,_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
-	_targetPosASL = (_targetPosASL vectorAdd [0,0,_height + 0.3]) vectorAdd (_dir vectorMultiply 1.3);
-	_actionAnim = (switch ([0.7,1,1.3,1.6,1.9,2.2,2.5] find _height) do {
+	_animPosASL = (_animPosASL vectorAdd [0,0,_height + 0.1]) vectorAdd (_dir vectorMultiply 0.8);
+	_targetPosASL = (_targetPosASL vectorAdd [0,0,_height + 0.2]) vectorAdd (_dir vectorMultiply 1.3);
+	_actionAnim = (switch ([0.4,0.7,1,1.3,1.6,1.9,2.2,2.5] find _height) do {
 		case 0 : {"Babe_stepOn"};
 		case 1;
-		case 2 : {"BABE_climbOn"};
-		case 3;
-		case 4 : {"BABE_climbOnH"};
-		case 5 : {"BABE_climbOnHer"};
+		case 2;
+		case 3 : {"BABE_climbOn"};
+		case 4;
+		case 5 : {"BABE_climbOnH"};
+		case 6;
+		case 7 : {"BABE_climbOnHer"};
 	}) + _weaponType;
 } else {
-	_animPosASL = (_animPosASL vectorAdd [0,0,_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
+	_animPosASL = (_animPosASL vectorAdd [0,0,_height + 0.1]) vectorAdd (_dir vectorMultiply 0.8);
 	_targetPosASL = _targetPosASL vectorAdd (_dir vectorMultiply 2);
-	_actionAnim = (switch ([0.7,1,1.3,1.6,1.9,2.2,2.5] find _height) do {
+	_actionAnim = (switch ([0.4,0.7,1,1.3,1.6,1.9,2.2,2.5] find _height) do {
 		case 0;
-		case 1 : {"Babe_vaultover"};
-		case 2 : {"BABE_climbOver"};
-		case 3 : {"BABE_climbOverH"};
-		case 4;
-		case 5 : {"BABE_climbOverHer"};
+		case 1;
+		case 2 : {"Babe_vaultover"};
+		case 3 : {"BABE_climbOver"};
+		case 4 : {"BABE_climbOverH"};
+		case 5;
+		case 6;
+		case 7 : {"BABE_climbOverHer"};
 	}) + _weaponType;
 };
 

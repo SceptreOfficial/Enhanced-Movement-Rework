@@ -14,13 +14,13 @@ if (_heightAboveTerrain < 0.8) exitWith {[false,0]};
 private _beg = (_pos vectorAdd [0,0,1.4]) vectorAdd (_dir vectorMultiply 1);
 
 // Min empty space
-private _minEnd = (_pos vectorAdd [0,0,-1.6]) vectorAdd (_dir vectorMultiply 2);
+private _minEnd = (_pos vectorAdd [0,0,-1.4]) vectorAdd (_dir vectorMultiply 2);
 private _minSurfaces = lineIntersectsSurfaces [_beg,_minEnd,_unit,objNull,true,-1,"GEOM","GEOM"];
 //_debug pushBack [ASLToATL _beg,ASLToATL _minEnd,[1,0,0,1]];
 
 if !(_minSurfaces isEqualTo []) exitWith {[false,0]};
 
-private _end = (_pos vectorAdd [0,0,-3.8]) vectorAdd (_dir vectorMultiply 2.7);
+private _end = (_pos vectorAdd [0,0,-4]) vectorAdd (_dir vectorMultiply 2.7);
 private _surfaces = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","GEOM"];
 //_debug pushBack [ASLToATL _beg,ASLToATL _end,[0,1,0,1]];
 
