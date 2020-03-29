@@ -6,7 +6,8 @@ if (
 	!alive _unit || 
 	{!(_unit in _unit)} || 
 	{((animationState _unit) select [1,3]) in ["bdv","bsw","dve","sdv","ssw","swm"]} || 
-	{stance _unit != "STAND"}
+	{stance _unit != "STAND"} || 
+	{!isTouchingGround _unit}
 ) exitWith {false};
 
 if (_unit getVariable [QGVAR(isClimbing),false]) exitWith {true};
