@@ -13,7 +13,7 @@ if (
 if (_unit getVariable [QGVAR(isClimbing),false]) exitWith {true};
 
 private _velocity = velocityModelSpace _unit;
-private _posASL = getPosASL _unit;
+//private _posASL = getPosASL _unit;
 private _actionAnim = "babe_em_jump" + (switch (currentWeapon _unit) do {
 	case (primaryWeapon _unit) : {"_rfl"};
 	case (handgunWeapon _unit) : {"_pst"};
@@ -21,7 +21,7 @@ private _actionAnim = "babe_em_jump" + (switch (currentWeapon _unit) do {
 });
 
 _unit playActionNow _actionAnim;
-_unit setPosASL [_posASL # 0,_posASL # 1,_posASL # 2 + 0.15];
-_unit setVelocityModelSpace [_velocity # 0,_velocity # 1 + 0.5,2.5];
+//_unit setPosASL [_posASL # 0,_posASL # 1,_posASL # 2 + 0.15];
+_unit setVelocityModelSpace [_velocity # 0,_velocity # 1 + 0.1,3];
 
 true
