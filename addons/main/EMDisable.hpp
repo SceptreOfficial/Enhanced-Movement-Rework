@@ -26,8 +26,6 @@ class CfgVehicles {
 			delete babe_int_initEH;
 		};
 	};
-
-	delete babe_helper;
 };
 
 delete BABE_core_List;
