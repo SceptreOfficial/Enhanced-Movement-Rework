@@ -2,6 +2,8 @@
 
 params ["_unit"];
 
+if (_unit getVariable [QGVAR(isClimbing),false]) exitWith {true};
+
 if (
 	!alive _unit || 
 	{!(_unit in _unit)} || 
@@ -10,10 +12,12 @@ if (
 	{!isTouchingGround _unit}
 ) exitWith {false};
 
-if (_unit getVariable [QGVAR(isClimbing),false]) exitWith {true};
+if ((_unit call FUNC(getWeight)) > GVAR(maxWeightJump)) exitWith {
+	hint "CAN'T JUMP: OVERWEIGHT";
+	false
+};
 
 private _velocity = velocityModelSpace _unit;
-//private _posASL = getPosASL _unit;
 private _actionAnim = "babe_em_jump" + (switch (currentWeapon _unit) do {
 	case (primaryWeapon _unit) : {"_rfl"};
 	case (handgunWeapon _unit) : {"_pst"};
@@ -21,7 +25,7 @@ private _actionAnim = "babe_em_jump" + (switch (currentWeapon _unit) do {
 });
 
 _unit playActionNow _actionAnim;
-//_unit setPosASL [_posASL # 0,_posASL # 1,_posASL # 2 + 0.15];
-_unit setVelocityModelSpace [_velocity # 0,_velocity # 1 + 0.1,3];
+_unit setVelocityModelSpace [_velocity # 0,_velocity # 1 + 0.1,3.4 - load _unit];
+[_unit,-(1 * GVAR(staminaCoefficient))] call FUNC(setStamina);
 
 true
