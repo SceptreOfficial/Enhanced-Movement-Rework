@@ -44,7 +44,7 @@ private _overweight = switch true do {
 	default {false};
 };
 
-if (_overweight) exitWith {
+if (GVAR(enableWeightCheck) && _overweight) exitWith {
 	hint "CAN'T CLIMB: OVERWEIGHT";
 	[false,false,_height]
 };

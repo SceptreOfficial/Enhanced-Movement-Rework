@@ -12,7 +12,7 @@ if (
 	{!isTouchingGround _unit}
 ) exitWith {false};
 
-if ((_unit call FUNC(getWeight)) > GVAR(maxWeightJump)) exitWith {
+if (GVAR(enableWeightCheck) && (_unit call FUNC(getWeight)) > GVAR(maxWeightJump)) exitWith {
 	hint "CAN'T JUMP: OVERWEIGHT";
 	false
 };

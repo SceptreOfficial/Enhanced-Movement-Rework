@@ -78,6 +78,15 @@ ADDON = false;
 	false
 ] call CBA_fnc_addSetting;
 
+[QGVAR(enableWeightCheck),"CHECKBOX",
+	["Enable weight checking",""],
+	["Enhanced Movement Rework","Maximum Weights"],
+	true,
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
 [QGVAR(maxWeightJump),"SLIDER",
 	["Jumping","Maximum jumping weight"],
 	["Enhanced Movement Rework","Maximum Weights"],
