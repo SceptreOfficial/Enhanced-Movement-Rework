@@ -55,7 +55,7 @@ ADDON = false;
 	["Prevent high edge vaulting","When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if vault keybind is the same as climb/drop)"],
 	["Enhanced Movement Rework","Core"],
 	false,
-	true,
+	false,
 	{},
 	false
 ] call CBA_fnc_addSetting;
