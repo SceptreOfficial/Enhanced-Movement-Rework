@@ -42,6 +42,15 @@ ADDON = false;
 	false
 ] call CBA_fnc_addSetting;
 
+[QGVAR(jumpVelocity),"SLIDER",
+	["Jump velocity","Super saiyan simulator"],
+	["Enhanced Movement Rework","Core"],
+	[1,50,3.4,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
 [QGVAR(preventHighVaulting),"CHECKBOX",
 	["Prevent high edge vaulting","When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if vault keybind is the same as climb/drop)"],
 	["Enhanced Movement Rework","Core"],
@@ -80,6 +89,15 @@ ADDON = false;
 
 [QGVAR(enableWeightCheck),"CHECKBOX",
 	["Enable weight checking",""],
+	["Enhanced Movement Rework","Maximum Weights"],
+	true,
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[QGVAR(scaleJumpVelocity),"CHECKBOX",
+	["Scale jump velocity with load","Changes jump height depending on player load"],
 	["Enhanced Movement Rework","Maximum Weights"],
 	true,
 	true,

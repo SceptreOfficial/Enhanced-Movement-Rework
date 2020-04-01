@@ -25,7 +25,13 @@ private _actionAnim = "babe_em_jump" + (switch (currentWeapon _unit) do {
 });
 
 _unit playActionNow _actionAnim;
-_unit setVelocityModelSpace [_velocity # 0,_velocity # 1 + 0.1,3.4 - load _unit];
+
+if (GVAR(scaleJumpVelocity)) then {
+	_unit setVelocityModelSpace [_velocity # 0,_velocity # 1 + 0.1,GVAR(jumpVelocity) - load _unit];
+} else {
+	_unit setVelocityModelSpace [_velocity # 0,_velocity # 1 + 0.1,GVAR(jumpVelocity)];
+};
+
 [_unit,-(1 * GVAR(staminaCoefficient))] call FUNC(setStamina);
 
 true
