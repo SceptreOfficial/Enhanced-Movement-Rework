@@ -24,7 +24,7 @@ _unit call FUNC(canDrop) params ["_canDrop","_depth","_highEdge"];
 if (_canClimb) then {
 	if (_climbOn) then {
 		_animPosASL = (_animPosASL vectorAdd [0,0,_height]) vectorAdd (_dir vectorMultiply 0.9);
-		_targetPosASL = (_targetPosASL vectorAdd [0,0,_height]) vectorAdd (_dir vectorMultiply 1.3);
+		_targetPosASL = (_targetPosASL vectorAdd [0,0,_height]) vectorAdd (_dir vectorMultiply 1.2);
 		_duty = _height * 3.3 * load _unit;
 		_actionAnim = switch true do {
 			case (_height >= 1.8) : {"BABE_climbOnHer"};
