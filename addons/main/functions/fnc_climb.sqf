@@ -118,11 +118,19 @@ _unit setVariable [QGVAR(isClimbing),true];
 		};
 
 		_unit setAnimSpeedCoef (1 - (load _unit) * 0.3);
-		[{(_this # 0) setPosASL (_this # 1)},[_unit,_animPosASL]] call CBA_fnc_execNextFrame;
+		
+		// Visual fix since animation may take a few frames to actually begin
+		[{
+			animationState (_this # 0) == (_this # 2)
+		},{
+			(_this # 0) setPosASL (_this # 1)
+		},[_unit,_animPosASL,_actionAnim],8] call CBA_fnc_waitUntilAndExecute;
+		
+		// Prevent any velocity changes while climbing
 		[{
 			_this setVelocity [0,0,0];
 			!alive _this || !(_this getVariable [QGVAR(isClimbing),false])
-		},{},_unit,10,{
+		},{},_unit,8,{
 			_this setVariable [QGVAR(isClimbing),nil];
 			_this setAnimSpeedCoef 1;
 		}] call CBA_fnc_waitUntilAndExecute;
