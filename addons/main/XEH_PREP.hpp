@@ -1,3 +1,5 @@
+PREP(action);
+PREP(addActionExitCondition);
 PREP(addWalkableSurfaceExitCondition);
 PREP(canClimb);
 PREP(canDrop);
@@ -6,4 +8,5 @@ PREP(getStamina);
 PREP(getWeight);
 PREP(jump);
 PREP(setStamina);
+PREP(startClimbing);
 PREP(updateWalkableSurface);

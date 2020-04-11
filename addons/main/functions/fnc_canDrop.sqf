@@ -16,8 +16,8 @@ private _minBeg1 = _pos vectorAdd [0,0,0.4];
 private _minEnd1 = (_pos vectorAdd [0,0,0.4]) vectorAdd (_dir vectorMultiply 1.2);
 private _minBeg2 = (_pos vectorAdd [0,0,1.2]) vectorAdd (_dir vectorMultiply 1);
 private _minEnd2 = (_pos vectorAdd [0,0,-1.2]) vectorAdd (_dir vectorMultiply 2);
-private _minSurfaces = lineIntersectsSurfaces [_minBeg1,_minEnd1,_unit,objNull,true,-1,"GEOM","GEOM"];
-_minSurfaces append (lineIntersectsSurfaces [_minBeg2,_minEnd2,_unit,objNull,true,-1,"GEOM","GEOM"]);
+private _minSurfaces = lineIntersectsSurfaces [_minBeg1,_minEnd1,_unit,objNull,true,-1,"GEOM","NONE"];
+_minSurfaces append (lineIntersectsSurfaces [_minBeg2,_minEnd2,_unit,objNull,true,-1,"GEOM","NONE"]);
 
 if (GVAR(debug)) then {
 	[{drawLine3D _this},{},[ASLToATL _minBeg1,ASLToATL _minEnd1,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
@@ -29,7 +29,7 @@ if !(_minSurfaces isEqualTo []) exitWith {[false,0,false]};
 // Depth detection
 private _beg = (_pos vectorAdd [0,0,0.4]) vectorAdd (_dir vectorMultiply 1.3);
 private _end = (_pos vectorAdd [0,0,-GVAR(maxDropHeight)]) vectorAdd (_dir vectorMultiply 1.3);
-private _surfaces = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","GEOM"];
+private _surfaces = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"];
 
 if (GVAR(debug)) then {
 	[{drawLine3D _this},{},[ASLToATL _beg,ASLToATL _end,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;

@@ -36,7 +36,7 @@ ADDON = false;
 [QGVAR(maxDropHeight),"SLIDER",
 	["Maximum drop height","Maximum height that a player can drop from"],
 	["Enhanced Movement Rework","Core"],
-	[2,7,5,1],
+	[2,20,5,1],
 	true,
 	{},
 	false
@@ -51,15 +51,6 @@ ADDON = false;
 	false
 ] call CBA_fnc_addSetting;
 
-[QGVAR(preventHighVaulting),"CHECKBOX",
-	["Prevent high edge vaulting","When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if vault keybind is the same as climb/drop)"],
-	["Enhanced Movement Rework","Core"],
-	false,
-	false,
-	{},
-	false
-] call CBA_fnc_addSetting;
-
 [QGVAR(allowMidairClimbing),"CHECKBOX",
 	["Allow mid-air climbing",""],
 	["Enhanced Movement Rework","Core"],
@@ -69,36 +60,81 @@ ADDON = false;
 	false
 ] call CBA_fnc_addSetting;
 
-[QGVAR(staminaCoefficient),"SLIDER",
-	["Stamina coefficient",""],
-	["Enhanced Movement Rework","Core"],
-	[0,10,1,1],
-	true,
+[QGVAR(preventHighVaulting),"CHECKBOX",
+	["Prevent high edge vaulting","When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if 'vault' keybind is the same as 'climb/drop only')"],
+	["Enhanced Movement Rework","Preferences"],
+	false,
+	false,
 	{},
 	false
 ] call CBA_fnc_addSetting;
 
 [QGVAR(enableWalkableSurface),"CHECKBOX",
-	["Enable walkable surface",""],
-	["Enhanced Movement Rework","Core"],
+	["Enable walkable surface","Spawns an invisible walkable surface object underneath the player when on top of an object"],
+	["Enhanced Movement Rework","Preferences"],
 	true,
 	false,
 	{},
 	false
 ] call CBA_fnc_addSetting;
 
-[QGVAR(enableWeightCheck),"CHECKBOX",
-	["Enable weight checking",""],
-	["Enhanced Movement Rework","Maximum Weights"],
-	true,
+[QGVAR(staminaCoefficient),"SLIDER",
+	["Stamina coefficient","Coefficient for all stamina drain"],
+	["Enhanced Movement Rework","Stamina"],
+	[0,10,1,1],
 	true,
 	{},
 	false
 ] call CBA_fnc_addSetting;
 
-[QGVAR(scaleJumpVelocity),"CHECKBOX",
-	["Scale jump velocity with load","Changes jump height depending on player load"],
-	["Enhanced Movement Rework","Maximum Weights"],
+[QGVAR(jumpDuty),"SLIDER",
+	["Jump duty","Base stamina cost for jumping"],
+	["Enhanced Movement Rework","Stamina"],
+	[0,10,1,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[QGVAR(climbOnDuty),"SLIDER",
+	["Climb on duty","Base stamina cost for climbing ONTO objects, which is multiplied by the height of the climb"],
+	["Enhanced Movement Rework","Stamina"],
+	[0,10,3.4,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[QGVAR(climbOverDuty),"SLIDER",
+	["Climb over duty","Base stamina cost for climbing OVER objects, which is multiplied by the height of the climb"],
+	["Enhanced Movement Rework","Stamina"],
+	[0,10,3,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[QGVAR(dropDuty),"SLIDER",
+	["Drop duty","Base stamina cost for dropping down from an object, which is multiplied by the depth of the drop"],
+	["Enhanced Movement Rework","Stamina"],
+	[0,10,0.7,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[QGVAR(jumpingLoadCoefficient),"SLIDER",
+	["Jumping velocity/load coefficient","Multiplier for how much player load reduces jump velocity"],
+	["Enhanced Movement Rework","Weight"],
+	[0,10,1,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[QGVAR(enableWeightCheck),"CHECKBOX",
+	["Enable max weight checking",""],
+	["Enhanced Movement Rework","Weight"],
 	true,
 	true,
 	{},
@@ -106,8 +142,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxWeightJump),"SLIDER",
-	["Jumping","Maximum jumping weight"],
-	["Enhanced Movement Rework","Maximum Weights"],
+	["Max Weight - Jumping","Maximum jumping weight"],
+	["Enhanced Movement Rework","Weight"],
 	[0,150,100,1],
 	true,
 	{},
@@ -115,8 +151,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxWeightClimb1),"SLIDER",
-	["1 Meter","Interpolated max player weight allowed to climb 1 meter"],
-	["Enhanced Movement Rework","Maximum Weights"],
+	["Max Weight - Climb 1m","Interpolated max player weight allowed to climb 1 meter"],
+	["Enhanced Movement Rework","Weight"],
 	[0,150,100,1],
 	true,
 	{},
@@ -124,8 +160,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxWeightClimb2),"SLIDER",
-	["2 Meters","Interpolated max player weight allowed to climb 2 meters"],
-	["Enhanced Movement Rework","Maximum Weights"],
+	["Max Weight - Climb 2m","Interpolated max player weight allowed to climb 2 meters"],
+	["Enhanced Movement Rework","Weight"],
 	[0,150,85,1],
 	true,
 	{},
@@ -133,8 +169,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxWeightClimb3),"SLIDER",
-	["3 Meters","Interpolated max player weight allowed to climb 3 meters"],
-	["Enhanced Movement Rework","Maximum Weights"],
+	["Max Weight - Climb 3m","Interpolated max player weight allowed to climb 3 meters"],
+	["Enhanced Movement Rework","Weight"],
 	[0,150,60,1],
 	true,
 	{},
@@ -145,7 +181,13 @@ GVAR(debug) = false;
 
 GVAR(WSExitConditions) = [
 	{!isNil {_this getVariable "acex_sitting_sittingStatus"}},
-	{animationState _this == "ACE_FastRoping"}
+	{animationState _this isEqualTo "ace_fastroping"}
+];
+
+GVAR(actionExitConditions) = [
+	{!isNil {_this getVariable "acex_sitting_sittingStatus"}},
+	{animationState _this isEqualTo "ace_fastroping"},
+	{!isNil {_this getVariable "ace_medical_treatment_endInAnim"}}
 ];
 
 if (isServer) then {
@@ -154,6 +196,13 @@ if (isServer) then {
 
 		GVAR(WSExitConditions) pushBack _code;
 		publicVariable QGVAR(WSExitConditions);
+	}] call CBA_fnc_addEventHandler;
+
+	[QGVAR(addActionExitCondition),{
+		params ["_code",{},[{}]];
+
+		GVAR(actionExitConditions) pushBack _code;
+		publicVariable QGVAR(actionExitConditions);
 	}] call CBA_fnc_addEventHandler;
 };
 

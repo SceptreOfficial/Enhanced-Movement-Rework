@@ -17,13 +17,12 @@ private _noIntersectCount = 0;
 
 	private _beg = _pos vectorAdd [0,0,_x];
 	private _end = _beg vectorAdd _dirVect;
-	private _doesIntersect = !(lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","GEOM"] isEqualTo []);
-	
+
 	if (GVAR(debug)) then {
 		[{drawLine3D _this},{},[ASLToATL _beg,ASLToATL _end,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;
 	};
 	
-	if (_doesIntersect) then {
+	if !(lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []) then {
 		_height = _x;
 		_noIntersectCount = 0;
 	} else {
@@ -50,7 +49,7 @@ if (GVAR(enableWeightCheck) && _overweight) exitWith {
 };
 
 // Ceiling check
-if !(lineIntersectsSurfaces [_pos,_pos vectorAdd [0,0,_height + 0.2],_unit,objNull,true,-1,"GEOM","GEOM"] isEqualTo []) exitWith {[false,false,_height]};
+if !(lineIntersectsSurfaces [_pos,_pos vectorAdd [0,0,_height + 0.2],_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []) exitWith {[false,false,_height]};
 
 private _hiPos = +_pos;
 private _loPos = +_pos;
@@ -66,7 +65,7 @@ private _climbOn = {
 		[{drawLine3D _this},{},[ASLToATL _beg,ASLToATL _end,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;
 	};
 
-	!(lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","GEOM"] isEqualTo [])
+	!(lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo [])
 } count [1.8,1.5,1.2] isEqualTo 3;
 
 // Final size checks
@@ -78,7 +77,7 @@ private _canClimb = if (_climbOn) then {
 		[{drawLine3D _this},{},[ASLToATL _checkBeg,ASLToATL _checkEnd,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
 	};
 
-	lineIntersectsSurfaces [_checkBeg,_checkEnd,_unit,objNull,true,-1,"GEOM","GEOM"] isEqualTo []
+	lineIntersectsSurfaces [_checkBeg,_checkEnd,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []
 } else {
 	private _checkBeg = (_pos vectorAdd [-0.3 * (_dir # 1),-0.3 * -(_dir # 0),_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
 	private _checkEnd = (_pos vectorAdd [0.35 * (_dir # 1),0.35 * -(_dir # 0),_height + 0.7]) vectorAdd (_dir vectorMultiply 1.4);
@@ -87,7 +86,7 @@ private _canClimb = if (_climbOn) then {
 		[{drawLine3D _this},{},[ASLToATL _checkBeg,ASLToATL _checkEnd,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
 	};
 
-	lineIntersectsSurfaces [_checkBeg,_checkEnd,_unit,objNull,true,-1,"GEOM","GEOM"] isEqualTo []
+	lineIntersectsSurfaces [_checkBeg,_checkEnd,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []
 };
 
 [_canClimb,_climbOn,_height]
