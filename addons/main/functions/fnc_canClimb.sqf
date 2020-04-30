@@ -68,7 +68,7 @@ private _climbOn = {
 	};
 
 	!(lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo [])
-} count [1.8,1.5,1.2] isEqualTo 3;
+} count [1.75,1.475,1.2] isEqualTo 3;
 
 // Final size checks
 private _canClimb = if (_climbOn) then {
