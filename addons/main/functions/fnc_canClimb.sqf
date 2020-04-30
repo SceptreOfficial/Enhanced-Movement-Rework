@@ -22,7 +22,9 @@ private _noIntersectCount = 0;
 		[{drawLine3D _this},{},[ASLToATL _beg,ASLToATL _end,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;
 	};
 	
-	if !(lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []) then {
+	private _ix = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"];
+
+	if (!(_ix isEqualTo []) && {!(typeOf (_ix # 0 # 2) in GVAR(objectClassBlacklist))}) then {
 		_height = _x;
 		_noIntersectCount = 0;
 	} else {

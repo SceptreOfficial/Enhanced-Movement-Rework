@@ -28,7 +28,7 @@ if (_ins isEqualTo []) exitWith {
 
 (_ins # 0) params ["_pos","_normal","_obj"];
 
-if (isNull _obj) exitWith {
+if (isNull _obj || typeOf _obj in GVAR(objectClassBlacklist)) exitWith {
 	_helper setPosASL [0,0,0];
 };
 
