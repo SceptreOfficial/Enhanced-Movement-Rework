@@ -32,7 +32,7 @@ switch true do {
 
 // Exit with jump if can't climb or drop
 if (_actionAnim == "" && isTouchingGround _unit) exitWith {
-	if (_viewElevation < -0.5 && _tooHigh) then {
+	if (_viewElevation < -0.65 && _tooHigh) then {
 		hint "CAN'T DROP: TOO HIGH";
 	};
 
