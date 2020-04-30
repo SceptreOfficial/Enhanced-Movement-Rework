@@ -9,7 +9,7 @@
 
 <p align="center">
 	<a href="https://github.com/SceptreOfficial/Enhanced-Movement-Rework/releases/latest">
-		<img src="https://img.shields.io/badge/Version-0.3.5-blue?style=flat-square" alt="Version">
+		<img src="https://img.shields.io/badge/Version-0.4.5-blue?style=flat-square" alt="Version">
 	</a>
 	<a href="https://github.com/SceptreOfficial/Enhanced-Movement-Rework/issues">
 		<img src="https://img.shields.io/github/issues-raw/SceptreOfficial/Enhanced-Movement-Rework?style=flat-square&label=Issues" alt="Issues">
@@ -29,13 +29,14 @@
 ### Info
 
 This is a rewrite of BadBenson's "Enhanced Movement."
-Disables all functions in EM to solely use the animations with new lightweight scripts.
+Disables all functions in EM to solely use the animations with new lightweight scripts. The goal of the mod is to simplify the functions, expand functionality, and get rid of any issues EM had. The mod will also be open source, so any contributions are welcome.
 
-Default climb/drop key is 'V'
-When pressed, script detects whether to climb or drop. If no advanced movements are available, then the vanilla vault function occurs.
+Default action key is 'Shift+V' (configurable via CBA keybinding)
+Climbing will occur automatically when looking at a valid obstacle. Dropping will occur when looking down from a tall edge. Jumping will occur if other action conditions aren't met.
 
-Default jump key is 'Shift + V'
-When pressed, unit will perform a jump.
+'Climb/Drop only' and 'Jump only' keybinds are also available via CBA keybinding.
+
+Check the addon options for more customization.
 
 The mod is still under development, with many features yet to be implemented and bugs still to be found.
 Feel free to submit issues or suggest any new features via the [issue tracker](https://github.com/SceptreOfficial/Enhanced-Movement-Rework/issues).
