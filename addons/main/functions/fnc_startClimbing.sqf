@@ -5,6 +5,7 @@ params ["_unit","_animPosASL","_targetPosASL","_actionAnim","_canClimb","_duty"]
 // Determine animation types
 private _prepAnim = "";
 _actionAnim = _actionAnim + (switch (currentWeapon _unit) do {
+	case "" : {"_ua"};
 	case (primaryWeapon _unit) : {
 		if (weaponLowered _unit) then {_prepAnim = "AmovPercMstpSrasWrflDnon";};
 		"_rfl"
