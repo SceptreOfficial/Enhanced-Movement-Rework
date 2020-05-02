@@ -60,7 +60,7 @@ _unit setVariable [QGVAR(isClimbing),true];
 		
 		// Visual fix since animation may take a few frames to actually begin
 		[{
-			animationState (_this # 0) == (_this # 2)
+			animationState (_this # 0) == (_this # 2) || !alive (_this # 0)
 		},{
 			(_this # 0) setPosASL (_this # 1);
 		},[_unit,_animPosASL,_actionAnim],8] call CBA_fnc_waitUntilAndExecute;
@@ -89,7 +89,7 @@ if (!isTouchingGround _unit) then {
 
 	if (_prepAnim != "") then {
 		_unit playMove _prepAnim;
-	};	
+	};
 };
 
 // Play animation
