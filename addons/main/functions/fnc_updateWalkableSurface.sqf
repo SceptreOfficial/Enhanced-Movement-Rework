@@ -15,7 +15,13 @@ if (_ix isEqualTo []) exitWith {
 
 (_ix # 0) params ["_pos","_normal","_obj"];
 
-if (isNull _obj || typeOf _obj in GVAR(objectClassBlacklist)) exitWith {
+if (isNull _obj) exitWith {
+	_helper setPosASL [0,0,0];
+};
+
+private _class = toLower typeOf _obj;
+
+if (!(_class in GVAR(whitelist)) && _class in GVAR(blacklist)) exitWith {
 	_helper setPosASL [0,0,0];
 };
 

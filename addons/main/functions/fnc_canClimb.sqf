@@ -10,6 +10,7 @@ private _dir = vectorDirVisual _unit;
 private _dirVect = _dir vectorMultiply 1.2;
 private _height = 0;
 private _noIntersectCount = 0;
+private _cfg = configFile >> "CfgVehicles";
 
 // Obstacle detection
 {
@@ -24,13 +25,17 @@ private _noIntersectCount = 0;
 	
 	private _ix = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"];
 
-	if (!(_ix isEqualTo []) && {!(typeOf (_ix # 0 # 2) in GVAR(objectClassBlacklist))}) then {
+	if (_ix isEqualTo []) then {
+		_noIntersectCount = _noIntersectCount + 1;
+	} else {
+		private _class = toLower typeOf (_ix # 0 # 2);
+
+		if (!(_class in GVAR(whitelist)) && _class in GVAR(blacklist)) exitWith {};
+			
 		_height = _x;
 		_noIntersectCount = 0;
-	} else {
-		_noIntersectCount = _noIntersectCount + 1;
 	};
-
+	
 	if (_noIntersectCount >= 5) exitWith {};
 } forEach CLIMB_HEIGHTS;
 

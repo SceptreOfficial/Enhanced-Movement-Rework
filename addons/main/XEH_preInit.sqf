@@ -60,12 +60,21 @@ ADDON = false;
 	false
 ] call CBA_fnc_addSetting;
 
-[QGVAR(blacklist),"EDITBOX",
-	["Object type blacklist","List of object classes that cannot be climbed on. Case-sensitive!"],
+[QGVAR(blacklistStr),"EDITBOX",
+	["Object type blacklist","List of object classes that cannot be climbed on."],
 	["Enhanced Movement Rework","Core"],
-	"Land_WiredFence_01_16m_F,Land_WiredFence_01_4m_F,Land_WiredFence_01_8m_F,Land_Mil_WiredFenceD_F,Land_Mil_WiredFence_F,Land_New_WiredFence_10m_Dam_F,Land_New_WiredFence_10m_F,Land_New_WiredFence_5m_F,Land_NetFence_03_m_9m_F,Land_IndFnc_9_F,Land_IndFnc_3_Hole_F,Land_NetFence_03_m_3m_hole_F,Land_NetFence_03_m_3m_d_F,Land_IndFnc_3_D_F,Land_NetFence_03_m_3m_corner_F,Land_IndFnc_Corner_F,Land_NetFence_03_m_3m_F,Land_IndFnc_3_F,Land_Razorwire_F,Fort_RazorWire,Wire,WireFence",
+	"",
 	true,
-	{GVAR(objectClassBlacklist) = _this splitString ",";},
+	{GVAR(blacklist) = ((_this splitString ",") apply {toLower _x}) + (uiNamespace getVariable [QGVAR(classBlacklist),[]])},
+	false
+] call CBA_fnc_addSetting;
+
+[QGVAR(whitelistStr),"EDITBOX",
+	["Object type whitelist","Use to override config level blacklisting."],
+	["Enhanced Movement Rework","Core"],
+	"",
+	true,
+	{GVAR(whitelist) = (_this splitString ",") apply {toLower _x}},
 	false
 ] call CBA_fnc_addSetting;
 
