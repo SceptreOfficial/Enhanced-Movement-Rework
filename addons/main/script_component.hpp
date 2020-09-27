@@ -1,5 +1,5 @@
 #define COMPONENT main
-#include "\z\EMR\addons\main\script_mod.hpp"
+#include "\z\emr\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
@@ -11,4 +11,4 @@
 	#define DEBUG_SETTINGS DEBUG_SETTINGS_MAIN
 #endif
 
-#include "\z\EMR\addons\main\script_macros.hpp"
+#include "\z\emr\addons\main\script_macros.hpp"

@@ -1,1 +1,1 @@
-#include "\z\EMR\addons\main\script_component.hpp"
+#include "\z\emr\addons\main\script_component.hpp"
