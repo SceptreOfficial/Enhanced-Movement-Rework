@@ -162,7 +162,7 @@ ADDON = false;
 [QGVAR(maxWeightJump),"SLIDER",
 	["Max Weight - Jumping","Maximum jumping weight"],
 	["Enhanced Movement Rework","Weight"],
-	[0,150,100,1],
+	[0,200,100,1],
 	true,
 	{},
 	false
@@ -171,7 +171,7 @@ ADDON = false;
 [QGVAR(maxWeightClimb1),"SLIDER",
 	["Max Weight - Climb 1m","Interpolated max player weight allowed to climb 1 meter"],
 	["Enhanced Movement Rework","Weight"],
-	[0,150,100,1],
+	[0,200,100,1],
 	true,
 	{},
 	false
@@ -180,7 +180,7 @@ ADDON = false;
 [QGVAR(maxWeightClimb2),"SLIDER",
 	["Max Weight - Climb 2m","Interpolated max player weight allowed to climb 2 meters"],
 	["Enhanced Movement Rework","Weight"],
-	[0,150,85,1],
+	[0,200,85,1],
 	true,
 	{},
 	false
@@ -189,7 +189,7 @@ ADDON = false;
 [QGVAR(maxWeightClimb3),"SLIDER",
 	["Max Weight - Climb 3m","Interpolated max player weight allowed to climb 3 meters"],
 	["Enhanced Movement Rework","Weight"],
-	[0,150,60,1],
+	[0,200,60,1],
 	true,
 	{},
 	false
