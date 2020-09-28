@@ -51,7 +51,7 @@ private _overweight = switch true do {
 };
 
 if (GVAR(enableWeightCheck) && _overweight) exitWith {
-	hint "CAN'T CLIMB: OVERWEIGHT";
+	hint LLSTRING(CantClimbOverweight);
 	[false,false,_height]
 };
 

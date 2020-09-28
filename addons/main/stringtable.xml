@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="EMR">
+	<Package name="Main">
+		<Key ID="STR_EMR_Main_EnhancedMovementRework">
+			<English>Enhanced Movement Rework</English>
+		</Key>
+		<Key ID="STR_EMR_Main_Keybind_AIOAction">
+			<English>All-in-one action</English>
+		</Key>
+		<Key ID="STR_EMR_Main_Keybind_ClimbDropOnly">
+			<English>Climb/drop only</English>
+		</Key>
+		<Key ID="STR_EMR_Main_Keybind_JumpOnly">
+			<English>Jump only</English>
+		</Key>
+		<Key ID="STR_EMR_Main_Keybind_HolsterWeapon">
+			<English>Holster weapon</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingCategory_Core">
+			<English>Core</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingCategory_Preferences">
+			<English>Preferences</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingCategory_Stamina">
+			<English>Stamina</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingCategory_Weight">
+			<English>Weight</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_climbingEnabled">
+			<English>Enable climbing/dropping</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_climbingEnabled">
+			<English>Global toggle for climbing and dropping actions</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_jumpingEnabled">
+			<English>Enable jumping</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_jumpingEnabled">
+			<English>Global toggle for the jump action</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_maxClimbHeight">
+			<English>Maximum climb height</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_maxClimbHeight">
+			<English>Maximum height that a player can reach to climb on/over objects</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_maxDropHeight">
+			<English>Maximum drop height</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_maxDropHeight">
+			<English>Maximum height that a player can drop from</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_jumpVelocity">
+			<English>Jump velocity</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_jumpVelocity">
+			<English>Super saiyan simulator</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_allowMidairClimbing">
+			<English>Allow mid-air climbing</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_allowMidairClimbing">
+			<English>Allows using the climb action while falling or jumping up towards a ledge</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_blacklistStr">
+			<English>Object type blacklist</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_blacklistStr">
+			<English>List of object classes that cannot be climbed on</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_whitelistStr">
+			<English>Object type whitelist</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_whitelistStr">
+			<English>Use to override config level blacklisting</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_preventHighVaulting">
+			<English>Prevent high edge vaulting</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_preventHighVaulting">
+			<English>When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if 'vault' keybind is the same as 'climb/drop only')</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_enableWalkableSurface">
+			<English>Enable walkable surface</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_enableWalkableSurface">
+			<English>Spawns an invisible walkable surface object underneath the player when on top of an object</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_staminaCoefficient">
+			<English>Stamina coefficient</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_staminaCoefficient">
+			<English>Coefficient for all stamina drain</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_jumpDuty">
+			<English>Jump duty</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_jumpDuty">
+			<English>Base stamina cost for jumping</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_climbOnDuty">
+			<English>Climb on duty</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_climbOnDuty">
+			<English>Base stamina cost for climbing ONTO objects, which is multiplied by the height of the climb</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_climbOverDuty">
+			<English>Climb over duty</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_climbOverDuty">
+			<English>Base stamina cost for climbing OVER objects, which is multiplied by the height of the climb</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_dropDuty">
+			<English>Drop duty</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_dropDuty">
+			<English>Base stamina cost for dropping down from an object, which is multiplied by the depth of the drop</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_jumpingLoadCoefficient">
+			<English>Jumping velocity/load coefficient</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_jumpingLoadCoefficient">
+			<English>Multiplier for how much player load reduces jump velocity</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_enableWeightCheck">
+			<English>Enable max weight checking</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_enableWeightCheck">
+			<English>If enabled, players will have to be under the specified weights to perform certain actions</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_maxWeightJump">
+			<English>Max Weight - Jumping</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_maxWeightJump">
+			<English>Maximum jumping weight</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_maxWeightClimb1">
+			<English>Max Weight - Climb 1m</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_maxWeightClimb1">
+			<English>Interpolated max player weight allowed to climb 1 meter</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_maxWeightClimb2">
+			<English>Max Weight - Climb 2m</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_maxWeightClimb2">
+			<English>Interpolated max player weight allowed to climb 2 meters</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_maxWeightClimb3">
+			<English>Max Weight - Climb 3m</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_maxWeightClimb3">
+			<English>Interpolated max player weight allowed to climb 3 meters</English>
+		</Key>
+		<Key ID="STR_EMR_Main_CantJumpOverweight">
+			<English>CAN'T JUMP: OVERWEIGHT</English>
+		</Key>
+		<Key ID="STR_EMR_Main_CantJumpStamina">
+			<English>CAN'T JUMP: NOT ENOUGH STAMINA</English>
+		</Key>
+		<Key ID="STR_EMR_Main_CantDropTooHigh">
+			<English>CAN'T DROP: TOO HIGH</English>
+		</Key>
+		<Key ID="STR_EMR_Main_CantClimbOverweight">
+			<English>CAN'T CLIMB: OVERWEIGHT</English>
+		</Key>
+		<Key ID="STR_EMR_Main_CantClimbStamina">
+			<English>CAN'T CLIMB: NOT ENOUGH STAMINA</English>
+		</Key>
+	</Package>
+</Project>

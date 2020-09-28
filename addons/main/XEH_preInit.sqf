@@ -7,8 +7,8 @@ ADDON = false;
 }] call CBA_fnc_addClassEventHandler;
 
 [QGVAR(climbingEnabled),"CHECKBOX",
-	["Enable climbing/dropping",""],
-	["Enhanced Movement Rework","Core"],
+	[LSTRING(SettingDisplayName_climbingEnabled),LSTRING(SettingDescription_climbingEnabled)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	true,
 	true,
 	{},
@@ -16,8 +16,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(jumpingEnabled),"CHECKBOX",
-	["Enable jumping",""],
-	["Enhanced Movement Rework","Core"],
+	[LSTRING(SettingDisplayName_jumpingEnabled),LSTRING(SettingDescription_jumpingEnabled)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	true,
 	true,
 	{},
@@ -25,8 +25,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxClimbHeight),"SLIDER",
-	["Maximum climb height","Maximum height that a player can reach to climb on/over objects"],
-	["Enhanced Movement Rework","Core"],
+	[LSTRING(SettingDisplayName_maxClimbHeight),LSTRING(SettingDescription_maxClimbHeight)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	[1,3,2.6,1],
 	true,
 	{},
@@ -34,8 +34,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxDropHeight),"SLIDER",
-	["Maximum drop height","Maximum height that a player can drop from"],
-	["Enhanced Movement Rework","Core"],
+	[LSTRING(SettingDisplayName_maxDropHeight),LSTRING(SettingDescription_maxDropHeight)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	[2,20,5,1],
 	true,
 	{},
@@ -43,8 +43,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(jumpVelocity),"SLIDER",
-	["Jump velocity","Super saiyan simulator"],
-	["Enhanced Movement Rework","Core"],
+	[LSTRING(SettingDisplayName_jumpVelocity),LSTRING(SettingDescription_jumpVelocity)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	[1,50,3.4,1],
 	true,
 	{},
@@ -52,8 +52,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(allowMidairClimbing),"CHECKBOX",
-	["Allow mid-air climbing",""],
-	["Enhanced Movement Rework","Core"],
+	[LSTRING(SettingDisplayName_allowMidairClimbing),LSTRING(SettingDescription_allowMidairClimbing)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	true,
 	true,
 	{},
@@ -61,8 +61,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(blacklistStr),"EDITBOX",
-	["Object type blacklist","List of object classes that cannot be climbed on."],
-	["Enhanced Movement Rework","Core"],
+	[LSTRING(SettingDisplayName_blacklistStr),LSTRING(SettingDescription_blacklistStr)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	"",
 	true,
 	{GVAR(blacklist) = ((_this splitString ",") apply {toLower _x}) + (uiNamespace getVariable [QGVAR(classBlacklist),[]])},
@@ -70,8 +70,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(whitelistStr),"EDITBOX",
-	["Object type whitelist","Use to override config level blacklisting."],
-	["Enhanced Movement Rework","Core"],
+	[LSTRING(SettingDisplayName_whitelistStr),LSTRING(SettingDescription_whitelistStr)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	"",
 	true,
 	{GVAR(whitelist) = (_this splitString ",") apply {toLower _x}},
@@ -79,8 +79,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(preventHighVaulting),"CHECKBOX",
-	["Prevent high edge vaulting","When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if 'vault' keybind is the same as 'climb/drop only')"],
-	["Enhanced Movement Rework","Preferences"],
+	[LSTRING(SettingDisplayName_preventHighVaulting),LSTRING(SettingDescription_preventHighVaulting)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Preferences)],
 	false,
 	false,
 	{},
@@ -88,8 +88,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(enableWalkableSurface),"CHECKBOX",
-	["Enable walkable surface","Spawns an invisible walkable surface object underneath the player when on top of an object"],
-	["Enhanced Movement Rework","Preferences"],
+	[LSTRING(SettingDisplayName_enableWalkableSurface),LSTRING(SettingDescription_enableWalkableSurface)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Preferences)],
 	true,
 	false,
 	{},
@@ -97,8 +97,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(staminaCoefficient),"SLIDER",
-	["Stamina coefficient","Coefficient for all stamina drain"],
-	["Enhanced Movement Rework","Stamina"],
+	[LSTRING(SettingDisplayName_staminaCoefficient),LSTRING(SettingDescription_staminaCoefficient)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Stamina)],
 	[0,10,1,1],
 	true,
 	{},
@@ -106,8 +106,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(jumpDuty),"SLIDER",
-	["Jump duty","Base stamina cost for jumping"],
-	["Enhanced Movement Rework","Stamina"],
+	[LSTRING(SettingDisplayName_jumpDuty),LSTRING(SettingDescription_jumpDuty)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Stamina)],
 	[0,10,1,1],
 	true,
 	{},
@@ -115,8 +115,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(climbOnDuty),"SLIDER",
-	["Climb on duty","Base stamina cost for climbing ONTO objects, which is multiplied by the height of the climb"],
-	["Enhanced Movement Rework","Stamina"],
+	[LSTRING(SettingDisplayName_climbOnDuty),LSTRING(SettingDescription_climbOnDuty)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Stamina)],
 	[0,10,3.4,1],
 	true,
 	{},
@@ -124,8 +124,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(climbOverDuty),"SLIDER",
-	["Climb over duty","Base stamina cost for climbing OVER objects, which is multiplied by the height of the climb"],
-	["Enhanced Movement Rework","Stamina"],
+	[LSTRING(SettingDisplayName_climbOverDuty),LSTRING(SettingDescription_climbOverDuty)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Stamina)],
 	[0,10,3,1],
 	true,
 	{},
@@ -133,8 +133,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(dropDuty),"SLIDER",
-	["Drop duty","Base stamina cost for dropping down from an object, which is multiplied by the depth of the drop"],
-	["Enhanced Movement Rework","Stamina"],
+	[LSTRING(SettingDisplayName_dropDuty),LSTRING(SettingDescription_dropDuty)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Stamina)],
 	[0,10,0.7,1],
 	true,
 	{},
@@ -142,8 +142,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(jumpingLoadCoefficient),"SLIDER",
-	["Jumping velocity/load coefficient","Multiplier for how much player load reduces jump velocity"],
-	["Enhanced Movement Rework","Weight"],
+	[LSTRING(SettingDisplayName_jumpingLoadCoefficient),LSTRING(SettingDescription_jumpingLoadCoefficient)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Weight)],
 	[0,10,1,1],
 	true,
 	{},
@@ -151,8 +151,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(enableWeightCheck),"CHECKBOX",
-	["Enable max weight checking",""],
-	["Enhanced Movement Rework","Weight"],
+	[LSTRING(SettingDisplayName_enableWeightCheck),LSTRING(SettingDescription_enableWeightCheck)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Weight)],
 	true,
 	true,
 	{},
@@ -160,8 +160,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxWeightJump),"SLIDER",
-	["Max Weight - Jumping","Maximum jumping weight"],
-	["Enhanced Movement Rework","Weight"],
+	[LSTRING(SettingDisplayName_maxWeightJump),LSTRING(SettingDescription_maxWeightJump)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Weight)],
 	[0,200,100,1],
 	true,
 	{},
@@ -169,8 +169,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxWeightClimb1),"SLIDER",
-	["Max Weight - Climb 1m","Interpolated max player weight allowed to climb 1 meter"],
-	["Enhanced Movement Rework","Weight"],
+	[LSTRING(SettingDisplayName_maxWeightClimb1),LSTRING(SettingDescription_maxWeightClimb1)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Weight)],
 	[0,200,100,1],
 	true,
 	{},
@@ -178,8 +178,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxWeightClimb2),"SLIDER",
-	["Max Weight - Climb 2m","Interpolated max player weight allowed to climb 2 meters"],
-	["Enhanced Movement Rework","Weight"],
+	[LSTRING(SettingDisplayName_maxWeightClimb2),LSTRING(SettingDescription_maxWeightClimb2)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Weight)],
 	[0,200,85,1],
 	true,
 	{},
@@ -187,8 +187,8 @@ ADDON = false;
 ] call CBA_fnc_addSetting;
 
 [QGVAR(maxWeightClimb3),"SLIDER",
-	["Max Weight - Climb 3m","Interpolated max player weight allowed to climb 3 meters"],
-	["Enhanced Movement Rework","Weight"],
+	[LSTRING(SettingDisplayName_maxWeightClimb3),LSTRING(SettingDescription_maxWeightClimb3)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Weight)],
 	[0,200,60,1],
 	true,
 	{},

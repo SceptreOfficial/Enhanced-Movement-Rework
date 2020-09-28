@@ -2,7 +2,7 @@
 
 class CfgPatches {
 	class ADDON {
-		name = COMPONENT;
+		name = CSTRING(EnhancedMovementRework);
 		author = "Simplex Team";
 		authors[] = {"Simplex Team"};
 		url = "";
