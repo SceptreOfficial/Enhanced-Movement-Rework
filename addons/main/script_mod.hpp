@@ -1,5 +1,5 @@
 #define MAINPREFIX z
-#define PREFIX EMR
+#define PREFIX emr
 
 #include "script_version.hpp"
 
