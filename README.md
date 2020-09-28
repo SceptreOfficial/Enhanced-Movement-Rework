@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://github.com/SceptreOfficial/Enhanced-Movement-Rework/raw/master/assets/emr.png" width="128">
+	<img src="https://github.com/SceptreOfficial/Enhanced-Movement-Rework/raw/master/assets/emr_black.png" width="128">
 </p>
 
 <p align="center">
