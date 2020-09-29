@@ -19,21 +19,21 @@
 },{false},[0,[false,false,false]]] call CBA_fnc_addKeybind;
 
 [LSTRING(EnhancedMovementRework),"EMR_holster",LSTRING(Keybind_HolsterWeapon),{// From ACE3
-	private _player = call CBA_fnc_currentUnit;
+	private _unit = call CBA_fnc_currentUnit;
 
-	if !(_player call CBA_fnc_canUseWeapon) exitWith {false};
+	if !(_unit call CBA_fnc_canUseWeapon) exitWith {false};
 
-	if ((currentWeapon _player) != "") then {
-		_player action ["SwitchWeapon",_player,_player,299];
+	if ((currentWeapon _unit) != "") then {
+		_unit action ["SwitchWeapon",_unit,_unit,299];
 	} else {
 		private _weapon = switch (true) do {
-			case (primaryWeapon _player != ""): {primaryWeapon _player};
-			case (handgunWeapon _player != ""): {handgunWeapon _player};
-			case (secondaryWeapon _player != ""): {secondaryWeapon _player};
+			case (primaryWeapon _unit != ""): {primaryWeapon _unit};
+			case (handgunWeapon _unit != ""): {handgunWeapon _unit};
+			case (secondaryWeapon _unit != ""): {secondaryWeapon _unit};
 			default {""};
 		};
 
-		if (_weapon != "") then {_player selectWeapon _weapon};
+		if (_weapon != "") then {_unit selectWeapon _weapon};
 	};
 
 	true
