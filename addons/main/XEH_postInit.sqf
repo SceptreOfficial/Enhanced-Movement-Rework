@@ -41,5 +41,5 @@
 
 if (hasInterface) then {
 	GVAR(walkableSurface) = "babe_helper" createVehicleLocal [0,0,0];
-	GVAR(walkableSurfacePFHID) = [FUNC(updateWalkableSurface),0] call CBA_fnc_addPerFrameHandler;
+	GVAR(walkableSurfaceEFID) = addMissionEventHandler ["EachFrame",{call FUNC(updateWalkableSurface)}];
 };
