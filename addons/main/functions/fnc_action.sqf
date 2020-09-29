@@ -44,7 +44,7 @@ if (_actionAnim == "") exitWith {false};
 
 // Stop if out of stamina
 if (_unit call FUNC(getStamina) < (_duty * GVAR(staminaCoefficient))) exitWith {
-	hint hint LLSTRING(CantClimbStamina);
+	hint LLSTRING(CantClimbStamina);
 	false
 };
 
