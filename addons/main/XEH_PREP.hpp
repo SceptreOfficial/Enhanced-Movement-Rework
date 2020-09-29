@@ -1,6 +1,4 @@
 PREP(action);
-PREP(addActionExitCondition);
-PREP(addWalkableSurfaceExitCondition);
 PREP(canClimb);
 PREP(canDrop);
 PREP(climb);

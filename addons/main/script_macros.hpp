@@ -15,7 +15,7 @@
 	{!(_unit in _unit)} || \
 	{stance _unit == "PRONE"} || \
 	{((animationState _unit) select [1,3]) in ["bdv","bsw","dve","sdv","ssw","swm","inv"]} || \
-	{_player call _x} count GVAR(actionExitConditions) != 0
+	{_unit call _x} count GVAR(actionExitConditions) != 0
 
 #define CLIMB_ON_PROCEDURE \
 	_animPosASL = (_animPosASL vectorAdd [0,0,_height]) vectorAdd (_dir vectorMultiply 0.9); \

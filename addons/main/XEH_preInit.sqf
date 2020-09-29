@@ -210,14 +210,14 @@ GVAR(actionExitConditions) = [
 
 if (isServer) then {
 	[QGVAR(addWSExitCondition),{
-		params ["_code",{},[{}]];
+		params [["_code",{},[{}]]];
 
 		GVAR(WSExitConditions) pushBack _code;
 		publicVariable QGVAR(WSExitConditions);
 	}] call CBA_fnc_addEventHandler;
 
 	[QGVAR(addActionExitCondition),{
-		params ["_code",{},[{}]];
+		params [["_code",{},[{}]]];
 
 		GVAR(actionExitConditions) pushBack _code;
 		publicVariable QGVAR(actionExitConditions);
