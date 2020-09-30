@@ -11,7 +11,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_Keybind_ClimbDropOnly">
 			<English>Climb/drop only</English>
-			<Japanese>昇降のみを行う</Japanese>
+			<Japanese>よじ登りのみを行う</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_Keybind_JumpOnly">
 			<English>Jump only</English>
@@ -39,7 +39,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_climbingEnabled">
 			<English>Enable climbing/dropping</English>
-			<Japanese>昇降機能の有効化</Japanese>
+			<Japanese>よじ登り機能の有効化</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_climbingEnabled">
 			<English>Global toggle for climbing and dropping actions</English>
@@ -103,7 +103,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_preventHighVaulting">
 			<English>Prevent high edge vaulting</English>
-			<Japanese>崖での跳躍アクションを防止する</Japanese>
+			<Japanese>崖での跳躍アクション防止</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_preventHighVaulting">
 			<English>When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if 'vault' keybind is the same as 'climb/drop only')</English>
@@ -111,7 +111,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_enableWalkableSurface">
 			<English>Enable walkable surface</English>
-			<Japanese>オブジェクト上を歩行可能にする機能の有効化</Japanese>
+			<Japanese>オブジェクト上を歩行可能にする</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_enableWalkableSurface">
 			<English>Spawns an invisible walkable surface object underneath the player when on top of an object</English>
