@@ -43,7 +43,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_climbingEnabled">
 			<English>Global toggle for climbing and dropping actions</English>
-			<Japanese>オブジェクトをよじ登ったり、飛び降りたりする機能を有効化します。</Japanese>
+			<Japanese>よじ登ったり、飛び降りたりする機能を有効化します。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_jumpingEnabled">
 			<English>Enable jumping</English>
@@ -59,7 +59,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_maxClimbHeight">
 			<English>Maximum height that a player can reach to climb on/over objects</English>
-			<Japanese>プレイヤーがよじ登ることのできるオブジェクトの高さの最大値です。</Japanese>
+			<Japanese>プレイヤーがよじ登ることができるオブジェクトの高さの最大値です。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_maxDropHeight">
 			<English>Maximum drop height</English>
@@ -67,7 +67,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_maxDropHeight">
 			<English>Maximum height that a player can drop from</English>
-			<Japanese>プレイヤーが飛び降りることのできるオブジェクトの高さの最大値です。</Japanese>
+			<Japanese>プレイヤーが飛び降りることができるオブジェクトの高さの最大値です。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_jumpVelocity">
 			<English>Jump velocity</English>
@@ -83,7 +83,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_allowMidairClimbing">
 			<English>Allows using the climb action while falling or jumping up towards a ledge</English>
-			<Japanese>落下中などに崖につかまってよじ登ることができるようにします。</Japanese>
+			<Japanese>落下中やジャンプ中に崖につかまってよじ登ることができるようにします。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_blacklistStr">
 			<English>Object type blacklist</English>
@@ -99,7 +99,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_whitelistStr">
 			<English>Use to override config level blacklisting</English>
-			<Japanese>ブラックリストを上書きすることができます。</Japanese>
+			<Japanese>デフォルトで指定されたブラックリストを上書きすることができます。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_preventHighVaulting">
 			<English>Prevent high edge vaulting</English>
