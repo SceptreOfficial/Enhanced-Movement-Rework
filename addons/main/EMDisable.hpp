@@ -8,21 +8,22 @@ class CfgModSettings {
 	delete babe_EM;
 };
 
+class EventHandlers;
 class CfgVehicles {
 	class AllVehicles;
 	class Air: AllVehicles {
-		class EventHandlers {
+		class EventHandlers : EventHandlers {
 			delete babe_int_initEH;
 		};
 	};
 	class LandVehicle;
 	class Car: LandVehicle {
-		class EventHandlers {
+		class EventHandlers : EventHandlers {
 			delete babe_int_initEH;
 		};
 	};
 	class Tank: LandVehicle {
-		class EventHandlers {
+		class EventHandlers : EventHandlers {
 			delete babe_int_initEH;
 		};
 	};
