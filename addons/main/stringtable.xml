@@ -101,6 +101,12 @@
 			<English>Use to override config level blacklisting</English>
 			<Japanese>デフォルトで指定されたブラックリストを上書きすることができます。</Japanese>
 		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_animSpeedCoef">
+			<English>Animation speed coefficient</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_animSpeedCoef">
+			<English>Changes the speed multiplier of climbing animations</English>
+		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_preventHighVaulting">
 			<English>Prevent high edge vaulting</English>
 			<Japanese>崖での跳躍アクション防止</Japanese>
@@ -117,12 +123,18 @@
 			<English>Spawns an invisible walkable surface object underneath the player when on top of an object</English>
 			<Japanese>プレイヤーがオブジェクトの上にいる際、不可視なオブジェクトを召喚し、歩行可能にします。</Japanese>
 		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_hintType">
+			<English>Hint type</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_hintType">
+			<English>What type of hint should be displayed when an action isn't possible</English>
+		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_staminaCoefficient">
 			<English>Stamina coefficient</English>
 			<Japanese>スタミナ係数</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_staminaCoefficient">
-			<English>Coefficient for all stamina drain</English>
+			<English>Stamina drain multiplier for all actions</English>
 			<Japanese>すべての動作でのスタミナ消費の係数。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_jumpDuty">
@@ -138,7 +150,7 @@
 			<Japanese>よじ登り時の負荷</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_climbOnDuty">
-			<English>Base stamina cost for climbing ONTO objects, which is multiplied by the height of the climb</English>
+			<English>Base stamina cost for climbing ON objects, which is multiplied by the height of the climb</English>
 			<Japanese>よじ登りに掛かるスタミナ消費の値です。高さで乗算されます。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_climbOverDuty">
@@ -157,8 +169,14 @@
 			<English>Base stamina cost for dropping down from an object, which is multiplied by the depth of the drop</English>
 			<Japanese>飛び降りに掛かるスタミナ消費の値です。高さで乗算されます。</Japanese>
 		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_animSpeedStaminaCoef">
+			<English>Stamina animation speed modifier</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_animSpeedStaminaCoef">
+			<English>Controls how much stamina affects climbing animation speed</English>
+		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_jumpingLoadCoefficient">
-			<English>Jumping velocity/load coefficient</English>
+			<English>Jumping velocity load coefficient</English>
 			<Japanese>ジャンプの速度と重量の係数</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_jumpingLoadCoefficient">
@@ -224,6 +242,21 @@
 		<Key ID="STR_EMR_Main_CantClimbStamina">
 			<English>CAN'T CLIMB: NOT ENOUGH STAMINA</English>
 			<Japanese>よじ登れません: スタミナ不足</Japanese>
+		</Key>
+		<Key ID="STR_EMR_Main_HintType_Hint">
+			<English>Hint</English>
+		</Key>
+		<Key ID="STR_EMR_Main_HintType_HintSilent">
+			<English>Hint (silent)</English>
+		</Key>
+		<Key ID="STR_EMR_Main_HintType_TitleEffect">
+			<English>Title effect</English>
+		</Key>
+		<Key ID="STR_EMR_Main_HintType_SystemChat">
+			<English>System chat</English>
+		</Key>
+		<Key ID="STR_EMR_Main_HintType_Disabled">
+			<English>Disabled</English>
 		</Key>
 	</Package>
 </Project>
