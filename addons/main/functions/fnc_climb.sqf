@@ -31,7 +31,7 @@ if (!_canClimb && _canDrop) then {
 // Stop if can't climb or drop (+ Prevent high edge vault)
 if (_actionAnim == "") exitWith {
 	if (_tooHigh) then {
-		hint LLSTRING(CantDropTooHigh);
+		LLSTRING(CantDropTooHigh) call FUNC(hint);
 		GVAR(preventHighVaulting)
 	} else {
 		false
@@ -40,7 +40,7 @@ if (_actionAnim == "") exitWith {
 
 // Stop if out of stamina
 if (_unit call FUNC(getStamina) < (_duty * GVAR(staminaCoefficient))) exitWith {
-	hint LLSTRING(CantClimbStamina);
+	LLSTRING(CantClimbStamina) call FUNC(hint);
 	false
 };
 

@@ -4,6 +4,7 @@ PREP(canDrop);
 PREP(climb);
 PREP(getStamina);
 PREP(getWeight);
+PREP(hint);
 PREP(jump);
 PREP(setStamina);
 PREP(startClimbing);

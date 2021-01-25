@@ -33,7 +33,7 @@ switch true do {
 // Exit with jump if can't climb or drop
 if (_actionAnim == "" && isTouchingGround _unit) exitWith {
 	if (_viewElevation < -0.65 && _tooHigh) then {
-		hint LLSTRING(CantDropTooHigh);
+		LLSTRING(CantDropTooHigh) call FUNC(hint);
 	};
 
 	_unit call FUNC(jump)
@@ -44,7 +44,8 @@ if (_actionAnim == "") exitWith {false};
 
 // Stop if out of stamina
 if (_unit call FUNC(getStamina) < (_duty * GVAR(staminaCoefficient))) exitWith {
-	hint LLSTRING(CantClimbStamina);
+
+	LLSTRING(CantClimbStamina) call FUNC(hint);
 	false
 };
 
