@@ -43,12 +43,13 @@ if (_actionAnim == "" && isTouchingGround _unit) exitWith {
 if (_actionAnim == "") exitWith {false};
 
 // Stop if out of stamina
-if (_unit call FUNC(getStamina) < (_duty * GVAR(staminaCoefficient))) exitWith {
+private _stamina = _unit call FUNC(getStamina);
 
+if (_stamina < (_duty * GVAR(staminaCoefficient))) exitWith {
 	LLSTRING(CantClimbStamina) call FUNC(hint);
 	false
 };
 
-[_unit,_animPosASL,_targetPosASL,_actionAnim,_canClimb,_duty] call FUNC(startClimbing);
+[_unit,_animPosASL,_targetPosASL,_actionAnim,_canClimb,_duty,_stamina] call FUNC(startClimbing);
 
 true

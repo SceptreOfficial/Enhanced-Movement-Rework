@@ -11,7 +11,7 @@ params ["_unit"];
 private _stamina = 100;
 
 if (isPlayer _unit && missionNamespace getVariable ["ace_advanced_fatigue_enabled",false]) then {
-	_stamina = (ace_advanced_fatigue_anReserve / 2300) * 100;
+	_stamina = ace_advanced_fatigue_anReserve / 23;
 } else {
 	_stamina = getStamina _unit;
 };

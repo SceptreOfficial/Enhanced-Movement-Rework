@@ -20,6 +20,11 @@ GVAR(actionExitConditions) = [
 	(_this # 0) setVariable [QGVAR(isClimbing),nil];
 }] call CBA_fnc_addClassEventHandler;
 
+[QGVAR(setAnimSpeedCoef),{
+	params ["_unit","_coef"];
+	_unit setAnimSpeedCoef _coef;
+}] call CBA_fnc_addEventHandler;
+
 if (isServer) then {
 	[QGVAR(addWSExitCondition),{
 		params [["_code",{},[{}]]];

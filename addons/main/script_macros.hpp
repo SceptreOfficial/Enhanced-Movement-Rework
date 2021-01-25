@@ -47,3 +47,8 @@
 	_duty = -_depth * GVAR(dropDuty) * load _unit; \
 	_actionAnim = "BABE_drop"
 
+#define ANIM_SPEED_COEF_END(UNIT) \
+	if (!isNil "ace_advanced_fatigue_setAnimExclusions") then { \
+		ace_advanced_fatigue_setAnimExclusions deleteAt (ace_advanced_fatigue_setAnimExclusions find QUOTE(ADDON)); \
+	}; \
+	[QGVAR(setAnimSpeedCoef),[_unit,1]] call CBA_fnc_globalEvent
