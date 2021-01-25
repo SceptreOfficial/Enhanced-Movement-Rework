@@ -1,5 +1,5 @@
 name = "Enhanced Movement Rework";
-dir = "@EMR";
+dir = "@emr";
 author = "Simplex Team";
 description = "Enhanced Movement Rework";
 overview = "Enhanced Movement Rework";
