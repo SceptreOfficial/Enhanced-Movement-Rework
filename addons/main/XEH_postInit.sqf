@@ -23,7 +23,7 @@
 
 	if !(_unit call CBA_fnc_canUseWeapon) exitWith {false};
 
-	if ((currentWeapon _unit) != "") then {
+	if (currentWeapon _unit != "") then {
 		_unit action ["SwitchWeapon",_unit,_unit,299];
 	} else {
 		private _weapon = switch (true) do {

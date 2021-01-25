@@ -9,7 +9,7 @@
 private _unit = call CBA_fnc_currentUnit;
 private _helper = GVAR(walkableSurface);
 
-if (!GVAR(enableWalkableSurface) || !(_unit in _unit) || {{_unit call _x} count GVAR(WSExitConditions) != 0}) exitWith {
+if (!GVAR(enableWalkableSurface) || alive objectParent _unit || {GVAR(WSExitConditions) findIf {_unit call _x} != -1}) exitWith {
 	_helper setPosASL [0,0,0];
 };
 
@@ -19,7 +19,7 @@ if (_ix isEqualTo []) exitWith {
 	_helper setPosASL [0,0,0];
 };
 
-(_ix # 0) params ["_pos","_normal","_obj"];
+(_ix # 0) params ["_posASL","_normal","_obj"];
 
 if (isNull _obj) exitWith {
 	_helper setPosASL [0,0,0];
@@ -32,6 +32,6 @@ if (!(_class in GVAR(whitelist)) && _class in GVAR(blacklist)) exitWith {
 };
 
 _helper setMass 0;
-_helper setPosASL _pos;
+_helper setPosASL _posASL;
 _helper setVectorUp _normal;
 _obj disableCollisionWith _helper;

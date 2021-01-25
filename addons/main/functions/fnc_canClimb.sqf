@@ -21,7 +21,6 @@ private _dir = vectorDirVisual _unit;
 private _dirVect = _dir vectorMultiply 1.2;
 private _height = 0;
 private _noIntersectCount = 0;
-private _cfg = configFile >> "CfgVehicles";
 
 // Obstacle detection
 {
