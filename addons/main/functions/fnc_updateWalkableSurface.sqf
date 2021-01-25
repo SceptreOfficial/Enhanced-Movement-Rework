@@ -1,4 +1,10 @@
 #include "script_component.hpp"
+/*
+	Author: Sceptre
+
+	Description:
+	Updates invisible walkable surface under player when on top of objects.
+*/
 
 private _unit = call CBA_fnc_currentUnit;
 private _helper = GVAR(walkableSurface);

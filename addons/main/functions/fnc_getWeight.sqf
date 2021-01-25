@@ -1,4 +1,16 @@
 #include "script_component.hpp"
+/*
+	Author: Sceptre
+
+	Description:
+	Gets a unit's weight
+
+	Parameters:
+	0: Unit <OBJECT>
+
+	Returns:
+	Weight <SCALAR>
+*/
 
 params ["_unit"];
 

@@ -1,4 +1,16 @@
 #include "script_component.hpp"
+/*
+	Author: Sceptre
+
+	Description:
+	Makes a unit jump.
+
+	Parameters:
+	0: Unit to perform action <OBJECT>
+
+	Returns:
+	Control override <BOOL>
+*/
 
 params ["_unit"];
 

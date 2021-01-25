@@ -1,4 +1,16 @@
 #include "script_component.hpp"
+/*
+	Author: Sceptre
+
+	Description:
+	Will make a unit climb or drop if possible.
+
+	Parameters:
+	0: Unit to perform action <OBJECT>
+
+	Returns:
+	Control override <BOOL>
+*/
 
 params ["_unit"];
 

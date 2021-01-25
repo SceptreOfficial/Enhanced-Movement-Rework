@@ -1,9 +1,13 @@
 #include "script_component.hpp"
 /*
-	Author: Diwako
+	Authors: Diwako, Sceptre
 
 	Description:
 	Sets a unit's stamina (ACE compatible)
+
+	Parameters:
+	0: Unit <OBJECT>
+	1: Amount <SCALAR>
 */
 
 params ["_unit","_amount"];

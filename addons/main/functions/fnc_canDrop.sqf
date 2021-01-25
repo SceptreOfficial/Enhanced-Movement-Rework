@@ -1,4 +1,15 @@
 #include "script_component.hpp"
+/*
+	Author: Sceptre
+
+	Description:
+	Checks if a unit can drop from a ledge
+
+	Returns:
+	0: Can drop <BOOL>
+	1: Drop depth <SCALAR>
+	2: True if too high of a fall <BOOL>
+*/
 
 params ["_unit"];
 	

@@ -4,6 +4,12 @@
 
 	Description:
 	Gets a unit's stamina (ACE compatible)
+
+	Parameters:
+	0: Unit <OBJECT>
+
+	Returns:
+	Stamina (x/100) <SCALAR>
 */
 
 params ["_unit"];

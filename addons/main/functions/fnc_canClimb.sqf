@@ -1,4 +1,15 @@
 #include "script_component.hpp"
+/*
+	Author: Sceptre
+
+	Description:
+	Checks if a unit can climb on or over an object
+
+	Returns:
+	0: Can climb <BOOL>
+	1: True to climb over, false to climb on top <BOOL>
+	2: Climb height <SCALAR>
+*/
 
 params ["_unit"];
 

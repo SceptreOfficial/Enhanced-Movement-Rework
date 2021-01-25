@@ -1,4 +1,19 @@
 #include "script_component.hpp"
+/*
+	Author: Sceptre
+
+	Description:
+	Starts climbing animations and procedures
+
+	Parameters:
+	0: Unit <OBJECT>
+	1: Animation position <ARRAY>
+	2: Target position <ARRAY>
+	3: Animation <STRING>
+	4: Can climb (to handle direction change) <BOOL>
+	5: Stamina duty <SCALAR>
+	6: Unit current stamina (for animation speed scaling) <SCALAR>
+*/
 
 params ["_unit","_animPosASL","_targetPosASL","_actionAnim","_canClimb","_duty","_stamina"];
 
