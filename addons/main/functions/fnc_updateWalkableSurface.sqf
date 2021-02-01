@@ -13,7 +13,7 @@ if (!GVAR(enableWalkableSurface) || alive objectParent _unit || {GVAR(WSExitCond
 	_helper setPosASL [0,0,0];
 };
 
-private _ix = lineIntersectsSurfaces [AGLToASL (_unit modelToWorld [0,0,0.5]),AGLToASL (_unit modelToWorld [0,0,-0.2]),_unit,_helper,true,1,"GEOM","NONE"];
+private _ix = lineIntersectsSurfaces [_unit modelToWorldVisualWorld [0,0,0.5],_unit modelToWorldVisualWorld [0,0,-0.2],_unit,_helper,true,1,"GEOM","NONE"];
 
 if (_ix isEqualTo []) exitWith {
 	_helper setPosASL [0,0,0];
