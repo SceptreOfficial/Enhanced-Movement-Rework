@@ -31,7 +31,7 @@
 
 #define CLIMB_OVER_PROCEDURE \
 	_animPosASL = (_animPosASL vectorAdd [0,0,_height]) vectorAdd (_dir vectorMultiply 0.8); \
-	_targetPosASL = _targetPosASL vectorAdd (_dir vectorMultiply 1.8); \
+	_targetPosASL = _targetPosASL vectorAdd (_dir vectorMultiply 1.9); \
 	_duty = _height * GVAR(climbOverDuty) * load _unit; \
 	_actionAnim = switch true do { \
 		case (_height >= 2.2) : {"BABE_climbOverHer"}; \
