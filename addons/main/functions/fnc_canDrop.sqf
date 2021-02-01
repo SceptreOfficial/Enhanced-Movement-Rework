@@ -15,7 +15,6 @@ params ["_unit"];
 	
 if (!isTouchingGround _unit) exitWith {[false,0,false]};
 
-private _debug = [];
 private _pos = getPosASLVisual _unit;
 private _dir = vectorDirVisual _unit;
 private _heightAboveTerrain = getPosATL _unit # 2;

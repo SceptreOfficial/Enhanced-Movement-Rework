@@ -15,7 +15,6 @@ params ["_unit"];
 
 if (!GVAR(allowMidairClimbing) && !isTouchingGround _unit) exitWith {[false,false,0]};
 
-private _debug = [];
 private _pos = getPosASLVisual _unit;
 private _dir = vectorDirVisual _unit;
 private _dirVect = _dir vectorMultiply 1.2;
@@ -68,15 +67,10 @@ if (GVAR(enableWeightCheck) && _overweight) exitWith {
 // Ceiling check
 if !(lineIntersectsSurfaces [_pos,_pos vectorAdd [0,0,_height + 0.2],_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []) exitWith {[false,false,_height]};
 
-private _hiPos = +_pos;
-private _loPos = +_pos;
-_hiPos set [2,_hiPos # 2 + _height + 0.6];
-_loPos set [2,_loPos # 2 + 0.6];
-
 // See if it's possible to climb onto the obstacle
 private _climbOn = {
-	private _beg = _hiPos vectorAdd (_dir vectorMultiply _x);
-	private _end = _loPos vectorAdd (_dir vectorMultiply _x);
+	private _beg = [_pos # 0,_pos # 1,_pos # 2 + _height + 0.6] vectorAdd (_dir vectorMultiply _x);
+	private _end = [_pos # 0,_pos # 1,_pos # 2 + 0.6] vectorAdd (_dir vectorMultiply _x);
 
 	if (GVAR(debug)) then {
 		[{drawLine3D _this},{},[ASLToATL _beg,ASLToATL _end,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;
