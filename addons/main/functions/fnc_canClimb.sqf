@@ -22,7 +22,7 @@ private _height = 0;
 private _noIntersectCount = 0;
 
 // Obstacle detection
-{
+for "_x" from 0.4 to 3.2 step 0.1 do {
 	if (_x > GVAR(maxClimbHeight)) exitWith {};
 
 	private _beg = _pos vectorAdd [0,0,_x];
@@ -45,8 +45,8 @@ private _noIntersectCount = 0;
 		_noIntersectCount = 0;
 	};
 	
-	if (_noIntersectCount >= 5) exitWith {};
-} forEach CLIMB_HEIGHTS;
+	if (_noIntersectCount >= 10) exitWith {};
+};
 
 // Stop if no obstacle or too tall
 if (_height isEqualTo 0 || _height > GVAR(maxClimbHeight)) exitWith {[false,false,_height]};
