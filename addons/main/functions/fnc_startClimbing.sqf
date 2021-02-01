@@ -94,19 +94,17 @@ _unit setVariable [QGVAR(isClimbing),true];
 },[_actionAnim,_animPosASL,_canClimb]] call CBA_fnc_addBISEventHandler;
 
 // Prep for stances, launcher weapon, or mid-air usage
-if (!isTouchingGround _unit) then {
-	_unit switchAction "";
-
-	if (_prepAnim != "") then {
-		_unit switchMove _prepAnim;
-	};	
-} else {
+if (isTouchingGround _unit) then {
 	if (stance _unit != "STAND") then {
 		_unit switchAction "PlayerStand";
 	};
 
 	if (_prepAnim != "") then {
 		_unit playMove _prepAnim;
+	};
+} else {
+	if (_prepAnim != "") then {
+		_unit switchMove _prepAnim;
 	};
 };
 
