@@ -16,6 +16,8 @@ GVAR(actionExitConditions) = [
 	{!isNil {_this getVariable "ace_medical_treatment_endInAnim"}}
 ];
 
+GVAR(staminaDuration) = getNumber (configFile >> "CfgMovesFatigue" >> "staminaDuration");
+
 ["CAManBase","Killed",{
 	(_this # 0) setVariable [QGVAR(isClimbing),nil];
 }] call CBA_fnc_addClassEventHandler;
