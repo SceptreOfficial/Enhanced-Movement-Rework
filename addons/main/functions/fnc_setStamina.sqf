@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /*
-	Authors: Diwako, Sceptre
+	Authors: Diwako, Sceptre, Freddo
 
 	Description:
 	Sets a unit's stamina (ACE compatible)
@@ -13,9 +13,9 @@
 params ["_unit","_amount"];
 
 if (isPlayer _unit && missionNamespace getVariable ["ace_advanced_fatigue_enabled",false]) then {
-	ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve + (
-		2300 * ((_amount / ace_advanced_fatigue_performanceFactor) / 100)
-	);
+	_amount = (_amount / ace_advanced_fatigue_performanceFactor) / 100;
+	ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve + (2300 * _amount);
+	ace_advanced_fatigue_anFatigue = ((ace_advanced_fatigue_anFatigue - (_amount * 0.8)) min 0.8) max ace_advanced_fatigue_anFatigue; // ~0.8 is seemingly the max fatigue one can get
 } else {
 	_unit setStamina ((getStamina _unit) + _amount);
 };
