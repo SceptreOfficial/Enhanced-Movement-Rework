@@ -9,7 +9,7 @@
 	0: Unit <OBJECT>
 
 	Returns:
-	Stamina (x/100) <SCALAR>
+	Stamina <SCALAR>
 */
 
 params ["_unit"];
