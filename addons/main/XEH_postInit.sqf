@@ -1,21 +1,15 @@
 #include "script_component.hpp"
 
 [LSTRING(EnhancedMovementRework),"EMR_action",LSTRING(Keybind_AIOAction),{
-	if (GVAR(climbingEnabled) || GVAR(jumpingEnabled)) then {
-		(call CBA_fnc_currentUnit) call FUNC(action)
-	} else {false}
+	(call CBA_fnc_currentUnit) call FUNC(action)
 },{false},[47,[true,false,false]]] call CBA_fnc_addKeybind;
 
 [LSTRING(EnhancedMovementRework),"EMR_climb",LSTRING(Keybind_ClimbDropOnly),{
-	if (GVAR(climbingEnabled)) then {
-		(call CBA_fnc_currentUnit) call FUNC(climb)
-	} else {false}
+	(call CBA_fnc_currentUnit) call FUNC(climb)
 },{false},[0,[false,false,false]]] call CBA_fnc_addKeybind;
 
 [LSTRING(EnhancedMovementRework),"EMR_jump",LSTRING(Keybind_JumpOnly),{
-	if (GVAR(jumpingEnabled)) then {
-		(call CBA_fnc_currentUnit) call FUNC(jump)
-	} else {false}
+	(call CBA_fnc_currentUnit) call FUNC(jump)
 },{false},[0,[false,false,false]]] call CBA_fnc_addKeybind;
 
 [LSTRING(EnhancedMovementRework),"EMR_holster",LSTRING(Keybind_HolsterWeapon),{// From ACE3

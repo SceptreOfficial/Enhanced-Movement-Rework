@@ -16,7 +16,7 @@ params ["_unit"];
 
 if (_unit getVariable [QGVAR(isClimbing),false]) exitWith {true};
 
-if (UNIVERSAL_EXIT_CONDITION || {!isTouchingGround _unit}) exitWith {false};
+if (!GVAR(jumpingEnabled) || UNIVERSAL_EXIT_CONDITION || {!isTouchingGround _unit}) exitWith {false};
 
 if (GVAR(enableWeightCheck) && _unit call FUNC(getWeight) > GVAR(maxWeightJump)) exitWith {
 	LLSTRING(CantJumpOverweight) call FUNC(hint);

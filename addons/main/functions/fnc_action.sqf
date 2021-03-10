@@ -29,15 +29,17 @@ private _viewElevation = getCameraViewDirection _unit # 2;
 _unit call FUNC(canClimb) params ["_canClimb","_climbOn","_height"];
 _unit call FUNC(canDrop) params ["_canDrop","_depth","_tooHigh"];
 
-switch true do {
+if (GVAR(climbingEnabled)) then {
+	switch true do {
 		case (_viewElevation < GVAR(dropViewElevation) && _canDrop) : {
-		DROP_PROCEDURE;
-	};
-	case (_canClimb) : {
-		if (_climbOn) then {
-			CLIMB_ON_PROCEDURE;
-		} else {
-			CLIMB_OVER_PROCEDURE;
+			DROP_PROCEDURE;
+		};
+		case (_canClimb) : {
+			if (_climbOn) then {
+				CLIMB_ON_PROCEDURE;
+			} else {
+				CLIMB_OVER_PROCEDURE;
+			};
 		};
 	};
 };

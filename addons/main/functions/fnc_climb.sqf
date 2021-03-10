@@ -28,16 +28,18 @@ private _actionAnim = "";
 _unit call FUNC(canClimb) params ["_canClimb","_climbOn","_height"];
 _unit call FUNC(canDrop) params ["_canDrop","_depth","_tooHigh"];
 
-if (_canClimb) then {
-	if (_climbOn) then {
-		CLIMB_ON_PROCEDURE;
-	} else {	
-		CLIMB_OVER_PROCEDURE;
+if (GVAR(climbingEnabled)) then {
+	if (_canClimb) then {
+		if (_climbOn) then {
+			CLIMB_ON_PROCEDURE;
+		} else {
+			CLIMB_OVER_PROCEDURE;
+		};
 	};
-};
 
-if (!_canClimb && _canDrop) then {
-	DROP_PROCEDURE;
+	if (!_canClimb && _canDrop) then {
+		DROP_PROCEDURE;
+	};	
 };
 
 // Stop if can't climb or drop (+ Prevent high edge vault)
