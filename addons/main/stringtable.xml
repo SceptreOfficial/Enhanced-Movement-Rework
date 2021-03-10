@@ -129,6 +129,12 @@
 		<Key ID="STR_EMR_Main_SettingDescription_hintType">
 			<English>What type of hint should be displayed when an action isn't possible</English>
 		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_DropViewElevation">
+			<English>Drop view elevation</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_DropViewElevation">
+			<English>How far down you need to look for the all-in-one action to trigger dropping</English>
+		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_staminaCoefficient">
 			<English>Stamina coefficient</English>
 			<Japanese>スタミナ係数</Japanese>

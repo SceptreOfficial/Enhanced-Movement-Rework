@@ -30,7 +30,7 @@ _unit call FUNC(canClimb) params ["_canClimb","_climbOn","_height"];
 _unit call FUNC(canDrop) params ["_canDrop","_depth","_tooHigh"];
 
 switch true do {
-	case (_viewElevation < -0.5 && _canDrop) : {
+		case (_viewElevation < GVAR(dropViewElevation) && _canDrop) : {
 		DROP_PROCEDURE;
 	};
 	case (_canClimb) : {
@@ -44,7 +44,7 @@ switch true do {
 
 // Exit with jump if can't climb or drop
 if (_actionAnim == "" && isTouchingGround _unit) exitWith {
-	if (_viewElevation < -0.65 && _tooHigh) then {
+	if (_viewElevation < GVAR(dropViewElevation) && _tooHigh) then {
 		LLSTRING(CantDropTooHigh) call FUNC(hint);
 	};
 

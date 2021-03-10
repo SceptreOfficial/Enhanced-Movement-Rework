@@ -118,6 +118,15 @@
 	false
 ] call CBA_fnc_addSetting;
 
+[QGVAR(dropViewElevation),"SLIDER",
+	[LSTRING(SettingDisplayName_DropViewElevation),LSTRING(SettingDescription_DropViewElevation)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Preferences)],
+	[-0.9,-0.1,-0.65,2],
+	false,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
 //---------------------------------------------//
 // Stamina
 
