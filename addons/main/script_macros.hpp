@@ -35,7 +35,7 @@
 		case (_height >= 2.2) : {"BABE_climbOverHer"}; \
 		case (_height >= 1.4) : {"BABE_climbOverH"}; \
 		case (_height >= 1.2) : {"BABE_climbOver"}; \
-		case (_height >= 0.6) : {"BABE_vaultover"}; \
+		case (_height >= 0.4) : {"BABE_vaultover"}; \
 		default {""}; \
 	}
 
