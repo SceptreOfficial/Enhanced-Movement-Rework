@@ -5,3 +5,4 @@ Authors:
 Sceptre
 diwako
 Apricot_ale (Japanese Translations)
+Freddo
