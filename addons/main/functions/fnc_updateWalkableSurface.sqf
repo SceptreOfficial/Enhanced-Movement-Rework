@@ -9,7 +9,12 @@
 private _unit = call CBA_fnc_currentUnit;
 private _helper = GVAR(walkableSurface);
 
-if (!GVAR(enableWalkableSurface) || alive objectParent _unit || {GVAR(WSExitConditions) findIf {_unit call _x} != -1}) exitWith {
+if (
+	!GVAR(enableWalkableSurface) ||
+	alive objectParent _unit ||
+	_unit getVariable [QGVAR(isClimbing),false] ||
+	{GVAR(WSExitConditions) findIf {_unit call _x} != -1}
+) exitWith {
 	_helper setPosASL [0,0,0];
 };
 
