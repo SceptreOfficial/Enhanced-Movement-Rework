@@ -24,6 +24,7 @@ GVAR(staminaDuration) = getNumber (configFile >> "CfgMovesFatigue" >> "staminaDu
 
 [QGVAR(setAnimSpeedCoef),{
 	params ["_unit","_coef"];
+	if (_unit getVariable ["EMR_animSpeedExclude",false]) exitWith {};
 	_unit setAnimSpeedCoef _coef;
 }] call CBA_fnc_addEventHandler;
 
