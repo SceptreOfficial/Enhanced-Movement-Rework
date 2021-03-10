@@ -31,14 +31,12 @@ GVAR(staminaDuration) = getNumber (configFile >> "CfgMovesFatigue" >> "staminaDu
 if (isServer) then {
 	[QGVAR(addWSExitCondition),{
 		params [["_code",{},[{}]]];
-
 		GVAR(WSExitConditions) pushBack _code;
 		publicVariable QGVAR(WSExitConditions);
 	}] call CBA_fnc_addEventHandler;
 
 	[QGVAR(addActionExitCondition),{
 		params [["_code",{},[{}]]];
-
 		GVAR(actionExitConditions) pushBack _code;
 		publicVariable QGVAR(actionExitConditions);
 	}] call CBA_fnc_addEventHandler;
