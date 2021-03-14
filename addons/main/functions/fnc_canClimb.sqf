@@ -17,38 +17,43 @@ if (!GVAR(allowMidairClimbing) && !isTouchingGround _unit) exitWith {[false,fals
 
 private _pos = getPosASLVisual _unit;
 private _dir = vectorDirVisual _unit;
-private _dirVect = (_dir vectorMultiply 1.2) vectorAdd [0,0,0.05];
+
+// offset pos to line up with view
+_pos = _pos vectorAdd (([_dir] matrixMultiply GVAR(rotVect90) select 0) vectorMultiply 0.1);
+
+private _animPosASL = +_pos;
 private _height = 0;
+private _targetHeight = 0;
+private _endVect = (_dir vectorMultiply 1.2) vectorAdd [0,0,0.05];
 private _noIntersectCount = 0;
 
 // Obstacle detection
-for "_x" from 0.3 to 3.4 step 0.1 do {
-	if (_x > GVAR(maxClimbHeight)) exitWith {};
-
+for "_x" from 0.3 to (GVAR(maxClimbHeight) + 0.1) step 0.1 do {
 	private _beg = _pos vectorAdd [0,0,_x];
-	private _end = _beg vectorAdd _dirVect;
-
-	if (GVAR(debug)) then {
-		[{drawLine3D _this},{},[ASLToATL _beg,ASLToATL _end,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;
-	};
+	private _end = _beg vectorAdd _endVect;
 	
 	private _ix = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"];
 
 	if (_ix isEqualTo []) then {
+		DEBUG_G(_beg,_end)
 		_noIntersectCount = _noIntersectCount + 1;
+	
 	} else {
 		private _class = toLower typeOf (_ix # 0 # 2);
-		if (!(_class in GVAR(whitelist)) && _class in GVAR(blacklist)) exitWith {};
-			
+		if (!(_class in GVAR(whitelist)) && _class in GVAR(blacklist)) exitWith {DEBUG_R(_beg,_end)};
+		
+		DEBUG_B(_beg,_end)
+
+		_animPosASL = _ix # 0 # 0;
 		_height = _x;
 		_noIntersectCount = 0;
 	};
 	
-	if (_height > 0 && _noIntersectCount >= 10) exitWith {};
+	if (_height > 0 && _noIntersectCount >= 9) exitWith {};
 };
 
 // Stop if no obstacle or too tall
-if (_height isEqualTo 0 || _height > GVAR(maxClimbHeight)) exitWith {[false,false,_height]};
+if (_height isEqualTo 0 || _height > GVAR(maxClimbHeight)) exitWith {[false,false,_height,_targetHeight,_animPosASL]};
 
 // Weight check
 private _weight = _unit call FUNC(getWeight);
@@ -60,43 +65,89 @@ private _overweight = switch true do {
 
 if (GVAR(enableWeightCheck) && _overweight) exitWith {
 	LLSTRING(CantClimbOverweight) call FUNC(hint);
-	[false,false,_height]
+	[false,false,_height,_targetHeight,_animPosASL]
 };
 
 // Ceiling check
-if !(lineIntersectsSurfaces [_pos,_pos vectorAdd [0,0,_height + 0.3],_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []) exitWith {[false,false,_height]};
-
-// See if it's possible to climb onto the obstacle
-private _climbOn = {
-	private _beg = _pos vectorAdd [0,0,_height + 0.6] vectorAdd (_dir vectorMultiply _x);
-	private _end = _pos vectorAdd [0,0,0.6] vectorAdd (_dir vectorMultiply _x);
-
-	if (GVAR(debug)) then {
-		[{drawLine3D _this},{},[ASLToATL _beg,ASLToATL _end,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;
-	};
-
-	!(lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo [])
-} count [1.75,1.475,1.2] isEqualTo 3;
-
-// Final size checks
-private _canClimb = if (_climbOn) then {
-	private _checkBeg = (_pos vectorAdd [-0.25 * (_dir # 1),-0.25 * -(_dir # 0),_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
-	private _checkEnd = (_pos vectorAdd [0.3 * (_dir # 1),0.3 * -(_dir # 0),_height + 1.7]) vectorAdd (_dir vectorMultiply 1.4);
-	
-	if (GVAR(debug)) then {
-		[{drawLine3D _this},{},[ASLToATL _checkBeg,ASLToATL _checkEnd,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
-	};
-
-	lineIntersectsSurfaces [_checkBeg,_checkEnd,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []
-} else {
-	private _checkBeg = (_pos vectorAdd [-0.25 * (_dir # 1),-0.25 * -(_dir # 0),_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
-	private _checkEnd = (_pos vectorAdd [0.3 * (_dir # 1),0.3 * -(_dir # 0),_height + 0.7]) vectorAdd (_dir vectorMultiply 1.4);
-	
-	if (GVAR(debug)) then {
-		[{drawLine3D _this},{},[ASLToATL _checkBeg,ASLToATL _checkEnd,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
-	};
-
-	lineIntersectsSurfaces [_checkBeg,_checkEnd,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []
+private _ceilBeg = _pos vectorAdd [0,0,_height - 0.1 max 0.3];
+private _ceilEnd = _pos vectorAdd [0,0,_height + 0.5];
+if (lineIntersectsSurfaces [_ceilBeg,_ceilEnd,_unit,objNull,true,-1,"GEOM","NONE"] isNotEqualTo []) exitWith {
+	DEBUG_R(_ceilBeg,_ceilEnd)
+	[false,false,_height,_targetHeight,_animPosASL]
 };
 
-[_canClimb,_climbOn,_height]
+DEBUG_B(_ceilBeg,_ceilEnd)
+
+// See if it's possible to climb onto the obstacle
+private _climbOnBeg = _pos vectorAdd [0,0,_height + 0.6];
+private _climbOnEnd = _pos vectorAdd [0,0,_height - 0.6 max 0.3];
+private _climbOn = {
+	private _beg = _climbOnBeg vectorAdd (_dir vectorMultiply _x);
+	private _end = _climbOnEnd vectorAdd (_dir vectorMultiply _x);
+
+	if (lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []) then {
+		DEBUG_G(_beg,_end)
+		false
+	} else {
+		DEBUG_B(_beg,_end)
+		true
+	};
+} count [1.725,1.4625,1.2] isEqualTo 3;
+
+// Final size checks
+private _dX = 0.25 * -(_dir # 0);
+private _dY = 0.25 * (_dir # 1);
+private _canClimb = false;
+
+if (_climbOn) then {
+	private _beg1 = (_pos vectorAdd [-_dY,-_dX,_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
+	private _end1 = (_pos vectorAdd [-_dY,-_dX,_height + 1.7]) vectorAdd (_dir vectorMultiply 1.4);
+	private _beg2 = (_pos vectorAdd [_dY,_dX,_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
+	private _end2 = (_pos vectorAdd [_dY,_dX,_height + 1.7]) vectorAdd (_dir vectorMultiply 1.4);
+
+	if ((
+		lineIntersectsSurfaces [_beg1,_end1,_unit,objNull,true,-1,"GEOM","NONE"] + 
+		lineIntersectsSurfaces [_beg2,_end2,_unit,objNull,true,-1,"GEOM","NONE"]
+	) isEqualTo []) then {
+		DEBUG_B(_beg1,_end1)
+		DEBUG_B(_beg2,_end2)
+		_canClimb = true;
+	} else {
+		DEBUG_R(_beg1,_end1)
+		DEBUG_R(_beg2,_end2)
+		_canClimb = false;
+	};
+};
+
+if (!_canClimb) then {
+	private _beg1 = (_pos vectorAdd [-_dY,-_dX,_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
+	private _end1 = (_pos vectorAdd [-_dY,-_dX,_height + 0.7]) vectorAdd (_dir vectorMultiply 1.8);
+	private _beg2 = (_pos vectorAdd [_dY,_dX,_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
+	private _end2 = (_pos vectorAdd [_dY,_dX,_height + 0.7]) vectorAdd (_dir vectorMultiply 1.8);
+
+	if ((
+		lineIntersectsSurfaces [_beg1,_end1,_unit,objNull,true,-1,"GEOM","NONE"] + 
+		lineIntersectsSurfaces [_beg2,_end2,_unit,objNull,true,-1,"GEOM","NONE"]
+	) isEqualTo []) then {
+		DEBUG_B(_beg1,_end1)
+		DEBUG_B(_beg2,_end2)
+		_canClimb = true;
+
+		// Account for objects on the other side of a wall
+		private _targetEnd = _pos vectorAdd (_dir vectorMultiply 1.8);
+		private _targetBeg = _targetEnd vectorAdd [0,0,_height + 0.6];
+		private _ix = lineIntersectsSurfaces [_targetBeg,_targetEnd,_unit,objNull,true,-1,"GEOM","NONE"];
+
+		if (_ix isNotEqualTo []) then {
+			_targetHeight = (_ix # 0 # 0 # 2) - (_pos # 2);
+		};
+		
+		DEBUG_B(_targetBeg,_targetEnd)
+	} else {
+		DEBUG_R(_beg1,_end1)
+		DEBUG_R(_beg2,_end2)
+		_canClimb = false;
+	};
+};
+
+[_canClimb,_climbOn,_height,_targetHeight,_animPosASL]

@@ -25,7 +25,7 @@ private _duty = 0;
 private _actionAnim = "";
 
 // Climb/drop detection
-_unit call FUNC(canClimb) params ["_canClimb","_climbOn","_height"];
+_unit call FUNC(canClimb) params ["_canClimb","_climbOn","_height","_targetHeight","_climbAnimPosASL"];
 _unit call FUNC(canDrop) params ["_canDrop","_depth","_tooHigh"];
 
 if (GVAR(climbingEnabled)) then {

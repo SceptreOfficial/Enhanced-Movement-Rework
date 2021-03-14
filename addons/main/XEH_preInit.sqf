@@ -17,6 +17,7 @@ GVAR(actionExitConditions) = [
 ];
 
 GVAR(staminaDuration) = getNumber (configFile >> "CfgMovesFatigue" >> "staminaDuration");
+GVAR(rotVect90) = [[-4.37114e-008,-1,0],[1,-4.37114e-008,0],[0,0,1]];
 
 ["CAManBase","Killed",{
 	(_this # 0) setVariable [QGVAR(isClimbing),nil];

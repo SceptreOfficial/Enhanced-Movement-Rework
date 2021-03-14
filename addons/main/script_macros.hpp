@@ -16,7 +16,7 @@
 	{GVAR(actionExitConditions) findIf {_unit call _x} != -1}
 
 #define CLIMB_ON_PROCEDURE \
-	_animPosASL = (_animPosASL vectorAdd [0,0,_height]) vectorAdd (_dir vectorMultiply 0.9); \
+	_animPosASL = _climbAnimPosASL vectorAdd (_dir vectorMultiply 0.1); \
 	_targetPosASL = (_targetPosASL vectorAdd [0,0,_height]) vectorAdd (_dir vectorMultiply 1.2); \
 	_duty = _height * GVAR(climbOnDuty) * load _unit; \
 	_actionAnim = switch true do { \
@@ -28,8 +28,8 @@
 	}
 
 #define CLIMB_OVER_PROCEDURE \
-	_animPosASL = (_animPosASL vectorAdd [0,0,_height]) vectorAdd (_dir vectorMultiply 0.8); \
-	_targetPosASL = _targetPosASL vectorAdd (_dir vectorMultiply 1.9); \
+	_animPosASL = _climbAnimPosASL vectorAdd (_dir vectorMultiply 0.05); \
+	_targetPosASL = (_targetPosASL vectorAdd [0,0,_targetHeight]) vectorAdd (_dir vectorMultiply 1.9); \
 	_duty = _height * GVAR(climbOverDuty) * load _unit; \
 	_actionAnim = switch true do { \
 		case (_height >= 2.2) : {"BABE_climbOverHer"}; \
@@ -50,3 +50,13 @@
 		ace_advanced_fatigue_setAnimExclusions deleteAt (ace_advanced_fatigue_setAnimExclusions find QUOTE(ADDON)); \
 	}; \
 	[QGVAR(setAnimSpeedCoef),[_unit,1]] call CBA_fnc_globalEvent
+
+#ifdef DEBUG_MODE_FULL
+	#define DEBUG_R(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
+	#define DEBUG_G(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;
+	#define DEBUG_B(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[0,0,1,1]],10] call CBA_fnc_waitUntilAndExecute;
+#else
+	#define DEBUG_R(P1,P2) 
+	#define DEBUG_G(P1,P2) 
+	#define DEBUG_B(P1,P2) 
+#endif
