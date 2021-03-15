@@ -43,7 +43,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_climbingEnabled">
 			<English>Global toggle for climbing and dropping actions</English>
-			<Japanese>よじ登ったり、飛び降りたりする機能を有効化します。</Japanese>
+			<Japanese>よじ登ったり、とび降りたりするアクションを可能にします。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_jumpingEnabled">
 			<English>Enable jumping</English>
@@ -51,27 +51,27 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_jumpingEnabled">
 			<English>Global toggle for the jump action</English>
-			<Japanese>ジャンプする機能を有効化します。</Japanese>
+			<Japanese>ジャンプするアクションを可能にします。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_maxClimbHeight">
 			<English>Maximum climb height</English>
-			<Japanese>よじ登りの高度制限</Japanese>
+			<Japanese>よじ登り可能な高さの限界</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_maxClimbHeight">
 			<English>Maximum height that a player can reach to climb on/over objects</English>
-			<Japanese>プレイヤーがよじ登ることができるオブジェクトの高さの最大値です。</Japanese>
+			<Japanese>プレイヤーがよじ登ることができるオブジェクトの高さを制限します。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_maxDropHeight">
 			<English>Maximum drop height</English>
-			<Japanese>飛び降りの高度制限</Japanese>
+			<Japanese>とび降り可能な高さの限界</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_maxDropHeight">
 			<English>Maximum height that a player can drop from</English>
-			<Japanese>プレイヤーが飛び降りることができるオブジェクトの高さの最大値です。</Japanese>
+			<Japanese>プレイヤーがとび降りることができるオブジェクトの高さを制限します。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_jumpVelocity">
 			<English>Jump velocity</English>
-			<Japanese>ジャンプの速度</Japanese>
+			<Japanese>ジャンプの加速度</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_jumpVelocity">
 			<English>Super saiyan simulator</English>
@@ -91,7 +91,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_blacklistStr">
 			<English>List of object classes that cannot be climbed on</English>
-			<Japanese>登ってほしくないオブジェクトのクラスネームを指定できます。</Japanese>
+			<Japanese>登ることのできないオブジェクトのクラスネームを指定できます。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_whitelistStr">
 			<English>Object type whitelist</English>
@@ -99,21 +99,23 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_whitelistStr">
 			<English>Use to override config level blacklisting</English>
-			<Japanese>デフォルトで指定されたブラックリストを上書きすることができます。</Japanese>
+			<Japanese>アドオンのデフォルトで指定されているブラックリストを上書きすることができます。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_animSpeedCoef">
 			<English>Animation speed coefficient</English>
+			<Japanese>アニメーション再生速度</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_animSpeedCoef">
 			<English>Changes the speed multiplier of climbing animations</English>
+			<Japanese>よじ登るアニメーション速度の倍率を変更します。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_preventHighVaulting">
 			<English>Prevent high edge vaulting</English>
-			<Japanese>崖での跳躍アクション防止</Japanese>
+			<Japanese>崖での'越す'アクションの防止</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_preventHighVaulting">
 			<English>When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if 'vault' keybind is the same as 'climb/drop only')</English>
-			<Japanese>プレイヤーが飛び降りられる高さよりも高い位置にいる場合、デフォルトの跳躍アクションを実行しないようにします。 \n(これは'跳躍'のアクションが'昇降のみを行う'アクションと同じキーに割り当てられている場合にのみ動作します)</Japanese>
+			<Japanese>プレイヤーがとび降りられる高さよりも高い位置にいる場合、Arma3デフォルトの '越す' アクションを実行しないようにします。 \n(これは '越す' のアクションが 'よじ登りのみを行う' アクションと同じキーに割り当てられている場合に限り動作します)</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_enableWalkableSurface">
 			<English>Enable walkable surface</English>
@@ -125,15 +127,19 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_hintType">
 			<English>Hint type</English>
+			<Japanese>警告表示の種類</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_hintType">
 			<English>What type of hint should be displayed when an action isn't possible</English>
+			<Japanese>アクションが不可能な場合に警告する表示の種類。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_DropViewElevation">
 			<English>Drop view elevation</English>
+			<Japanese>とび降りアクションの判定角度</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_DropViewElevation">
 			<English>How far down you need to look for the all-in-one action to trigger dropping</English>
+			<Japanese>とび降りるアクションを実行するのにどれだけ下を向けばよいかの角度。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_staminaCoefficient">
 			<English>Stamina coefficient</English>
@@ -141,7 +147,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_staminaCoefficient">
 			<English>Stamina drain multiplier for all actions</English>
-			<Japanese>すべての動作でのスタミナ消費の係数。</Japanese>
+			<Japanese>すべての動作に掛かるスタミナ消費の係数。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_jumpDuty">
 			<English>Jump duty</English>
@@ -149,45 +155,47 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_jumpDuty">
 			<English>Base stamina cost for jumping</English>
-			<Japanese>ジャンプに掛かるスタミナ消費の値です。</Japanese>
+			<Japanese>ジャンプに掛かるスタミナ消費の基礎値です。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_climbOnDuty">
 			<English>Climb on duty</English>
-			<Japanese>よじ登り時の負荷</Japanese>
+			<Japanese>よじ登る時の負荷</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_climbOnDuty">
 			<English>Base stamina cost for climbing ON objects, which is multiplied by the height of the climb</English>
-			<Japanese>よじ登りに掛かるスタミナ消費の値です。高さで乗算されます。</Japanese>
+			<Japanese>よじ登る際にに掛かるスタミナ消費の基礎値です。高さで乗算されます。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_climbOverDuty">
 			<English>Climb over duty</English>
-			<Japanese>乗り越え時の負荷</Japanese>
+			<Japanese>乗り越える時の負荷</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_climbOverDuty">
 			<English>Base stamina cost for climbing OVER objects, which is multiplied by the height of the climb</English>
-			<Japanese>乗り越えに掛かるスタミナ消費の値です。高さで乗算されます。</Japanese>
+			<Japanese>乗り越える際に掛かるスタミナ消費の基礎値です。高さで乗算されます。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_dropDuty">
 			<English>Drop duty</English>
-			<Japanese>飛び降り時の負荷</Japanese>			
+			<Japanese>とび降りる時の負荷</Japanese>			
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_dropDuty">
 			<English>Base stamina cost for dropping down from an object, which is multiplied by the depth of the drop</English>
-			<Japanese>飛び降りに掛かるスタミナ消費の値です。高さで乗算されます。</Japanese>
+			<Japanese>とび降りる際に掛かるスタミナ消費の基礎値です。高さで乗算されます。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_animSpeedStaminaCoef">
 			<English>Stamina animation speed modifier</English>
+			<Japanese>動作速度へ与えるスタミナの影響倍率</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_animSpeedStaminaCoef">
 			<English>Controls how much stamina affects climbing animation speed</English>
+			<Japanese>スタミナが動作の速度にどの程度影響するかの倍率。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_jumpingLoadCoefficient">
 			<English>Jumping velocity load coefficient</English>
-			<Japanese>ジャンプの速度と重量の係数</Japanese>
+			<Japanese>ジャンプ加速度へ与える重量の影響係数</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_jumpingLoadCoefficient">
 			<English>Multiplier for how much player load reduces jump velocity</English>
-			<Japanese>プレイヤーの重量がどれだけジャンプに影響するかの係数。</Japanese>
+			<Japanese>プレイヤーの重量がどの程度ジャンプ加速度に影響するかの係数。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_enableWeightCheck">
 			<English>Enable max weight checking</English>
@@ -195,11 +203,11 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_enableWeightCheck">
 			<English>If enabled, players will have to be under the specified weights to perform certain actions</English>
-			<Japanese>有効化した場合、特定の動作をする際に装備の重量制限が付きます。</Japanese>
+			<Japanese>有効化した場合、特定の動作をする際に装備重量による制限が付きます。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_maxWeightJump">
 			<English>Max Weight - Jumping</English>
-			<Japanese>ジャンプの最大重量</Japanese>
+			<Japanese>ジャンプ可能な最大重量</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_maxWeightJump">
 			<English>Maximum jumping weight</English>
@@ -207,23 +215,23 @@
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_maxWeightClimb1">
 			<English>Max Weight - Climb 1m</English>
-			<Japanese>よじ登り最大重量 - 1メートル</Japanese>
+			<Japanese>よじ登り可能な最大重量 - 1メートル時</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_maxWeightClimb1">
 			<English>Interpolated max player weight allowed to climb 1 meter</English>
-			<Japanese>3メートルの高さをよじ登ることができる最大装備重量。</Japanese>
+			<Japanese>1メートルの高さをよじ登ることができる最大装備重量。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_maxWeightClimb2">
 			<English>Max Weight - Climb 2m</English>
-			<Japanese>よじ登り最大重量 - 2メートル登り</Japanese>
+			<Japanese>よじ登り可能な最大重量 - 2メートル時</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_maxWeightClimb2">
 			<English>Interpolated max player weight allowed to climb 2 meters</English>
-			<Japanese>3メートルの高さをよじ登ることができる最大装備重量。</Japanese>
+			<Japanese>2メートルの高さをよじ登ることができる最大装備重量。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_maxWeightClimb3">
 			<English>Max Weight - Climb 3m</English>
-			<Japanese>よじ登り最大重量 - 3メートル登り</Japanese>
+			<Japanese>よじ登り可能な最大重量 - 3メートル時</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_maxWeightClimb3">
 			<English>Interpolated max player weight allowed to climb 3 meters</English>
@@ -231,7 +239,7 @@
 		</Key>
 		<Key ID="STR_EMR_Main_CantJumpOverweight">
 			<English>CAN'T JUMP: OVERWEIGHT</English>
-			<Japanese>ジャンプできません: 装備が重すぎます</Japanese>
+			<Japanese>ジャンプできません: 重量過多</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_CantJumpStamina">
 			<English>CAN'T JUMP: NOT ENOUGH STAMINA</English>
@@ -239,30 +247,35 @@
 		</Key>
 		<Key ID="STR_EMR_Main_CantDropTooHigh">
 			<English>CAN'T DROP: TOO HIGH</English>
-			<Japanese>飛び降りられません: 高すぎます</Japanese>
+			<Japanese>降りられません: 高すぎます</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_CantClimbOverweight">
 			<English>CAN'T CLIMB: OVERWEIGHT</English>
-			<Japanese>よじ登れません: 装備が重すぎます</Japanese>
+			<Japanese>登れません: 重量過多</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_CantClimbStamina">
 			<English>CAN'T CLIMB: NOT ENOUGH STAMINA</English>
-			<Japanese>よじ登れません: スタミナ不足</Japanese>
+			<Japanese>登れません: スタミナ不足</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_HintType_Hint">
 			<English>Hint</English>
+			<Japanese>ヒント</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_HintType_HintSilent">
 			<English>Hint (silent)</English>
+			<Japanese>ヒント(通知音オフ)</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_HintType_TitleEffect">
 			<English>Title effect</English>
+			<Japanese>タイトルエフェクト(画面中央)</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_HintType_SystemChat">
 			<English>System chat</English>
+			<Japanese>システムチャットメッセージ</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_HintType_Disabled">
 			<English>Disabled</English>
+			<Japanese>無効</Japanese>
 		</Key>
 	</Package>
 </Project>
