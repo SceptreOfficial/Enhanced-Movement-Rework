@@ -1,8 +1,12 @@
 class CfgVehicles {
+	class All;
 	class NonStrategic;
 	class Wall_F;
 	class Fence;
 
+	class Rope : All {
+		EMR_blacklist = 1;
+	};
 	class Land_WiredFence_01_16m_F : Wall_F {
 		EMR_blacklist = 1;
 	};
