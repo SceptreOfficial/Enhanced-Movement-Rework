@@ -20,7 +20,7 @@
 	if (currentWeapon _unit != "") then {
 		_unit action ["SwitchWeapon",_unit,_unit,299];
 	} else {
-		private _weapon = switch (true) do {
+		private _weapon = switch true do {
 			case (primaryWeapon _unit != ""): {primaryWeapon _unit};
 			case (handgunWeapon _unit != ""): {handgunWeapon _unit};
 			case (secondaryWeapon _unit != ""): {secondaryWeapon _unit};
