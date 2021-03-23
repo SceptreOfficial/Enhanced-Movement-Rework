@@ -37,10 +37,10 @@ for "_x" from 0.3 to (GVAR(maxClimbHeight) + 0.1) step 0.1 do {
 	if (_ix isEqualTo []) then {
 		DEBUG_G(_beg,_end)
 		_noIntersectCount = _noIntersectCount + 1;
-	
 	} else {
-		private _class = toLower typeOf (_ix # 0 # 2);
-		if (!(_class in GVAR(whitelist)) && _class in GVAR(blacklist)) exitWith {DEBUG_R(_beg,_end)};
+		private _model = toLower ((getModelInfo (_ix # 0 # 2)) # 0);
+
+		if (!(_model in GVAR(whitelist)) && _model in GVAR(blacklist)) exitWith {DEBUG_R(_beg,_end)};
 		
 		DEBUG_B(_beg,_end)
 

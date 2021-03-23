@@ -90,7 +90,7 @@
 			<Japanese>オブジェクトのブラックリスト</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDescription_blacklistStr">
-			<English>List of object classes that cannot be climbed on</English>
+			<English>List of object classes or models (example.p3d) that cannot be climbed on</English>
 			<Japanese>登ってほしくないオブジェクトのクラスネームを指定できます。</Japanese>
 		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_whitelistStr">

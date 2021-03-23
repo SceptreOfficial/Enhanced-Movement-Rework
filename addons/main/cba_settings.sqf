@@ -60,7 +60,28 @@
 	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	"",
 	true,
-	{GVAR(blacklist) = ((_this splitString ",") apply {toLower _x}) + (uiNamespace getVariable [QGVAR(classBlacklist),[]])},
+	{
+		GVAR(blacklist) = uiNamespace getVariable [QGVAR(preStartBlacklist),[]];
+		private _cfgVehicles = configFile >> "CfgVehicles";
+
+		{
+			if (isClass (_cfgVehicles >> _x)) then {
+				private _model = getText (_cfgVehicles >> _x >> "model");
+
+				if (_model isEqualTo "") exitWith {};
+
+				private _index = (reverse _model) find "\";
+			
+				if (_index > -1) then {
+					_model = _model select [count _model - _index,_index];
+				};
+			
+				GVAR(blacklist) pushBackUnique toLower _model;
+			} else {
+				GVAR(blacklist) pushBackUnique toLower _x;
+			};
+		} forEach (_this splitString ",");
+	},
 	false
 ] call CBA_fnc_addSetting;
 
@@ -69,7 +90,28 @@
 	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
 	"",
 	true,
-	{GVAR(whitelist) = (_this splitString ",") apply {toLower _x}},
+	{
+		GVAR(whitelist) = [];
+		private _cfgVehicles = configFile >> "CfgVehicles";
+
+		{
+			if (isClass (_cfgVehicles >> _x)) then {
+				private _model = getText (_cfgVehicles >> _x >> "model");
+
+				if (_model isEqualTo "") exitWith {};
+
+				private _index = (reverse _model) find "\";
+			
+				if (_index > -1) then {
+					_model = _model select [count _model - _index,_index];
+				};
+			
+				GVAR(whitelist) pushBackUnique toLower _model;
+			} else {
+				GVAR(whitelist) pushBackUnique toLower _x;
+			};
+		} forEach (_this splitString ",");
+	},
 	false
 ] call CBA_fnc_addSetting;
 

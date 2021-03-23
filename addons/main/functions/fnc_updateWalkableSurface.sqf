@@ -26,9 +26,9 @@ if (_ix isEqualTo []) exitWith {
 
 (_ix # 0) params ["_posASL","_normal","_obj"];
 
-private _class = toLower typeOf _obj;
+private _model = toLower ((getModelInfo _obj) # 0);
 
-if (isNull _obj || {!(_class in GVAR(whitelist)) && _class in GVAR(blacklist)}) exitWith {
+if (isNull _obj || {!(_model in GVAR(whitelist)) && _model in GVAR(blacklist)}) exitWith {
 	_helper setPosASL [0,0,0];
 };
 
