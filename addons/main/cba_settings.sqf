@@ -31,7 +31,7 @@
 [QGVAR(maxDropHeight),"SLIDER",
 	[LSTRING(SettingDisplayName_maxDropHeight),LSTRING(SettingDescription_maxDropHeight)],
 	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
-	[2,20,5,1],
+	[2,20,6,1],
 	true,
 	{},
 	false
