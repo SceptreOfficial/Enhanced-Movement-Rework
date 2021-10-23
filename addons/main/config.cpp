@@ -5,7 +5,7 @@ class CfgPatches {
 		name = CSTRING(EnhancedMovementRework);
 		author = "Simplex Team";
 		authors[] = {"Simplex Team"};
-		url = "";
+		url = "https://github.com/SceptreOfficial/Enhanced-Movement-Rework";
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = REQUIRED_VERSION;
