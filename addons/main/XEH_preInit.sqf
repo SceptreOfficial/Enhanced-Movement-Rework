@@ -6,12 +6,12 @@ ADDON = false;
 GVAR(debug) = false;
 
 GVAR(WSExitConditions) = [
-	{!isNil {_this getVariable "acex_sitting_sittingStatus"}},
+	{!isNil {_this getVariable "ace_sitting_sittingStatus"}},
 	{animationState _this isEqualTo "ace_fastroping"}
 ];
 
 GVAR(actionExitConditions) = [
-	{!isNil {_this getVariable "acex_sitting_sittingStatus"}},
+	{!isNil {_this getVariable "ace_sitting_sittingStatus"}},
 	{animationState _this isEqualTo "ace_fastroping"},
 	{!isNil {_this getVariable "ace_medical_treatment_endInAnim"}}
 ];
