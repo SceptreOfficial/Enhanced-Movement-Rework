@@ -44,6 +44,6 @@ _unit playActionNow _actionAnim;
 
 _unit setVelocityModelSpace [_velocity # 0,_velocity # 1 + 0.1,_jumpVelocity - load _unit * GVAR(jumpingLoadCoefficient)];
 
-[_unit,-(GVAR(jumpDuty) * GVAR(staminaCoefficient))] call FUNC(setStamina);
+[QGVAR(setStamina),[_unit,-(GVAR(jumpDuty) * GVAR(staminaCoefficient))]] call CBA_fnc_localEvent;
 
 true

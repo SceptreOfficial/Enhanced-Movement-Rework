@@ -29,6 +29,8 @@ GVAR(rotVect90) = [[-4.37114e-008,-1,0],[1,-4.37114e-008,0],[0,0,1]];
 	_unit setAnimSpeedCoef _coef;
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(setStamina),FUNC(setStamina)] call CBA_fnc_addEventHandler;
+
 if (isServer) then {
 	[QGVAR(addWSExitCondition),{
 		params [["_code",{},[{}]]];

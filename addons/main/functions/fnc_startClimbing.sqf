@@ -121,4 +121,4 @@ private _speed = GVAR(animSpeedCoef) * (linearConversion [1,0,GVAR(animSpeedStam
 _unit playMove _actionAnim;
 
 // Set stamina drain
-[_unit,-(_duty * GVAR(staminaCoefficient))] call FUNC(setStamina);
+[QGVAR(setStamina),[_unit,-(_duty * GVAR(staminaCoefficient))]] call CBA_fnc_localEvent;
