@@ -49,7 +49,7 @@ for "_x" from 0.3 to (GVAR(maxClimbHeight) + 0.1) step 0.1 do {
 		_noIntersectCount = 0;
 	};
 	
-	if (_height > 0 && _noIntersectCount >= 9) exitWith {};
+	if (_height > 0 && _noIntersectCount >= 8) exitWith {};
 };
 
 // Stop if no obstacle or too tall
