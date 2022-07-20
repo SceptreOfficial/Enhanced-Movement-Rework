@@ -48,6 +48,9 @@ private _getInManEHID = [_unit,"GetInMan",{
 	_unit removeEventHandler ["AnimChanged",_unit getVariable [QGVAR(animChangedEHID),-1]];
 	_unit setVariable [QGVAR(isClimbing),nil];
 	ANIM_SPEED_COEF_END(_unit);
+
+	// CBA event
+	[QGVAR(climbingEnd),[_unit,_thisArgs]] call CBA_fnc_localEvent;
 },_actionAnim] call CBA_fnc_addBISEventHandler;
 
 // Handle animation end
@@ -60,6 +63,9 @@ private _animDoneEHID = [_unit,"AnimDone",{
 		_unit removeEventHandler [_thisType,_thisID];
 		_unit setVariable [QGVAR(isClimbing),nil];
 		ANIM_SPEED_COEF_END(_unit);
+
+		// CBA event
+		[QGVAR(climbingEnd),[_unit,_animation]] call CBA_fnc_localEvent;
 	};
 
 	if (_animation == _actionAnim) then {
@@ -68,6 +74,9 @@ private _animDoneEHID = [_unit,"AnimDone",{
 		_unit setVariable [QGVAR(isClimbing),nil];
 		_unit setPosASL _targetPosASL;
 		ANIM_SPEED_COEF_END(_unit);
+
+		// CBA event
+		[QGVAR(climbingEnd),[_unit,_actionAnim]] call CBA_fnc_localEvent;
 	};
 },[_actionAnim,_targetPosASL]] call CBA_fnc_addBISEventHandler;
 
@@ -103,6 +112,9 @@ private _animChangedEHID = [_unit,"AnimChanged",{
 		},{},_unit,8,{
 			_this setVariable [QGVAR(isClimbing),nil];
 		}] call CBA_fnc_waitUntilAndExecute;
+
+		// CBA event
+		[QGVAR(climbingStart),[_unit,_actionAnim]] call CBA_fnc_localEvent;
 	};
 },[_actionAnim,_animPosASL,_canClimb]] call CBA_fnc_addBISEventHandler;
 
