@@ -49,7 +49,7 @@
 	if (!isNil "ace_advanced_fatigue_setAnimExclusions") then { \
 		ace_advanced_fatigue_setAnimExclusions deleteAt (ace_advanced_fatigue_setAnimExclusions find QUOTE(ADDON)); \
 	}; \
-	[QGVAR(setAnimSpeedCoef),[UNIT,1]] call CBA_fnc_globalEvent
+	[QGVAR(setAnimSpeedCoef),[UNIT,UNIT getVariable [QGVAR(animSpeedCoef),1]]] call CBA_fnc_globalEvent
 
 #ifdef DEBUG_MODE_FULL
 	#define DEBUG_R(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;

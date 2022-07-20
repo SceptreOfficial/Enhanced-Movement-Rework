@@ -132,6 +132,7 @@ if (!isNil "ace_advanced_fatigue_setAnimExclusions") then {
 
 private _max = [GVAR(staminaDuration),100] select (isPlayer _unit && missionNamespace getVariable ["ace_advanced_fatigue_enabled",false]);
 private _speed = GVAR(animSpeedCoef) * (linearConversion [1,0,GVAR(animSpeedStaminaCoef),_stamina,_max] / _max) max 0.3;
+_unit setVariable [QGVAR(animSpeedCoef),getAnimSpeedCoef _unit,true];
 [QGVAR(setAnimSpeedCoef),[_unit,_speed]] call CBA_fnc_globalEvent;
 
 // Play animation
