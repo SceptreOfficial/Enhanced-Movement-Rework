@@ -25,7 +25,8 @@ if (!GVAR(climbingEnabled) ||
 	!alive _unit ||
 	{!(_unit in _unit)} ||
 	{animationState _unit select [1,3] in ["bdv","bsw","dve","sdv","ssw","swm","inv"]} ||
-	{!isTouchingGround _unit}
+	{!isTouchingGround _unit} || 
+	{GVAR(assistHeight) isEqualTo 0}
 ) exitWith {false};
 
 // Stop if height is short enough to climb without assistance
