@@ -39,18 +39,31 @@ _actionAnim = _actionAnim + (switch (currentWeapon _unit) do {
 // Start 'climbing'
 _unit setVariable [QGVAR(isClimbing),true];
 
+// Handle vehicle entering glitch
+private _getInManEHID = [_unit,"GetInMan",{
+	params ["_unit"];
+
+	_unit removeEventHandler [_thisType,_thisID];
+	_unit removeEventHandler ["AnimDone",_unit getVariable [QGVAR(animDoneEHID),-1]];
+	_unit removeEventHandler ["AnimChanged",_unit getVariable [QGVAR(animChangedEHID),-1]];
+	_unit setVariable [QGVAR(isClimbing),nil];
+	ANIM_SPEED_COEF_END(_unit);
+},_actionAnim] call CBA_fnc_addBISEventHandler;
+
 // Handle animation end
-[_unit,"AnimDone",{
+private _animDoneEHID = [_unit,"AnimDone",{
 	params ["_unit","_animation"];
 	_thisArgs params ["_actionAnim","_targetPosASL"];
 
 	if !(_unit getVariable [QGVAR(isClimbing),false]) exitWith {
+		_unit removeEventHandler ["GetInMan",_unit getVariable [QGVAR(getInManEHID),-1]];
 		_unit removeEventHandler [_thisType,_thisID];
 		_unit setVariable [QGVAR(isClimbing),nil];
 		ANIM_SPEED_COEF_END(_unit);
 	};
 
 	if (_animation == _actionAnim) then {
+		_unit removeEventHandler ["GetInMan",_unit getVariable [QGVAR(getInManEHID),-1]];
 		_unit removeEventHandler [_thisType,_thisID];
 		_unit setVariable [QGVAR(isClimbing),nil];
 		_unit setPosASL _targetPosASL;
@@ -59,7 +72,7 @@ _unit setVariable [QGVAR(isClimbing),true];
 },[_actionAnim,_targetPosASL]] call CBA_fnc_addBISEventHandler;
 
 // Handle animation start
-[_unit,"AnimChanged",{
+private _animChangedEHID = [_unit,"AnimChanged",{
 	params ["_unit","_animation"];
 	_thisArgs params ["_actionAnim","_animPosASL","_canClimb"];
 
@@ -92,6 +105,10 @@ _unit setVariable [QGVAR(isClimbing),true];
 		}] call CBA_fnc_waitUntilAndExecute;
 	};
 },[_actionAnim,_animPosASL,_canClimb]] call CBA_fnc_addBISEventHandler;
+
+_unit setVariable [QGVAR(getInManEHID),_getInManEHID];
+_unit setVariable [QGVAR(animDoneEHID),_animDoneEHID];
+_unit setVariable [QGVAR(animChangedEHID),_animChangedEHID];
 
 // Prep for stances, launcher weapon, or mid-air usage
 if (isTouchingGround _unit) then {
