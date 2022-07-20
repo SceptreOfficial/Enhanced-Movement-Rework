@@ -26,7 +26,7 @@ private _actionAnim = "";
 private _viewElevation = getCameraViewDirection _unit # 2;
 
 // Detections
-_unit call FUNC(canClimb) params ["_canClimb","_climbOn","_height","_targetHeight","_climbAnimPosASL"];
+_unit call FUNC(canClimb) params ["_canClimb","_climbOn","_height","_targetHeight","_climbAnimPosASL","_assistant"];
 _unit call FUNC(canDrop) params ["_canDrop","_depth","_tooHigh"];
 
 if (GVAR(climbingEnabled)) then {
@@ -64,6 +64,6 @@ if (_stamina < (_duty * GVAR(staminaCoefficient))) exitWith {
 	false
 };
 
-[_unit,_animPosASL,_targetPosASL,_actionAnim,_canClimb,_duty,_stamina] call FUNC(startClimbing);
+[_unit,_animPosASL,_targetPosASL,_actionAnim,_canClimb,_duty,_stamina,_assistant] call FUNC(startClimbing);
 
 true

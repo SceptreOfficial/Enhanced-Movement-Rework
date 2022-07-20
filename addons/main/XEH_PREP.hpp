@@ -1,4 +1,5 @@
 PREP(action);
+PREP(assist);
 PREP(canClimb);
 PREP(canDrop);
 PREP(climb);

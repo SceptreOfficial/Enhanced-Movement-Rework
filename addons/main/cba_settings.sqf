@@ -37,6 +37,15 @@
 	false
 ] call CBA_fnc_addSetting;
 
+[QGVAR(assistHeight),"SLIDER",
+	[LSTRING(SettingDisplayName_assistHeight),LSTRING(SettingDescription_assistHeight)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
+	[0,3,1,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
 [QGVAR(jumpVelocity),"SLIDER",
 	[LSTRING(SettingDisplayName_jumpVelocity),LSTRING(SettingDescription_jumpVelocity)],
 	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
@@ -212,6 +221,15 @@
 	[LSTRING(SettingDisplayName_dropDuty),LSTRING(SettingDescription_dropDuty)],
 	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Stamina)],
 	[0,10,0.7,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[QGVAR(assistDuty),"SLIDER",
+	[LSTRING(SettingDisplayName_assistDuty),LSTRING(SettingDescription_assistDuty)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Stamina)],
+	[0,10,1.5,1],
 	true,
 	{},
 	false

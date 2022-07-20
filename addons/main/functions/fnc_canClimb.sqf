@@ -13,7 +13,7 @@
 
 params ["_unit"];
 
-if (!GVAR(allowMidairClimbing) && !isTouchingGround _unit) exitWith {[false,false,0]};
+if (!GVAR(allowMidairClimbing) && !isTouchingGround _unit) exitWith {[false,false,0,0,[0,0,0],objNull]};
 
 private _pos = getPosASLVisual _unit;
 private _dir = vectorDirVisual _unit;
@@ -52,8 +52,34 @@ for "_x" from 0.3 to (GVAR(maxClimbHeight) + 0.1) step 0.1 do {
 	if (_height > 0 && _noIntersectCount >= 8) exitWith {};
 };
 
+private _assistant = objNull;
+
+// Check for assistance
+if (_height > GVAR(maxClimbHeight)) then {
+	if (GVAR(assistHeight) isEqualTo 0) exitWith {};
+
+	private _posZ = _pos # 2;
+	private _assistance = (_unit nearEntities ["CAManBase",GVAR(maxClimbHeight) + GVAR(assistHeight) + 0.3]) select {
+		_x getVariable [QGVAR(isAssisting),false] &&
+		getPosASLVisual _x # 2 - _posZ > GVAR(maxClimbHeight) &&
+		_x distance2D _unit < 2.1
+	};
+
+	if (_assistance isEqualTo []) exitWith {};
+
+	_assistant = _assistance # 0;
+	private _pos = getPosASLVisual _assistant;
+	private _dir = _pos getDir getPosASLVisual _unit;
+	private _vectorDir = [sin _dir,cos _dir,0];
+
+	_animPosASL = _pos vectorAdd (_vectorDir vectorMultiply (((_assistant distance2D _unit) * 0.5) min 1));
+	_height = _pos # 2 - _posZ;
+
+	DEBUG_R(_pos,_animPosASL);
+};
+
 // Stop if no obstacle or too tall
-if (_height isEqualTo 0 || _height > GVAR(maxClimbHeight)) exitWith {[false,false,_height,_targetHeight,_animPosASL]};
+if (_height isEqualTo 0 || (_height > GVAR(maxClimbHeight) && isNull _assistant)) exitWith {[false,false,_height,_targetHeight,_animPosASL,_assistant]};
 
 // Weight check
 private _weight = _unit call FUNC(getWeight);
@@ -65,15 +91,18 @@ private _overweight = switch true do {
 
 if (GVAR(enableWeightCheck) && _overweight) exitWith {
 	LLSTRING(CantClimbOverweight) call FUNC(hint);
-	[false,false,_height,_targetHeight,_animPosASL]
+	[false,false,_height,_targetHeight,_animPosASL,_assistant]
 };
+
+// Exit here if there is assistance
+if (alive _assistant) exitWith {[true,true,_height,_targetHeight,_animPosASL,_assistant]};
 
 // Ceiling check
 private _ceilBeg = _pos vectorAdd [0,0,_height - 0.1 max 0.3];
 private _ceilEnd = _pos vectorAdd [0,0,_height + 0.5];
 if (lineIntersectsSurfaces [_ceilBeg,_ceilEnd,_unit,objNull,true,-1,"GEOM","NONE"] isNotEqualTo []) exitWith {
 	DEBUG_R(_ceilBeg,_ceilEnd)
-	[false,false,_height,_targetHeight,_animPosASL]
+	[false,false,_height,_targetHeight,_animPosASL,objNull]
 };
 
 DEBUG_B(_ceilBeg,_ceilEnd)
@@ -150,4 +179,4 @@ if (!_canClimb) then {
 	};
 };
 
-[_canClimb,_climbOn,_height,_targetHeight,_animPosASL]
+[_canClimb,_climbOn,_height,_targetHeight,_animPosASL,objNull]

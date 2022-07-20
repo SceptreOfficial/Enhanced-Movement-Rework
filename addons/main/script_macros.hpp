@@ -13,7 +13,8 @@
 	{!(_unit in _unit)} || \
 	{stance _unit == "PRONE"} || \
 	{animationState _unit select [1,3] in ["bdv","bsw","dve","sdv","ssw","swm","inv"]} || \
-	{GVAR(actionExitConditions) findIf {_unit call _x} != -1}
+	{GVAR(actionExitConditions) findIf {_unit call _x} != -1} || \
+	{_unit getVariable [QGVAR(isAssisting),false]}
 
 #define CLIMB_ON_PROCEDURE \
 	_animPosASL = _climbAnimPosASL vectorAdd (_dir vectorMultiply 0.1); \

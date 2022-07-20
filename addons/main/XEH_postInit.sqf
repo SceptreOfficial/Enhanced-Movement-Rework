@@ -15,6 +15,11 @@
 	(call CBA_fnc_currentUnit) call FUNC(jump)
 },{false},[0,[false,false,false]]] call CBA_fnc_addKeybind;
 
+[LSTRING(EnhancedMovementRework),"EMR_assist",LSTRING(Keybind_Assist),{
+	if (!isNull findDisplay IDD_RSCDISPLAYCURATOR) exitWith {false};
+	(call CBA_fnc_currentUnit) call FUNC(assist)
+},{false},[DIK_V,[false,false,true]]] call CBA_fnc_addKeybind;
+
 [LSTRING(EnhancedMovementRework),"EMR_holster",LSTRING(Keybind_HolsterWeapon),{// From ACE3
 	if (!isNull findDisplay IDD_RSCDISPLAYCURATOR) exitWith {false};
 

@@ -15,7 +15,7 @@
 	6: Unit current stamina (for animation speed scaling) <SCALAR>
 */
 
-params ["_unit","_animPosASL","_targetPosASL","_actionAnim","_canClimb","_duty","_stamina"];
+params ["_unit","_animPosASL","_targetPosASL","_actionAnim","_canClimb","_duty","_stamina","_assistant"];
 
 // Determine animation types
 private _prepAnim = "";
@@ -83,7 +83,7 @@ private _animDoneEHID = [_unit,"AnimDone",{
 // Handle animation start
 private _animChangedEHID = [_unit,"AnimChanged",{
 	params ["_unit","_animation"];
-	_thisArgs params ["_actionAnim","_animPosASL","_canClimb"];
+	_thisArgs params ["_actionAnim","_animPosASL","_canClimb","_assistant"];
 
 	if (_animation == _actionAnim) then {
 		_unit removeEventHandler [_thisType,_thisID];
@@ -115,8 +115,11 @@ private _animChangedEHID = [_unit,"AnimChanged",{
 
 		// CBA event
 		[QGVAR(climbingStart),[_unit,_actionAnim]] call CBA_fnc_localEvent;
+		
+		// "Assist"
+		[QGVAR(assist),[_assistant,_unit,load _unit],_assistant] call CBA_fnc_targetEvent;
 	};
-},[_actionAnim,_animPosASL,_canClimb]] call CBA_fnc_addBISEventHandler;
+},[_actionAnim,_animPosASL,_canClimb,_assistant]] call CBA_fnc_addBISEventHandler;
 
 _unit setVariable [QGVAR(getInManEHID),_getInManEHID];
 _unit setVariable [QGVAR(animDoneEHID),_animDoneEHID];

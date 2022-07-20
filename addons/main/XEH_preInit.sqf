@@ -31,6 +31,17 @@ GVAR(rotVect90) = [[-4.37114e-008,-1,0],[1,-4.37114e-008,0],[0,0,1]];
 
 [QGVAR(setStamina),FUNC(setStamina)] call CBA_fnc_addEventHandler;
 
+[QGVAR(assist),{
+	params ["_unit","_assistedUnit","_assistedLoad"];
+
+	_unit setVariable [QGVAR(isAssisting),nil,true];
+
+	private _duty = GVAR(assistDuty) * ((load _unit * 0.2) + _assistedLoad);
+	private _stamina = _unit call FUNC(getStamina);
+
+	[QGVAR(setStamina),[_unit,-(_duty * GVAR(staminaCoefficient))]] call CBA_fnc_localEvent;
+}] call CBA_fnc_addEventHandler;
+
 if (isServer) then {
 	[QGVAR(addWSExitCondition),{
 		params [["_code",{},[{}]]];
