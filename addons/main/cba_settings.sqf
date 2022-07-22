@@ -49,7 +49,16 @@
 [QGVAR(jumpVelocity),"SLIDER",
 	[LSTRING(SettingDisplayName_jumpVelocity),LSTRING(SettingDescription_jumpVelocity)],
 	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
-	[1,50,3.4,1],
+	[1,50,3.5,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[QGVAR(jumpForwardVelocity),"SLIDER",
+	[LSTRING(SettingDisplayName_jumpForwardVelocity),LSTRING(SettingDescription_jumpForwardVelocity)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
+	[0.1,10,1.2,1],
 	true,
 	{},
 	false

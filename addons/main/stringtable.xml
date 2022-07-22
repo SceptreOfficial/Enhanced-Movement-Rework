@@ -86,6 +86,12 @@
 			<English>Super saiyan simulator</English>
 			<Japanese>スーパーサイヤ人シミュレーター! \n(訳注:これはジャンプ時にどれだけ跳ねるかを設定します)</Japanese>
 		</Key>
+		<Key ID="STR_EMR_Main_SettingDisplayName_jumpForwardVelocity">
+			<English>Jump forward velocity</English>
+		</Key>
+		<Key ID="STR_EMR_Main_SettingDescription_jumpForwardVelocity">
+			<English>Additional forward velocity added depending on speed</English>
+		</Key>
 		<Key ID="STR_EMR_Main_SettingDisplayName_allowMidairClimbing">
 			<English>Allow mid-air climbing</English>
 			<Japanese>空中でのよじ登りの許可</Japanese>
