@@ -9,7 +9,7 @@
         <Key ID="STR_EMR_Main_Keybind_AIOAction">
             <English>All-in-one action</English>
             <Japanese>全ての動作を行う</Japanese>
-            <German>Option für alles in einem.</German>
+            <German>Option für alles in einem</German>
         </Key>
         <Key ID="STR_EMR_Main_Keybind_ClimbDropOnly">
             <English>Climb/drop only</English>
@@ -29,6 +29,7 @@
         <Key ID="STR_EMR_Main_Keybind_Assist">
             <English>Assist</English>
             <Japanese>アシストする(踏み台になる)</Japanese>
+            <German>Unterstützen</German>
         </Key>
         <Key ID="STR_EMR_Main_SettingCategory_Core">
             <English>Core</English>
@@ -93,10 +94,12 @@
         <Key ID="STR_EMR_Main_SettingDisplayName_assistHeight">
             <English>Assist height</English>
             <Japanese>アシストされる高さ</Japanese>
+            <German>Unterstützungshöhe</German>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_assistHeight">
             <English>Additional climbing height achievable with assistance</English>
             <Japanese>アシストで追加されるよじ登り可能な高さの値を設定します。</Japanese>
+            <German>Überwindbare Höhe, die durch Unterstützung erreicht werden kann.</German>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_jumpVelocity">
             <English>Jump velocity</English>
@@ -111,10 +114,12 @@
         <Key ID="STR_EMR_Main_SettingDisplayName_jumpForwardVelocity">
             <English>Jump forward velocity</English>
             <Japanese>ジャンプの前方の加速度</Japanese>
+            <German>Vorwärts Sprunggeschwindigkeit</German>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_jumpForwardVelocity">
             <English>Additional forward velocity added depending on speed</English>
             <Japanese>ジャンプをした際に前方へどのくらい進むかを設定します。</Japanese>
+            <German>Zusätzliche vorwärts Geschwindigkeit, die je nach Geschwindigkeit hinzugefügt wird</German>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_allowMidairClimbing">
             <English>Allow mid-air climbing</English>
@@ -249,10 +254,12 @@
         <Key ID="STR_EMR_Main_SettingDisplayName_assistDuty">
             <English>Assist duty</English>
             <Japanese>アシスト時の負荷</Japanese>
+            <German>Unterstützungspflicht</German>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_assistDuty">
             <English>Base stamina cost to assist another player in climbing a high edge</English>
             <Japanese>他プレイヤーをより高い所へ登らせるアシストでの消費スタミナの基礎値です。</Japanese>
+            <German>Basis-Ausdauer kosten, um einem anderen Spieler beim Erklimmen einer hohen Kante zu helfen</German>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_animSpeedStaminaCoef">
             <English>Stamina animation speed modifier</English>
@@ -352,10 +359,12 @@
         <Key ID="STR_EMR_Main_CantAssistStamina">
             <English>CAN'T ASSIST: NOT ENOUGH STAMINA</English>
             <Japanese>アシストできません: スタミナ不足</Japanese>
+            <German>KANN NICHT HELFEN: KEINE AUSDAUER</German>
         </Key>
         <Key ID="STR_EMR_Main_AssistUnnecessary">
             <English>ASSIST UNNECESSARY</English>
             <Japanese>アシストは不要です</Japanese>
+            <German>UNTERSTÜTZUNG NICHT NOTWENDIG</German>
         </Key>
         <Key ID="STR_EMR_Main_HintType_Hint">
             <English>Hint</English>
