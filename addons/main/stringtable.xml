@@ -28,7 +28,7 @@
         </Key>
         <Key ID="STR_EMR_Main_Keybind_Assist">
             <English>Assist</English>
-            <Japanese>アシストする(踏み台になる)</Japanese>
+            <Japanese>アシストする</Japanese>
             <German>Unterstützen</German>
         </Key>
         <Key ID="STR_EMR_Main_SettingCategory_Core">
