@@ -6,10 +6,10 @@ private _camPosATL = positionCameraToWorld [0,0,0];
 private _targetPosATL = positionCameraToWorld [0,0,[1.6,4.6] select (cameraView == "External")];
 private _camPosASL = ATLToASL _camPosATL;
 private _targetPosASL = ATLToASL _targetPosATL;
-private _ix = lineIntersectsSurfaces [_camPosASL,_targetPosASL,_unit,objNull,true,1,"GEOM","FIRE"];
+private _ix = lineIntersectsSurfaces [_camPosASL,_targetPosASL,_unit,cameraOn,true,1,"GEOM","FIRE"];
 
 if (_ix isEqualTo []) then {
-	_ix = lineIntersectsSurfaces [_unit modelToWorldVisualWorld [0,0,0.5],_unit modelToWorldVisualWorld [0,0,-1],_unit,objNull,true,1,"GEOM","FIRE"];
+	_ix = lineIntersectsSurfaces [_unit modelToWorldVisualWorld [0,0,0.5],_unit modelToWorldVisualWorld [0,0,-1],_unit,cameraOn,true,1,"GEOM","FIRE"];
 };
 
 if (_ix isEqualTo []) exitWith {};
@@ -111,13 +111,13 @@ if (getNumber (configOf _target >> "transportMaxBackpacks") > 0 ||
 	getNumber (configOf _target >> "transportMaxWeapons") > 0 ||
 	{_target isKindOf "CAManBase" && {!alive _target || (_target in units group player && !isPlayer _target)}}
 ) exitWith {
-	systemChat str _target;
 	_unit action ["Gear",_target];
 };
 
 private _ladders = getArray (configOf _target >> "ladders"); 
+private _onLadder = false;
 
-if (_ladders isNotEqualTo []) exitWith {
+if (_ladders isNotEqualTo []) then {
 	{
 		private _ladderIndex = _forEachIndex;
 
@@ -129,10 +129,13 @@ if (_ladders isNotEqualTo []) exitWith {
 				(_unit modelToWorld (_pelvis vectorAdd [0,1,0])) distance _ladderPos < 1
 			) then {
 				_unit action [["ladderUp","ladderDown"] select (_forEachIndex == 0),_target,_ladderIndex,_forEachIndex];
+				_onLadder = true;
 			};
 		} foreach ([[_x # 0,_x # 1],[],{(_target selectionPosition _x) # 2}] call BIS_fnc_sortBy);
 	} foreach _ladders;
 };
+
+if (_onLadder) exitWith {};
 
 _ix = [_target,"GEOM"] intersect [_camPosATL,_targetPosATL];
 
