@@ -26,6 +26,9 @@
             <Japanese>武器をしまう</Japanese>
             <German>Waffe Holstern</German>
         </Key>
+        <Key ID="STR_EMR_Main_Keybind_Interact">
+            <English>Interact</English>
+        </Key>
         <Key ID="STR_EMR_Main_Keybind_Assist">
             <English>Assist</English>
             <Japanese>アシストする</Japanese>
@@ -390,6 +393,9 @@
             <English>Disabled</English>
             <Japanese>無効</Japanese>
             <German>Deaktiviert</German>
+        </Key>
+        <Key ID="STR_EMR_Main_VehicleFull">
+            <English>VEHICLE FULL</English>
         </Key>
     </Package>
 </Project>

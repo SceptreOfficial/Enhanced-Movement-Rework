@@ -1,0 +1,159 @@
+#include "script_component.hpp"
+
+params ["_unit"];
+
+private _camPosATL = positionCameraToWorld [0,0,0];
+private _targetPosATL = positionCameraToWorld [0,0,[1.6,4.6] select (cameraView == "External")];
+private _camPosASL = ATLToASL _camPosATL;
+private _targetPosASL = ATLToASL _targetPosATL;
+private _ix = lineIntersectsSurfaces [_camPosASL,_targetPosASL,_unit,objNull,true,1,"GEOM","FIRE"];
+
+if (_ix isEqualTo []) then {
+	_ix = lineIntersectsSurfaces [_unit modelToWorldVisualWorld [0,0,0.5],_unit modelToWorldVisualWorld [0,0,-1],_unit,objNull,true,1,"GEOM","FIRE"];
+};
+
+if (_ix isEqualTo []) exitWith {};
+
+private _target = _ix # 0 # 3;
+
+if (isNull _target) exitWith {};
+
+if (_target == objectParent _unit) exitWith {
+	if (unitIsUAV _target && _unit in [driver _target,gunner _target]) exitWith {};
+
+	if (_unit == driver _target) then {
+		_target engineOn false;
+	};
+
+	if (_target isKindOf "Air" || _target isKindOf "StaticWeapon") then {	
+		_unit action ["GetOut",_target];
+	} else {
+		_unit action ["Eject",_target];
+	};
+};
+
+// Adapted from ACE3 - "ace_quickmount_fnc_getInNearest"
+if (alive _target && 
+	{["LandVehicle","Air","Ship","StaticMortar"] findIf {_target isKindOf _x} > -1} &&
+	{speed _target < 15} &&
+	{locked _target <= 1}
+) exitWith {
+	private _sortedSeats = ["Driver","Gunner","Commander","Cargo"];
+	private _hasAction = false;
+	scopeName "SearchForSeat";
+	{
+		private _desiredRole = _x;
+		{
+			_x params ["_activeUnit","_role","_cargoIndex","_turretPath"];
+			
+			if (alive _activeUnit) then {continue};
+
+			private _effectiveRole = toLower _role;
+
+			if (_effectiveRole in ["driver","gunner"] && unitIsUAV _target) exitWith {}; // Ignoring UAV Driver/Gunner
+			if (_effectiveRole == "driver" && {getNumber (configOf _target >> "hasDriver") == 0}) exitWith {}; // Ignoring Non Driver (static weapons)
+
+			// Seats can be locked independently of the main vehicle
+			if (_role == "driver" && lockedDriver _target ||
+				{cargoIndex >= 0 && _target lockedCargo _cargoIndex} ||
+				{_turretPath isNotEqualTo [] && _target lockedTurret _turretPath}
+			) exitWith {};
+
+			if (_effectiveRole == "turret") then {
+				private _turretConfig = [_target,_turretPath] call CBA_fnc_getTurret;
+
+				if (getNumber (_turretConfig >> "isCopilot") == 1) exitWith {
+					_effectiveRole = "driver";
+				};
+
+				if (
+					_cargoIndex >= 0 // FFV
+					|| {"" isEqualTo getText (_turretConfig >> "gun")} // turret without weapon
+				) exitWith {
+					_effectiveRole = "cargo";
+				};
+
+				_effectiveRole = "gunner"; // door gunners / 2nd turret
+			};
+
+			if (_effectiveRole != _desiredRole) exitWith {};
+
+			if (_turretPath isNotEqualTo []) then {
+				// Using GetInTurret seems to solve problems with incorrect GetInEH params when gunner/commander
+				_unit action ["GetInTurret",_target,_turretPath];
+			} else {
+				if (_cargoIndex > -1) then {
+					// GetInCargo expects the index of the seat in the "cargo" array from fullCrew
+					// See description: https://community.bistudio.com/wiki/fullCrew
+					private _cargoActionIndex = -1;
+					{
+						if ((_x select 2) == _cargoIndex) exitWith {_cargoActionIndex = _forEachIndex};
+					} forEach (fullCrew [_target,"cargo",true]);
+
+					_unit action ["GetInCargo",_target,_cargoActionIndex];
+				} else {
+					_unit action ["GetIn" + _role,_target];
+				};
+			};
+
+			_hasAction = true;
+			breakTo "SearchForSeat";
+		} forEach (fullCrew [_target, "", true]);
+	} forEach _sortedSeats;
+
+	if (!_hasAction) then {
+		if (IS_PLAYER(_unit)) then {LLSTRING(VehicleFull) call FUNC(hint)};
+	};
+};
+
+if (getNumber (configOf _target >> "transportMaxBackpacks") > 0 ||
+	getNumber (configOf _target >> "transportMaxMagazines") > 0 ||
+	getNumber (configOf _target >> "transportMaxWeapons") > 0 ||
+	{_target isKindOf "CAManBase" && {!alive _target || (_target in units group player && !isPlayer _target)}}
+) exitWith {
+	systemChat str _target;
+	_unit action ["Gear",_target];
+};
+
+private _ladders = getArray (configOf _target >> "ladders"); 
+
+if (_ladders isNotEqualTo []) exitWith {
+	{
+		private _ladderIndex = _forEachIndex;
+
+		{
+			private _ladderPos = _target modelToWorld (_target selectionPosition _x);
+			private _pelvis = _unit selectionPosition "pelvis";
+
+			if ((_unit modelToWorld (_pelvis vectorAdd [0,1,-1])) distance _ladderPos < 1 ||
+				(_unit modelToWorld (_pelvis vectorAdd [0,1,0])) distance _ladderPos < 1
+			) then {
+				_unit action [["ladderUp","ladderDown"] select (_forEachIndex == 0),_target,_ladderIndex,_forEachIndex];
+			};
+		} foreach ([[_x # 0,_x # 1],[],{(_target selectionPosition _x) # 2}] call BIS_fnc_sortBy);
+	} foreach _ladders;
+};
+
+_ix = [_target,"GEOM"] intersect [_camPosATL,_targetPosATL];
+
+if (_ix isEqualTo []) then {
+	_ix = [_target,"FIRE"] intersect [_camPosATL,_targetPosATL];
+};
+
+if (_ix isEqualTo []) exitWith {};
+
+private _selection = toLower (_ix # 0 # 0);
+
+if (_target getVariable ["bis_disabled_" + _selection,0] == 1) then {
+	_target animateSource [_selection + "_locked_source",1 - (_target animationSourcePhase (_selection + "_locked_source"))];
+} else {
+	{
+		if (toLower _x find _selection > -1) then {
+			if (_target animationPhase _x > 0.5) then {
+				_target animate [_x,0];
+			} else {
+				_target animate [_x,1];
+			};
+		};
+	} forEach animationNames _target;	
+};

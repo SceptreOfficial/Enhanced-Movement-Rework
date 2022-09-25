@@ -43,6 +43,12 @@
 	true
 },{false},[0,[false,false,false]],false] call CBA_fnc_addKeybind;
 
+[LSTRING(EnhancedMovementRework),"EMR_interact",LSTRING(Keybind_Interact),{
+	if (!isNull findDisplay IDD_RSCDISPLAYCURATOR) exitWith {false};
+	call CBA_fnc_currentUnit call FUNC(interact);
+	true
+},{false},[0,[false,false,false]],false] call CBA_fnc_addKeybind;
+
 if (hasInterface) then {
 	GVAR(walkableSurface) = "babe_helper" createVehicleLocal [0,0,0];
 	GVAR(walkableSurfaceEFID) = addMissionEventHandler ["EachFrame",{call FUNC(updateWalkableSurface)}];

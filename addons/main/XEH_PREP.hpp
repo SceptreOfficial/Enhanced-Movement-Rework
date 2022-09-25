@@ -8,5 +8,6 @@ PREP(getWeight);
 PREP(hint);
 PREP(jump);
 PREP(setStamina);
+PREP(interact);
 PREP(startClimbing);
 PREP(updateWalkableSurface);
