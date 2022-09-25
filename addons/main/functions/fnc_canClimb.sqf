@@ -90,7 +90,7 @@ private _overweight = switch true do {
 };
 
 if (GVAR(enableWeightCheck) && _overweight) exitWith {
-	LLSTRING(CantClimbOverweight) call FUNC(hint);
+	if (IS_PLAYER(_unit)) then {LLSTRING(CantClimbOverweight) call FUNC(hint)};
 	[false,false,_height,_targetHeight,_animPosASL,_assistant]
 };
 

@@ -46,7 +46,7 @@ if (GVAR(climbingEnabled)) then {
 
 // Exit with jump if can't climb or drop
 if (_actionAnim == "" && isTouchingGround _unit) exitWith {
-	if (_viewElevation < GVAR(dropViewElevation) && _tooHigh) then {
+	if (IS_PLAYER(_unit) && _viewElevation < GVAR(dropViewElevation) && _tooHigh) then {
 		LLSTRING(CantDropTooHigh) call FUNC(hint);
 	};
 
@@ -60,7 +60,7 @@ if (_actionAnim == "") exitWith {false};
 private _stamina = _unit call FUNC(getStamina);
 
 if (_stamina < (_duty * GVAR(staminaCoefficient))) exitWith {
-	LLSTRING(CantClimbStamina) call FUNC(hint);
+	if (IS_PLAYER(_unit)) then {LLSTRING(CantClimbStamina) call FUNC(hint)};
 	false
 };
 

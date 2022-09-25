@@ -52,6 +52,8 @@
 	}; \
 	[QGVAR(setAnimSpeedCoef),[UNIT,UNIT getVariable [QGVAR(animSpeedCoef),1]]] call CBA_fnc_globalEvent
 
+#define IS_PLAYER(UNIT) (UNIT == call CBA_fnc_currentUnit)
+
 #ifdef DEBUG_MODE_FULL
 	#define DEBUG_R(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
 	#define DEBUG_G(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;

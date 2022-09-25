@@ -29,20 +29,22 @@ if (!GVAR(climbingEnabled) ||
 	{GVAR(assistHeight) isEqualTo 0}
 ) exitWith {false};
 
+/*
 // Stop if height is short enough to climb without assistance
-//_unit call FUNC(canDrop) params ["_canDrop","_depth","_tooHigh"];
+_unit call FUNC(canDrop) params ["_canDrop","_depth","_tooHigh"];
 
-//if (-_depth < GVAR(maxClimbHeight) - 0.1) exitWith {
-//	//"ASSIST UNNECESSARY" call FUNC(hint);//LLSTRING(AssistUnnecessary)
-//	false
-//};
+if (-_depth < GVAR(maxClimbHeight) - 0.1) exitWith {
+	if (IS_PLAYER(_unit)) then {LLSTRING(AssistUnnecessary) call FUNC(hint)};
+	false
+};
+*/
 
 // Stop if out of stamina
 private _duty = GVAR(assistDuty) * load _unit;
 private _stamina = _unit call FUNC(getStamina);
 
 if (_stamina < (_duty * GVAR(staminaCoefficient))) exitWith {
-	LLSTRING(CantAssistStamina) call FUNC(hint);
+	if (IS_PLAYER(_unit)) then {LLSTRING(CantAssistStamina) call FUNC(hint)};
 	false
 };
 
