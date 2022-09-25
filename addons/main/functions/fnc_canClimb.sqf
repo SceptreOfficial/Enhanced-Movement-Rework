@@ -9,6 +9,9 @@
 	0: Can climb <BOOL>
 	1: True to climb over, false to climb on top <BOOL>
 	2: Climb height <SCALAR>
+	3: Target height <SCALAR>
+	4: Animation position ASL <ARRAY>
+	5: Assistant <OBJECT>
 */
 
 params ["_unit"];
