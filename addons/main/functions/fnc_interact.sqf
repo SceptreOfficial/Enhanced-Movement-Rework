@@ -32,7 +32,7 @@ if (_ix isEqualTo []) then {
 
 if (_ix isEqualTo []) exitWith {};
 
-private _target = _ix # 0 # 3;
+private _target = _ix # 0 # 2;
 
 if (isNull _target) exitWith {};
 
