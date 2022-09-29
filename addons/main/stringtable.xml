@@ -28,6 +28,7 @@
         </Key>
         <Key ID="STR_EMR_Main_Keybind_Interact">
             <English>Interact</English>
+            <German>Interagieren</German>
         </Key>
         <Key ID="STR_EMR_Main_Keybind_Assist">
             <English>Assist</English>
@@ -396,6 +397,7 @@
         </Key>
         <Key ID="STR_EMR_Main_VehicleFull">
             <English>VEHICLE FULL</English>
+            <German>FAHRZEUG IST VOLL</German>
         </Key>
     </Package>
 </Project>
