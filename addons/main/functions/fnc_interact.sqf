@@ -2,11 +2,13 @@
 
 params ["_unit"];
 
+private _reach = ((AGLToASL positionCameraToWorld [0,0,0]) vectorDistance (_unit modelToWorldVisualWorld (_unit selectionPosition "Head"))) + 2;
 private _camPosATL = positionCameraToWorld [0,0,0];
-private _targetPosATL = positionCameraToWorld [0,0,[1.6,4.6] select (cameraView == "External")];
+private _targetPosATL = positionCameraToWorld [0,0,_reach];
 private _camPosASL = ATLToASL _camPosATL;
 private _targetPosASL = ATLToASL _targetPosATL;
 private _ix = lineIntersectsSurfaces [_camPosASL,_targetPosASL,_unit,cameraOn,true,1,"GEOM","FIRE"];
+DEBUG_G(_camPosASL,_targetPosASL);
 
 if (_ix isEqualTo []) then {
 	_ix = lineIntersectsSurfaces [_unit modelToWorldVisualWorld [0,0,0.5],_unit modelToWorldVisualWorld [0,0,-1],_unit,cameraOn,true,1,"GEOM","FIRE"];
