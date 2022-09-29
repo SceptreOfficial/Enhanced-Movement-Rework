@@ -18,7 +18,7 @@ private _target = _ix # 0 # 3;
 
 if (isNull _target) exitWith {};
 
-if (_target == objectParent _unit) exitWith {
+if (_target == vehicle _unit) exitWith {
 	if (unitIsUAV _target && _unit in [driver _target,gunner _target]) exitWith {};
 
 	if (_unit == driver _target) then {
