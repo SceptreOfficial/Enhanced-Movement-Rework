@@ -2,6 +2,22 @@
 
 params ["_unit"];
 
+if !(_unit in _unit) exitWith {	
+	private _vehicle = vehicle _unit;
+	
+	if (unitIsUAV _vehicle && _unit in [driver _vehicle,gunner _vehicle]) exitWith {};
+
+	if (_unit == driver _vehicle) then {
+		_vehicle engineOn false;
+	};
+
+	if (_vehicle isKindOf "Air" || _vehicle isKindOf "StaticWeapon") then {	
+		_unit action ["GetOut",_vehicle];
+	} else {
+		_unit action ["Eject",_vehicle];
+	};
+};
+
 private _reach = ((AGLToASL positionCameraToWorld [0,0,0]) vectorDistance (_unit modelToWorldVisualWorld (_unit selectionPosition "Head"))) + 2;
 private _camPosATL = positionCameraToWorld [0,0,0];
 private _targetPosATL = positionCameraToWorld [0,0,_reach];
@@ -19,20 +35,6 @@ if (_ix isEqualTo []) exitWith {};
 private _target = _ix # 0 # 3;
 
 if (isNull _target) exitWith {};
-
-if (_target == vehicle _unit) exitWith {
-	if (unitIsUAV _target && _unit in [driver _target,gunner _target]) exitWith {};
-
-	if (_unit == driver _target) then {
-		_target engineOn false;
-	};
-
-	if (_target isKindOf "Air" || _target isKindOf "StaticWeapon") then {	
-		_unit action ["GetOut",_target];
-	} else {
-		_unit action ["Eject",_target];
-	};
-};
 
 // Adapted from ACE3 - "ace_quickmount_fnc_getInNearest"
 // https://github.com/acemod/ACE3/blob/master/addons/quickmount/functions/fnc_getInNearest.sqf
