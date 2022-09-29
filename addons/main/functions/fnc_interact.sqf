@@ -33,6 +33,7 @@ if (_target == objectParent _unit) exitWith {
 };
 
 // Adapted from ACE3 - "ace_quickmount_fnc_getInNearest"
+// https://github.com/acemod/ACE3/blob/master/addons/quickmount/functions/fnc_getInNearest.sqf
 if (alive _target && 
 	{["LandVehicle","Air","Ship","StaticMortar"] findIf {_target isKindOf _x} > -1} &&
 	{speed _target < 15} &&
