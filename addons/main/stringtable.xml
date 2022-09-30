@@ -28,6 +28,7 @@
         </Key>
         <Key ID="STR_EMR_Main_Keybind_Interact">
             <English>Interact</English>
+            <Japanese>インタラクション</Japanese>
             <German>Interagieren</German>
         </Key>
         <Key ID="STR_EMR_Main_Keybind_Assist">
@@ -397,6 +398,7 @@
         </Key>
         <Key ID="STR_EMR_Main_VehicleFull">
             <English>VEHICLE FULL</English>
+            <Japanese>車両は満員です</Japanese>
             <German>FAHRZEUG IST VOLL</German>
         </Key>
     </Package>
