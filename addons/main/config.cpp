@@ -37,3 +37,4 @@ class CfgPatches {
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
 #include "EMDisable.hpp"
+#include "keybinding.hpp"

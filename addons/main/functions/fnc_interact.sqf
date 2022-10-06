@@ -5,7 +5,7 @@ params ["_unit"];
 if !(_unit in _unit) exitWith {	
 	private _vehicle = vehicle _unit;
 	
-	if (unitIsUAV _vehicle && _unit in [driver _vehicle,gunner _vehicle]) exitWith {};
+	if (unitIsUAV _vehicle && _unit in [driver _vehicle,gunner _vehicle]) exitWith {false};
 
 	if (_unit == driver _vehicle) then {
 		_vehicle engineOn false;
@@ -16,6 +16,8 @@ if !(_unit in _unit) exitWith {
 	} else {
 		_unit action ["Eject",_vehicle];
 	};
+
+	true
 };
 
 private _reach = ((AGLToASL positionCameraToWorld [0,0,0]) vectorDistance (_unit modelToWorldVisualWorld (_unit selectionPosition "Head"))) + 2;
@@ -30,11 +32,11 @@ if (_ix isEqualTo []) then {
 	_ix = lineIntersectsSurfaces [_unit modelToWorldVisualWorld [0,0,0.5],_unit modelToWorldVisualWorld [0,0,-1],_unit,cameraOn,true,1,"GEOM","FIRE"];
 };
 
-if (_ix isEqualTo []) exitWith {};
+if (_ix isEqualTo []) exitWith {false};
 
 private _target = _ix # 0 # 2;
 
-if (isNull _target) exitWith {};
+if (isNull _target) exitWith {false};
 
 // Adapted from ACE3 - "ace_quickmount_fnc_getInNearest"
 // https://github.com/acemod/ACE3/blob/master/addons/quickmount/functions/fnc_getInNearest.sqf
@@ -106,9 +108,12 @@ if (alive _target &&
 		} forEach (fullCrew [_target, "", true]);
 	} forEach _sortedSeats;
 
-	if (!_hasAction) then {
+	if (!_hasAction) exitWith {
 		if (IS_PLAYER(_unit)) then {LLSTRING(VehicleFull) call FUNC(hint)};
+		false
 	};
+
+	true
 };
 
 if (getNumber (configOf _target >> "transportMaxBackpacks") > 0 ||
@@ -117,6 +122,7 @@ if (getNumber (configOf _target >> "transportMaxBackpacks") > 0 ||
 	{_target isKindOf "CAManBase" && {!alive _target || (_target in units group player && !isPlayer _target)}}
 ) exitWith {
 	_unit action ["Gear",_target];
+	true
 };
 
 private _ladders = getArray (configOf _target >> "ladders"); 
@@ -140,7 +146,7 @@ if (_ladders isNotEqualTo []) then {
 	} foreach _ladders;
 };
 
-if (_onLadder) exitWith {};
+if (_onLadder) exitWith {true};
 
 _ix = [_target,"GEOM"] intersect [_camPosATL,_targetPosATL];
 
@@ -148,7 +154,7 @@ if (_ix isEqualTo []) then {
 	_ix = [_target,"FIRE"] intersect [_camPosATL,_targetPosATL];
 };
 
-if (_ix isEqualTo []) exitWith {};
+if (_ix isEqualTo []) exitWith {false};
 
 private _selection = toLower (_ix # 0 # 0);
 
@@ -165,3 +171,5 @@ if (_target getVariable ["bis_disabled_" + _selection,0] == 1) then {
 		};
 	} forEach animationNames _target;	
 };
+
+true
