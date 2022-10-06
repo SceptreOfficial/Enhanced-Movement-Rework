@@ -12,7 +12,7 @@
 	Stamina <SCALAR>
 */
 
-params ["_unit"];
+params [["_unit",objNull,[objNull]]];
 
 private _stamina = 100;
 

@@ -10,7 +10,7 @@
 	1: Amount <SCALAR>
 */
 
-params ["_unit","_amount"];
+params [["_unit",objNull,[objNull]],["_amount",0,[0]]];
 
 if (isPlayer _unit && missionNamespace getVariable ["ace_advanced_fatigue_enabled",false]) then {
 	_amount = (_amount / ace_advanced_fatigue_performanceFactor) / 100;

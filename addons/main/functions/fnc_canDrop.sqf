@@ -11,7 +11,7 @@
 	2: True if too high of a fall <BOOL>
 */
 
-params ["_unit"];
+params [["_unit",objNull,[objNull]]];
 
 if (!isTouchingGround _unit) exitWith {[false,0,false]};
 

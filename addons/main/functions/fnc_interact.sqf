@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-params ["_unit"];
+params [["_unit",objNull,[objNull]]];
 
 if !(_unit in _unit) exitWith {	
 	private _vehicle = vehicle _unit;

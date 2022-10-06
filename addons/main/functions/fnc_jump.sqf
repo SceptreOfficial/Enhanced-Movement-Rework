@@ -12,7 +12,7 @@
 	Control override <BOOL>
 */
 
-params ["_unit"];
+params [["_unit",objNull,[objNull]]];
 
 if (_unit getVariable [QGVAR(isClimbing),false]) exitWith {true};
 

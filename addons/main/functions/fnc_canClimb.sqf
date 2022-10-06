@@ -14,7 +14,7 @@
 	5: Assistant <OBJECT>
 */
 
-params ["_unit"];
+params [["_unit",objNull,[objNull]]];
 
 if (!GVAR(allowMidairClimbing) && !isTouchingGround _unit) exitWith {[false,false,0,0,[0,0,0],objNull]};
 

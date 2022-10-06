@@ -9,7 +9,7 @@
 	0: Text <STRING>
 */
 
-params ["_text"];
+params [["_text","",[""]]];
 
 switch GVAR(hintType) do {
 	case 0 : {hint _text};
