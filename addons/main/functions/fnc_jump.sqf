@@ -37,6 +37,13 @@ private _actionAnim = "babe_em_jump" + (switch (currentWeapon _unit) do {
 	default {"_ua"};
 });
 
+private _ix = lineIntersectsSurfaces [_unit modelToWorldVisualWorld [0,0,0.5],_unit modelToWorldVisualWorld [0,0,-0.2],_unit,GVAR(walkableSurface),true,1,"GEOM","NONE"];
+
+if (_ix isNotEqualTo [] && {_ix # 0 # 2 isKindOf "CAManBase"}) then {
+	_jumpVelocity = _jumpVelocity * GVAR(yeetCoefficient);
+	_forwardVelocity = _forwardVelocity * GVAR(yeetCoefficient);
+};
+
 if (stance _unit == "KNEEL") then {
 	_jumpVelocity = _jumpVelocity * 0.75;
 	_forwardVelocity = _forwardVelocity * 0.75
