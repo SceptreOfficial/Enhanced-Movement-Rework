@@ -64,6 +64,15 @@
 	false
 ] call CBA_fnc_addSetting;
 
+[QGVAR(yeetCoefficient),"SLIDER",
+    [LSTRING(SettingDisplayName_yeetCoefficient),LSTRING(SettingDescription_yeetCoefficient)],
+    [LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
+    [1,10,1.4,1],
+    true,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
 [QGVAR(allowMidairClimbing),"CHECKBOX",
 	[LSTRING(SettingDisplayName_allowMidairClimbing),LSTRING(SettingDescription_allowMidairClimbing)],
 	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],

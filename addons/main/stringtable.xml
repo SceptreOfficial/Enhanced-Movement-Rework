@@ -126,6 +126,12 @@
             <Japanese>ジャンプをした際に前方へどのくらい進むかを設定します。</Japanese>
             <German>Zusätzliche vorwärts Geschwindigkeit, die je nach Geschwindigkeit hinzugefügt wird</German>
         </Key>
+        <Key ID="STR_EMR_Main_SettingDisplayName_yeetCoefficient">
+            <English>Yeet coefficient</English>
+        </Key>
+        <Key ID="STR_EMR_Main_SettingDescription_yeetCoefficient">
+            <English>Velocity multiplier when standing on another unit</English>
+        </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_allowMidairClimbing">
             <English>Allow mid-air climbing</English>
             <Japanese>空中でのよじ登りの許可</Japanese>
