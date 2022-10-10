@@ -116,14 +116,22 @@ private _animChangedEHID = [_unit,"AnimChanged",{
 		// CBA event
 		[QGVAR(climbingStart),[_unit,_actionAnim]] call CBA_fnc_localEvent;
 		
-		// "Assist"
-		[QGVAR(assist),[_assistant,_unit,load _unit],_assistant] call CBA_fnc_targetEvent;
+		// Assist
+		if (alive _assistant) then {
+			[QGVAR(assist),[_assistant,_unit,load _unit],_assistant] call CBA_fnc_targetEvent;
+		};
 	};
 },[_actionAnim,_animPosASL,_canClimb,_assistant]] call CBA_fnc_addBISEventHandler;
 
 _unit setVariable [QGVAR(getInManEHID),_getInManEHID];
 _unit setVariable [QGVAR(animDoneEHID),_animDoneEHID];
 _unit setVariable [QGVAR(animChangedEHID),_animChangedEHID];
+
+// Disable collision with assistant
+if (alive _assistant) then {
+	[QGVAR(disableCollision),[_unit,_assistant]] call CBA_fnc_localEvent;
+	[QGVAR(disableCollision),[_unit,_assistant],_assistant] call CBA_fnc_targetEvent;
+};
 
 // Prep for stances, launcher weapon, or mid-air usage
 if (isTouchingGround _unit) then {

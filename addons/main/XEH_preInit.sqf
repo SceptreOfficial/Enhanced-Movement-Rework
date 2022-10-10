@@ -42,6 +42,25 @@ GVAR(rotVect90) = [[-4.37114e-008,-1,0],[1,-4.37114e-008,0],[0,0,1]];
 	[QGVAR(setStamina),[_unit,-(_duty * GVAR(staminaCoefficient))]] call CBA_fnc_localEvent;
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(disableCollision),{
+	params ["_climber","_assistant"];
+
+	_climber disableCollisionWith _assistant;
+
+	[{
+		[{
+			params ["_climber","_assistant"];
+			!(_climber getVariable [QGVAR(isClimbing),false]) && _climber distance2D _assistant > 2
+		},{
+			params ["_climber","_assistant"];
+			_climber enableCollisionWith _assistant;
+		},_this,10,{
+			params ["_climber","_assistant"];
+			_climber enableCollisionWith _assistant;
+		}] call CBA_fnc_waitUntilAndExecute;
+	},[_climber,_assistant],2] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;
+
 if (isServer) then {
 	[QGVAR(addWSExitCondition),{
 		params [["_code",{},[{}]]];
