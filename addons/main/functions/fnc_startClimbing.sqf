@@ -75,6 +75,11 @@ private _animDoneEHID = [_unit,"AnimDone",{
 		_unit setPosASL _targetPosASL;
 		ANIM_SPEED_COEF_END(_unit);
 
+		if (_unit getVariable [QGVAR(swimFix),""] isNotEqualTo "") then {
+			_unit switchMove (_unit getVariable QGVAR(swimFix));
+			_unit setVariable [QGVAR(swimFix),nil];
+		};
+
 		// CBA event
 		[QGVAR(climbingEnd),[_unit,_actionAnim,true]] call CBA_fnc_localEvent;
 	};

@@ -24,6 +24,13 @@ private _dir = vectorDirVisual _unit;
 // offset pos to line up with view
 _pos = _pos vectorAdd (([_dir] matrixMultiply GVAR(rotVect90) select 0) vectorMultiply 0.1);
 
+if (animationState _unit select [1,3] in ["sdv","ssw","dve","swm"]) then {
+	_pos = _pos vectorAdd [0,0,0.5];
+	_unit setVariable [QGVAR(swimFix),animationState _unit];
+} else {
+	_unit setVariable [QGVAR(swimFix),nil];
+};
+
 private _animPosASL = +_pos;
 private _height = 0;
 private _targetHeight = 0;

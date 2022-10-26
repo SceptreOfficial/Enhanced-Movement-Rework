@@ -15,7 +15,7 @@
 	!alive _unit || \
 	{!(_unit in _unit)} || \
 	{stance _unit == "PRONE"} || \
-	{animationState _unit select [1,3] in ["bdv","bsw","dve","sdv","ssw","swm","inv"]} || \
+	{animationState _unit select [1,3] in ["bdv","bsw","inv"]} || \
 	{GVAR(actionExitConditions) findIf {_unit call _x} != -1} || \
 	{_unit getVariable [QGVAR(isAssisting),false]}
 
