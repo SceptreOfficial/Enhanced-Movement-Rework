@@ -142,6 +142,12 @@
             <Japanese>落下中やジャンプ中に崖につかまってよじ登ることができるようにします。</Japanese>
             <German>Ermöglicht die Verwendung der Kletteraktion beim Fallen oder Springen zu einem Felsvorsprung</German>
         </Key>
+        <Key ID="STR_EMR_Main_SettingDisplayName_allowClimbOnStandingUnits">
+            <English>Allow climbing on standing units</English>
+        </Key>
+        <Key ID="STR_EMR_Main_SettingDescription_allowClimbOnStandingUnits">
+            <English>When enabled, units standing up may be climbed on</English>
+        </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_blacklistStr">
             <English>Object type blacklist</English>
             <Japanese>オブジェクトのブラックリスト</Japanese>

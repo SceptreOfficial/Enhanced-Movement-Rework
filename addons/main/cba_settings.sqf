@@ -82,6 +82,15 @@
 	false
 ] call CBA_fnc_addSetting;
 
+[QGVAR(allowClimbOnStandingUnits),"CHECKBOX",
+	[LSTRING(SettingDisplayName_allowClimbOnStandingUnits),LSTRING(SettingDescription_allowClimbOnStandingUnits)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
+	false,
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
 [QGVAR(blacklistStr),"EDITBOX",
 	[LSTRING(SettingDisplayName_blacklistStr),LSTRING(SettingDescription_blacklistStr)],
 	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],

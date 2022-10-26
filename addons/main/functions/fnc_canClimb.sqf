@@ -7,7 +7,7 @@
 
 	Returns:
 	0: Can climb <BOOL>
-	1: True to climb over, false to climb on top <BOOL>
+	1: false to climb over, true to climb on top <BOOL>
 	2: Climb height <SCALAR>
 	3: Target height <SCALAR>
 	4: Animation position ASL <ARRAY>
@@ -29,12 +29,12 @@ private _height = 0;
 private _targetHeight = 0;
 private _endVect = (_dir vectorMultiply 1.2) vectorAdd [0,0,0.05];
 private _noIntersectCount = 0;
+private _obstacle = objNull;
 
 // Obstacle detection
 for "_x" from 0.3 to (GVAR(maxClimbHeight) + 0.1) step 0.1 do {
 	private _beg = _pos vectorAdd [0,0,_x];
 	private _end = _beg vectorAdd _endVect;
-	
 	private _ix = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"];
 
 	if (_ix isEqualTo []) then {
@@ -44,12 +44,12 @@ for "_x" from 0.3 to (GVAR(maxClimbHeight) + 0.1) step 0.1 do {
 		private _model = toLower ((getModelInfo (_ix # 0 # 2)) # 0);
 
 		if (!(_model in GVAR(whitelist)) && _model in GVAR(blacklist)) exitWith {DEBUG_R(_beg,_end)};
-		
 		DEBUG_B(_beg,_end)
 
 		_animPosASL = _ix # 0 # 0;
 		_height = _x;
 		_noIntersectCount = 0;
+		_obstacle = _ix # 0 # 2;
 	};
 	
 	if (_height > 0 && _noIntersectCount >= 8) exitWith {};
@@ -113,20 +113,34 @@ DEBUG_B(_ceilBeg,_ceilEnd)
 // See if it's possible to climb onto the obstacle
 private _climbOnBeg = _pos vectorAdd [0,0,_height + 0.6];
 private _climbOnEnd = _pos vectorAdd [0,0,_height - 0.6 max 0.3];
-private _climbOn = {
-	private _beg = _climbOnBeg vectorAdd (_dir vectorMultiply _x);
-	private _end = _climbOnEnd vectorAdd (_dir vectorMultiply _x);
+private _exit = false;
+private _climbOn = false;
 
-	if (lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []) then {
-		DEBUG_G(_beg,_end)
-		false
+if (_obstacle isKindOf "CAManBase") then {
+	// Climbing should only happen if unit is kneeling/prone or if standing is allowed via settings
+	if (stance _obstacle isNotEqualTo "STAND" || GVAR(allowClimbOnStandingUnits)) then {
+		_climbOn = true;
 	} else {
-		DEBUG_B(_beg,_end)
-		true
+		_exit = true;
 	};
-} count [1.725,1.4625,1.2] isEqualTo 3;
+} else {
+	_climbOn = {
+		private _beg = _climbOnBeg vectorAdd (_dir vectorMultiply _x);
+		private _end = _climbOnEnd vectorAdd (_dir vectorMultiply _x);
 
-// Final size checks
+		if (lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []) then {
+			DEBUG_G(_beg,_end)
+			false
+		} else {
+			DEBUG_B(_beg,_end)
+			true
+		};
+	} count [1.725,1.4625,1.2] isEqualTo 3
+};
+
+if (_exit) exitWith {[false,false,_height,_targetHeight,_animPosASL,objNull]};
+
+// Climb on size checks
 private _dX = 0.25 * -(_dir # 0);
 private _dY = 0.25 * (_dir # 1);
 private _canClimb = false;
@@ -151,6 +165,7 @@ if (_climbOn) then {
 	};
 };
 
+// Climb over size checks 
 if (!_canClimb) then {
 	private _beg1 = (_pos vectorAdd [-_dY,-_dX,_height + 0.3]) vectorAdd (_dir vectorMultiply 1);
 	private _end1 = (_pos vectorAdd [-_dY,-_dX,_height + 0.7]) vectorAdd (_dir vectorMultiply 1.8);
