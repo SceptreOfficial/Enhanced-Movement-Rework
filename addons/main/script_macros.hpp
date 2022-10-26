@@ -59,9 +59,9 @@
 #define KEY_CODE(VAR) {if (!isNull findDisplay IDD_RSCDISPLAYCURATOR) exitWith {false}; call CBA_fnc_currentUnit call FUNC(VAR)}
 
 #ifdef DEBUG_MODE_FULL
-	#define DEBUG_R(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
-	#define DEBUG_G(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;
-	#define DEBUG_B(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[0,0,1,1]],10] call CBA_fnc_waitUntilAndExecute;
+	#define DEBUG_R(P1,P2) [{drawLine3D _this},{},[ASLToAGL P1,ASLToAGL P2,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
+	#define DEBUG_G(P1,P2) [{drawLine3D _this},{},[ASLToAGL P1,ASLToAGL P2,[0,1,0,1]],10] call CBA_fnc_waitUntilAndExecute;
+	#define DEBUG_B(P1,P2) [{drawLine3D _this},{},[ASLToAGL P1,ASLToAGL P2,[0,0,1,1]],10] call CBA_fnc_waitUntilAndExecute;
 #else
 	#define DEBUG_R(P1,P2) 
 	#define DEBUG_G(P1,P2) 
