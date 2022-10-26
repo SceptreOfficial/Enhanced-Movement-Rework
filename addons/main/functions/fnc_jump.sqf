@@ -59,4 +59,7 @@ _unit setVelocityModelSpace [
 
 [QGVAR(setStamina),[_unit,-(GVAR(jumpDuty) * GVAR(staminaCoefficient))]] call CBA_fnc_localEvent;
 
+// CBA event
+[QGVAR(jump),[_unit]] call CBA_fnc_localEvent;
+
 true
