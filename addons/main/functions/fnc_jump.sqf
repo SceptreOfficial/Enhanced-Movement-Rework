@@ -49,7 +49,9 @@ if (stance _unit == "KNEEL") then {
 	_forwardVelocity = _forwardVelocity * 0.75
 };
 
-_unit playActionNow _actionAnim;
+if (weaponState _unit # 6 == 0) then {
+	_unit playActionNow _actionAnim;
+};
 
 _unit setVelocityModelSpace [
 	_velocity # 0,
