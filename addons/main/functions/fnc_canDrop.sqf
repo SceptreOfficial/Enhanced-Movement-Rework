@@ -46,7 +46,13 @@ private _surfaces = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEO
 
 if (_surfaces isEqualTo []) exitWith {
 	DEBUG_R(_beg,_end)
-	[false,0,true]
+
+	// Drop into water
+	if (_end # 2 <= 0) then {
+		[true,-(_pos # 2) max -2.8,false]
+	} else {
+		[false,0,true]
+	};
 };
 
 DEBUG_B(_beg,_end)

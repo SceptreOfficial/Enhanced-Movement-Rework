@@ -45,7 +45,7 @@
 
 #define DROP_PROCEDURE \
 	_animPosASL = (_animPosASL vectorAdd [0,0,-2.1]) vectorAdd (_dir vectorMultiply 0.8); \
-	_targetPosASL = (_targetPosASL vectorAdd [0,0,_depth]) vectorAdd (_dir vectorMultiply 1.3); \
+	_targetPosASL = (_targetPosASL vectorAdd [0,0,_depth]) vectorAdd (_dir vectorMultiply 1.35); \
 	_duty = -_depth * GVAR(dropDuty) * load _unit; \
 	_actionAnim = "BABE_drop"
 
