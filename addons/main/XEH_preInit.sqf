@@ -25,7 +25,7 @@ GVAR(rotVect90) = [[-4.37114e-008,-1,0],[1,-4.37114e-008,0],[0,0,1]];
 
 [QGVAR(setAnimSpeedCoef),{
 	params ["_unit","_coef"];
-	if (_unit getVariable ["EMR_animSpeedExclude",false]) exitWith {};
+	if (_unit getVariable [QPVAR(animSpeedExclude),false]) exitWith {};
 	_unit setAnimSpeedCoef _coef;
 }] call CBA_fnc_addEventHandler;
 

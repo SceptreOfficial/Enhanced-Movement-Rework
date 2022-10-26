@@ -4,7 +4,7 @@
 private _blacklist = [];
 
 {
-	if (isNumber (_x >> "EMR_blacklist") && {getNumber (_x >> "EMR_blacklist") > 0}) then {
+	if (isNumber (_x >> QPVAR(blacklist)) && {getNumber (_x >> QPVAR(blacklist)) > 0}) then {
 		private _model = getText (_x >> "model");
 
 		if (_model isEqualTo "") exitWith {};

@@ -8,6 +8,9 @@
 	#define PREP(fncName) [QPATHTOF(functions\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #endif
 
+#define PVAR(VAR) DOUBLES(PREFIX,VAR)
+#define QPVAR(VAR) QUOTE(PVAR(VAR))
+
 #define UNIVERSAL_EXIT_CONDITION \
 	!alive _unit || \
 	{!(_unit in _unit)} || \
@@ -53,7 +56,7 @@
 	[QGVAR(setAnimSpeedCoef),[UNIT,UNIT getVariable [QGVAR(animSpeedCoef),1]]] call CBA_fnc_globalEvent
 
 #define IS_PLAYER(UNIT) (UNIT == call CBA_fnc_currentUnit)
-#define KEY_CODE(VAR) if (!isNull findDisplay IDD_RSCDISPLAYCURATOR) exitWith {false}; call CBA_fnc_currentUnit call FUNC(VAR)
+#define KEY_CODE(VAR) {if (!isNull findDisplay IDD_RSCDISPLAYCURATOR) exitWith {false}; call CBA_fnc_currentUnit call FUNC(VAR)}
 
 #ifdef DEBUG_MODE_FULL
 	#define DEBUG_R(P1,P2) [{drawLine3D _this},{},[ASLToATL P1,ASLToATL P2,[1,0,0,1]],10] call CBA_fnc_waitUntilAndExecute;
