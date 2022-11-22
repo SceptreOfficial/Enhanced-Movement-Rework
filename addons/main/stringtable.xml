@@ -224,6 +224,12 @@
             <Japanese>とび降りるアクションを実行するのにどのくらい下を向けばよいかの角度。</Japanese>
             <German>Wie weit nach unten geschaut werden muss, mit der Alles in einem Funktion um das Fallen auszulösen.</German>
         </Key>
+        <Key ID="STR_EMR_Main_SettingDisplayName_interactBehaviorInVehicle">
+            <English>Interact behavior in vehicles</English>
+        </Key>
+        <Key ID="STR_EMR_Main_SettingDescription_interactBehaviorInVehicle">
+            <English>Action to perform when using the interact keybind while inside a vehicle</English>
+        </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_staminaCoefficient">
             <English>Stamina coefficient</English>
             <Japanese>スタミナ係数</Japanese>
@@ -418,6 +424,12 @@
             <English>VEHICLE FULL</English>
             <Japanese>車両は満員です</Japanese>
             <German>FAHRZEUG IST VOLL</German>
+        </Key>
+        <Key ID="STR_EMR_Main_interactBehaviorInVehicle_Dismount">
+            <English>Dismount</English>
+        </Key>
+        <Key ID="STR_EMR_Main_interactBehaviorInVehicle_Engine">
+            <English>Toggle engine (must be driver)</English>
         </Key>
     </Package>
 </Project>

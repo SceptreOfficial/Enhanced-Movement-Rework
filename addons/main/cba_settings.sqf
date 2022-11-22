@@ -214,6 +214,18 @@
 	false
 ] call CBA_fnc_addSetting;
 
+[QGVAR(interactBehaviorInVehicle),"LIST",
+	[LSTRING(SettingDisplayName_interactBehaviorInVehicle),LSTRING(SettingDescription_interactBehaviorInVehicle)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Preferences)],
+	[["DISMOUNT","ENGINE"],[
+		LSTRING(interactBehaviorInVehicle_Dismount),
+		LSTRING(interactBehaviorInVehicle_Engine)
+	],0],
+	false,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
 //---------------------------------------------//
 // Stamina
 

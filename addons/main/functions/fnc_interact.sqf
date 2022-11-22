@@ -7,17 +7,28 @@ if !(_unit in _unit) exitWith {
 	
 	if (unitIsUAV _vehicle && _unit in [driver _vehicle,gunner _vehicle]) exitWith {false};
 
-	if (_unit == driver _vehicle) then {
-		_vehicle engineOn false;
-	};
+	switch GVAR(interactBehaviorInVehicle) do {
+		case "DISMOUNT" : {
+			if (_unit == driver _vehicle) then {
+				_vehicle engineOn false;
+			};
 
-	if (_vehicle isKindOf "Air" || _vehicle isKindOf "StaticWeapon") then {	
-		_unit action ["GetOut",_vehicle];
-	} else {
-		_unit action ["Eject",_vehicle];
-	};
+			if (_vehicle isKindOf "Air" || _vehicle isKindOf "StaticWeapon") then {	
+				_unit action ["GetOut",_vehicle];
+			} else {
+				_unit action ["Eject",_vehicle];
+			};
 
-	true
+			true
+		};
+		case "ENGINE" : {
+			if (_unit == driver _vehicle) then {
+				_vehicle engineOn !isEngineOn _vehicle;
+			};
+			
+			true
+		};
+	};	
 };
 
 private _reach = ((AGLToASL positionCameraToWorld [0,0,0]) vectorDistance (_unit modelToWorldVisualWorld (_unit selectionPosition "Head"))) + 2;
