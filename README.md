@@ -9,7 +9,7 @@
 
 <p align="center">
 	<a href="https://github.com/SceptreOfficial/Enhanced-Movement-Rework/releases/latest">
-		<img src="https://img.shields.io/badge/Version-0.9.5-blue?style=flat-square" alt="Version">
+		<img src="https://img.shields.io/badge/Version-0.9.7-blue?style=flat-square" alt="Version">
 	</a>
 	<a href="https://github.com/SceptreOfficial/Enhanced-Movement-Rework/issues">
 		<img src="https://img.shields.io/github/issues-raw/SceptreOfficial/Enhanced-Movement-Rework?style=flat-square&label=Issues" alt="Issues">
