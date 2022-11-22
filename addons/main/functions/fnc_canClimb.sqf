@@ -88,8 +88,13 @@ if (_height > GVAR(maxClimbHeight)) then {
 	DEBUG_R(_pos,_animPosASL);
 };
 
-// Stop if no obstacle or too tall
-if (_height isEqualTo 0 || (_height > GVAR(maxClimbHeight) && isNull _assistant)) exitWith {[false,false,_height,_targetHeight,_animPosASL,_assistant]};
+// Stop if no obstacle, terrain too short, or obstacle too tall
+if (_height isEqualTo 0 ||
+	(_height < GVAR(minClimbTerrain) && isNull _obstacle) ||
+	(_height > GVAR(maxClimbHeight) && isNull _assistant)
+) exitWith {
+	[false,false,_height,_targetHeight,_animPosASL,_assistant]
+};
 
 // Weight check
 private _weight = _unit call FUNC(getWeight);

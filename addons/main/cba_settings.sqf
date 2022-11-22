@@ -37,6 +37,15 @@
 	false
 ] call CBA_fnc_addSetting;
 
+[QGVAR(minClimbTerrain),"SLIDER",
+	[LSTRING(SettingDisplayName_minClimbTerrain),LSTRING(SettingDescription_minClimbTerrain)],
+	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],
+	[0.3,3,0.3,1],
+	true,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
 [QGVAR(assistHeight),"SLIDER",
 	[LSTRING(SettingDisplayName_assistHeight),LSTRING(SettingDescription_assistHeight)],
 	[LSTRING(EnhancedMovementRework),LSTRING(SettingCategory_Core)],

@@ -96,6 +96,12 @@
             <Japanese>プレイヤーがとび降りることができるオブジェクトの高さを制限します。</Japanese>
             <German>Maximale Höhe, aus der ein Spieler fallen kann</German>
         </Key>
+        <Key ID="STR_EMR_Main_SettingDisplayName_minClimbTerrain">
+            <English>Minimum terrain climb height</English>
+        </Key>
+        <Key ID="STR_EMR_Main_SettingDescription_minClimbTerrain">
+            <English>Relative height the terrain must be to be considered an obstacle (e.g. to prevent climbing on steep hills)</English>
+        </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_assistHeight">
             <English>Assist height</English>
             <Japanese>アシストされる高さ</Japanese>
