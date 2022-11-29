@@ -2,42 +2,42 @@ class CfgUserActions {
 	class GVAR(action) {
 		displayName = CSTRING(Keybind_AIOAction);
 		tooltip = "";
-		onActivate = QUOTE(KEY_CODE(action));
+		onActivate = QUOTE(call KEY_CODE(action));
 		onDeactivate = "";
 		onAnalog = "";
 	};
 	class GVAR(climb) {
 		displayName = CSTRING(Keybind_ClimbDropOnly);
 		tooltip = "";
-		onActivate = QUOTE(KEY_CODE(climb));
+		onActivate = QUOTE(call KEY_CODE(climb));
 		onDeactivate = "";
 		onAnalog = "";
 	};
 	class GVAR(jump) {
 		displayName = CSTRING(Keybind_JumpOnly);
 		tooltip = "";
-		onActivate = QUOTE(KEY_CODE(jump));
+		onActivate = QUOTE(call KEY_CODE(jump));
 		onDeactivate = "";
 		onAnalog = "";
 	};
 	class GVAR(assist) {
 		displayName = CSTRING(Keybind_Assist);
 		tooltip = "";
-		onActivate = QUOTE(KEY_CODE(assist));
+		onActivate = QUOTE(call KEY_CODE(assist));
 		onDeactivate = "";
 		onAnalog = "";
 	};
 	class GVAR(holster) {
 		displayName = CSTRING(Keybind_HolsterWeapon);
 		tooltip = "";
-		onActivate = QUOTE(KEY_CODE(holster));
+		onActivate = QUOTE(call KEY_CODE(holster));
 		onDeactivate = "";
 		onAnalog = "";
 	};
 	class GVAR(interact) {
 		displayName = CSTRING(Keybind_Interact);
 		tooltip = "";
-		onActivate = QUOTE(KEY_CODE(interact));
+		onActivate = QUOTE(call KEY_CODE(interact));
 		onDeactivate = "";
 		onAnalog = "";
 	};
