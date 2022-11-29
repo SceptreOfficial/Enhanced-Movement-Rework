@@ -431,5 +431,8 @@
         <Key ID="STR_EMR_Main_interactBehaviorInVehicle_Engine">
             <English>Toggle engine (must be driver)</English>
         </Key>
+        <Key ID="STR_EMR_Main_keybindWarning">
+            <English>Ensure you have no conflicts with default CBA keybinds (Configure Addons)</English>
+        </Key>
     </Package>
 </Project>
