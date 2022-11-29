@@ -8,7 +8,7 @@ files = ["mod.cpp","assets","LICENSE","authors.txt","patrons.txt"]
 folder_optionals = true
 sig_version = 3
 
-version = "0.9.7"
+version = "0.9.8"
 
 modname = "{{name}}"
 key_name = "{{prefix}}_{{version}}"
