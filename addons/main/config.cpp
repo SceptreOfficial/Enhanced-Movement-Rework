@@ -36,5 +36,6 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgMoves.hpp"
 #include "EMDisable.hpp"
 #include "keybinding.hpp"
