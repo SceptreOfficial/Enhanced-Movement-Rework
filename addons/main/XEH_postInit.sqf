@@ -1,6 +1,8 @@
 #include "script_component.hpp"
 
-if (!hasInterface) exitWith {};
+if (!hasInterface) exitWith {
+	GVAR(walkableSurface) = objNull;
+};
 
 [LSTRING(EnhancedMovementRework),QPVAR(action),LSTRING(Keybind_AIOAction),KEY_CODE(action),{false},[DIK_V,[true,false,false]]] call CBA_fnc_addKeybind;
 [LSTRING(EnhancedMovementRework),QPVAR(climb),LSTRING(Keybind_ClimbDropOnly),KEY_CODE(climb),{false},[0,[false,false,false]]] call CBA_fnc_addKeybind;
