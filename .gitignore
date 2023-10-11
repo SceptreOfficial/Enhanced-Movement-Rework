@@ -7,9 +7,6 @@
 releases/
 Thumbs.db
 desktop.ini
-
-## Added by HEMTT
 releases/*
 keys/*
-.hemtt/local
-####
+.hemttout/*

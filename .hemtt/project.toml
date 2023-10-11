@@ -1,0 +1,21 @@
+name = "Enhanced Movement Rework"
+mainprefix = "z"
+prefix = "emr"
+author = "Simplex Team"
+
+[files]
+include = [
+    "mod.cpp",
+    "assets/emr.paa",
+    "LICENSE",
+    "authors.txt"
+]
+
+[version]
+major = 1
+minor = 0
+patch = 1
+git_hash = 0
+
+[asc]
+enabled = true

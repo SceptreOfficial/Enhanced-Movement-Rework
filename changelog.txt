@@ -1,0 +1,18 @@
+v1.0.1
+- Fixed: Possible server-side script errors
+- Changed: Walkable surface will now be ignored in climbing checks
+- Changed: Animations should now be loaded in memory on game start
+
+v0.9.8
+- Fixed: Vanilla style keybinding
+
+v0.9.7
+- Added: Setting for minimum terrain climb height
+- Added: Setting for interact keybind behavior when inside vehicles
+- Improved: CBA event when jumping
+- Changed: Climbing out of water is now possible, but not always a smooth process due to limitations with swimming transitions.
+- Changed: Units can now only be climbed on if they're not standing. Standing may be allowed via addon options.
+- Fixed: Dropping into water was considered 'too high'
+- Fixed: Jumping in the middle of a reload would cause the new magazine to disappear
+- Fixed: Climbing onto units would perform a vault and sometimes clip through obstacles
+

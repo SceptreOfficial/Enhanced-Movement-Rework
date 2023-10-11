@@ -61,12 +61,12 @@ class UserActionGroups {
 		name = CSTRING(EnhancedMovementRework);
 		isAddon = 1;
 		group[] = {
-			GVAR(action),
-			GVAR(climb),
-			GVAR(jump),
-			GVAR(assist),
-			GVAR(holster),
-			GVAR(interact)
+			QGVAR(action),
+			QGVAR(climb),
+			QGVAR(jump),
+			QGVAR(assist),
+			QGVAR(holster),
+			QGVAR(interact)
 		};
 	};
 };
