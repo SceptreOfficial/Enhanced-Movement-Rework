@@ -42,7 +42,7 @@ private _obstacle = objNull;
 for "_x" from 0.3 to (GVAR(maxClimbHeight) + 0.1) step 0.1 do {
 	private _beg = _pos vectorAdd [0,0,_x];
 	private _end = _beg vectorAdd _endVect;
-	private _ix = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"];
+	private _ix = lineIntersectsSurfaces [_beg,_end,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"];
 
 	if (_ix isEqualTo []) then {
 		DEBUG_G(_beg,_end)
@@ -115,7 +115,7 @@ if (alive _assistant) exitWith {[true,true,_height,_targetHeight,_animPosASL,_as
 // Ceiling check
 private _ceilBeg = _pos vectorAdd [0,0,_height - 0.1 max 0.3];
 private _ceilEnd = _pos vectorAdd [0,0,_height + 0.5];
-if (lineIntersectsSurfaces [_ceilBeg,_ceilEnd,_unit,objNull,true,-1,"GEOM","NONE"] isNotEqualTo []) exitWith {
+if (lineIntersectsSurfaces [_ceilBeg,_ceilEnd,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"] isNotEqualTo []) exitWith {
 	DEBUG_R(_ceilBeg,_ceilEnd)
 	[false,false,_height,_targetHeight,_animPosASL,objNull]
 };
@@ -140,7 +140,7 @@ if (_obstacle isKindOf "CAManBase") then {
 		private _beg = _climbOnBeg vectorAdd (_dir vectorMultiply _x);
 		private _end = _climbOnEnd vectorAdd (_dir vectorMultiply _x);
 
-		if (lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"] isEqualTo []) then {
+		if (lineIntersectsSurfaces [_beg,_end,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"] isEqualTo []) then {
 			DEBUG_G(_beg,_end)
 			false
 		} else {
@@ -164,8 +164,8 @@ if (_climbOn) then {
 	private _end2 = (_pos vectorAdd [_dY,_dX,_height + 1.7]) vectorAdd (_dir vectorMultiply 1.4);
 
 	if ((
-		lineIntersectsSurfaces [_beg1,_end1,_unit,objNull,true,-1,"GEOM","NONE"] + 
-		lineIntersectsSurfaces [_beg2,_end2,_unit,objNull,true,-1,"GEOM","NONE"]
+		lineIntersectsSurfaces [_beg1,_end1,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"] + 
+		lineIntersectsSurfaces [_beg2,_end2,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"]
 	) isEqualTo []) then {
 		DEBUG_B(_beg1,_end1)
 		DEBUG_B(_beg2,_end2)
@@ -185,8 +185,8 @@ if (!_canClimb) then {
 	private _end2 = (_pos vectorAdd [_dY,_dX,_height + 0.7]) vectorAdd (_dir vectorMultiply 1.8);
 
 	if ((
-		lineIntersectsSurfaces [_beg1,_end1,_unit,objNull,true,-1,"GEOM","NONE"] + 
-		lineIntersectsSurfaces [_beg2,_end2,_unit,objNull,true,-1,"GEOM","NONE"]
+		lineIntersectsSurfaces [_beg1,_end1,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"] + 
+		lineIntersectsSurfaces [_beg2,_end2,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"]
 	) isEqualTo []) then {
 		DEBUG_B(_beg1,_end1)
 		DEBUG_B(_beg2,_end2)
@@ -195,7 +195,7 @@ if (!_canClimb) then {
 		// Account for objects on the other side of a wall
 		private _targetEnd = _pos vectorAdd (_dir vectorMultiply 1.8);
 		private _targetBeg = _targetEnd vectorAdd [0,0,_height + 0.6];
-		private _ix = lineIntersectsSurfaces [_targetBeg,_targetEnd,_unit,objNull,true,-1,"GEOM","NONE"];
+		private _ix = lineIntersectsSurfaces [_targetBeg,_targetEnd,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"];
 
 		if (_ix isNotEqualTo []) then {
 			_targetHeight = (_ix # 0 # 0 # 2) - (_pos # 2);

@@ -28,8 +28,8 @@ private _minBeg2 = (_pos vectorAdd [0,0,1.2]) vectorAdd (_dir vectorMultiply 1);
 private _minEnd2 = (_pos vectorAdd [0,0,-1.2]) vectorAdd (_dir vectorMultiply 2);
 
 if ((
-	lineIntersectsSurfaces [_minBeg1,_minEnd1,_unit,objNull,true,-1,"GEOM","NONE"] + 
-	lineIntersectsSurfaces [_minBeg2,_minEnd2,_unit,objNull,true,-1,"GEOM","NONE"]
+	lineIntersectsSurfaces [_minBeg1,_minEnd1,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"] + 
+	lineIntersectsSurfaces [_minBeg2,_minEnd2,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"]
 ) isNotEqualTo []) exitWith {
 	DEBUG_R(_minBeg1,_minEnd1)
 	DEBUG_R(_minBeg2,_minEnd2)
@@ -42,7 +42,7 @@ DEBUG_B(_minBeg2,_minEnd2)
 // Depth detection
 private _beg = (_pos vectorAdd [0,0,0.4]) vectorAdd (_dir vectorMultiply 1.3);
 private _end = (_pos vectorAdd [0,0,-GVAR(maxDropHeight)]) vectorAdd (_dir vectorMultiply 1.3);
-private _surfaces = lineIntersectsSurfaces [_beg,_end,_unit,objNull,true,-1,"GEOM","NONE"];
+private _surfaces = lineIntersectsSurfaces [_beg,_end,_unit,GVAR(walkableSurface),true,-1,"GEOM","NONE"];
 
 if (_surfaces isEqualTo []) exitWith {
 	DEBUG_R(_beg,_end)
