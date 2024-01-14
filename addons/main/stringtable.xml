@@ -121,7 +121,7 @@
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_minClimbTerrain">
             <English>Relative height the terrain must be to be considered an obstacle (e.g. to prevent climbing on steep hills)</English>
-            <Chinesesimp>地形必须达到一定的相对高度才能被视为障碍物（例如，防止在陡峭的山坡上攀爬）。</Chinesesimp>
+            <Chinesesimp>地形必须达到一定的相对高度才能被视为障碍物(例如,防止在陡峭的山坡上攀爬)。</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_assistHeight">
             <English>Assist height</English>
@@ -185,7 +185,7 @@
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_allowClimbOnStandingUnits">
             <English>When enabled, units standing up may be climbed on</English>
-            <Chinesesimp>启用后，长期存在的单位可以攀爬</Chinesesimp>
+            <Chinesesimp>启用后,长期存在的单位可以攀爬</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_blacklistStr">
             <English>Object type blacklist</English>
@@ -197,7 +197,7 @@
             <English>List of object classes or models (example.p3d) that cannot be climbed on</English>
             <Japanese>登ることのできないオブジェクトのクラス名またはモデル名(例- example.p3d)を指定できます。</Japanese>
             <German>Liste von Objektklassen oder Modellen (beispiel.p3d), die nicht bestiegen werden können</German>
-            <Chinesesimp>无法攀爬的物体或模型（例如.p3d）的列表</Chinesesimp>
+            <Chinesesimp>无法攀爬的物体或模型(例如.p3d)的列表</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_whitelistStr">
             <English>Object type whitelist</English>
@@ -227,13 +227,13 @@
             <English>Prevent high edge vaulting</English>
             <Japanese>崖での'越す'アクションの防止</Japanese>
             <German>Verhindert das Überklettern hoher Kanten</German>
-            <Chinesesimp>防止在高的物体边缘处跳跃</Chinesesimp>
+            <Chinesesimp>防止在高的物体边缘处翻越</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_preventHighVaulting">
             <English>When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if 'vault' keybind is the same as 'climb/drop only')</English>
             <Japanese>プレイヤーがとび降りられる高さよりも高い位置にいる場合、Arma3デフォルトの '越す' アクションを実行しないようにします。 \n(これは '越す' アクションが 'よじ登りのみを行う' アクションと同じキーに割り当てられている場合に限り動作します)</Japanese>
             <German>Wenn sich der Spieler über der maximalen Fallhöhe befindet, wird die Vanilla Überspringen-Aktion ignoriert. \n(Funktioniert nur, wenn die Tastenbelegung von 'Klettern' mit 'Nur klettern/fallen' identisch ist)</German>
-            <Chinesesimp>当玩家的高度超过最大下降高度时，普通跳跃动作将被忽视。\n（只有当"跳跃"键与"仅攀爬/下降"键绑定相同时才生效）</Chinesesimp>
+            <Chinesesimp>当玩家的高度超过最大下降高度时,原始翻越动作将被忽视。\n(只有当"跳跃"键与"仅攀爬/下降"键绑定相同时才生效)</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_enableWalkableSurface">
             <English>Enable walkable surface</English>
@@ -269,7 +269,7 @@
             <English>How far down you need to look for the all-in-one action to trigger dropping</English>
             <Japanese>とび降りるアクションを実行するのにどのくらい下を向けばよいかの角度。</Japanese>
             <German>Wie weit nach unten geschaut werden muss, mit der Alles in einem Funktion um das Fallen auszulösen.</German>
-            <Chinesesimp>玩家触发下降所需的向下看（全身动作）的距离</Chinesesimp>
+            <Chinesesimp>玩家触发下降所需的向下看(全身动作)的距离</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_interactBehaviorInVehicle">
             <English>Interact behavior in vehicles</English>
@@ -313,19 +313,19 @@
             <English>Base stamina cost for climbing ON objects, multiplied by the height of the climb</English>
             <Japanese>よじ登りでの消費スタミナの基礎値です。高さで乗算されます。</Japanese>
             <German>Basis-Ausdauerkosten für das Klettern AUF Objekten, die mit der Höhe des Aufstiegs multipliziert werden</German>
-            <Chinesesimp>攀爬物体的基本体力消耗，乘以攀爬高度</Chinesesimp>
+            <Chinesesimp>攀爬物体的基本体力消耗,乘以攀爬高度</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_climbOverDuty">
             <English>Climb over duty</English>
             <Japanese>乗り越え時の負荷</Japanese>
             <German>Belastung beim Klettern über Objekte</German>
-            <Chinesesimp>翻越时的负荷</Chinesesimp>
+            <Chinesesimp>攀爬时的负荷</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_climbOverDuty">
             <English>Base stamina cost for climbing OVER objects, multiplied by the height of the climb</English>
             <Japanese>乗り越えでの消費スタミナの基礎値です。高さで乗算されます。</Japanese>
             <German>Basis-Ausdauerkosten für das Klettern ÜBER Objekten, die mit der Höhe des Aufstiegs multipliziert werden</German>
-            <Chinesesimp>翻越物体的基本体力消耗乘以翻越高度</Chinesesimp>
+            <Chinesesimp>攀爬物体的基本体力消耗乘以攀爬高度</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_dropDuty">
             <English>Drop duty</English>
@@ -337,7 +337,7 @@
             <English>Base stamina cost for dropping down from an object, multiplied by the depth of the drop</English>
             <Japanese>とび降りでの消費スタミナの基礎値です。高さで乗算されます。</Japanese>
             <German>Basis-Ausdauerkosten für das Herunterklettern von einem Objekt, die mit der Höhe des Herunterkletterns multipliziert wird</German>
-            <Chinesesimp>从物体由上向下坠落的基本体力消耗，乘以下降深度</Chinesesimp>
+            <Chinesesimp>从物体由上向下坠落的基本体力消耗,乘以下降深度</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_assistDuty">
             <English>Assist duty</English>
@@ -355,7 +355,7 @@
             <English>Stamina animation speed modifier</English>
             <Japanese>アニメーション速度へのスタミナの影響倍率</Japanese>
             <German>Modifikator für die Ausdauer der Animationsgeschwindigkeit</German>
-            <Chinesesimp>耐力动画速度修改器</Chinesesimp>
+            <Chinesesimp>耐力动画速度修改</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_animSpeedStaminaCoef">
             <English>Controls how much stamina affects climbing animation speed</English>
@@ -439,37 +439,37 @@
             <English>CAN'T JUMP: OVERWEIGHT</English>
             <Japanese>ジャンプできません: 重量過多</Japanese>
             <German>KANN NICHT SPRINGEN: ÜBERGEWICHT</German>
-            <Chinesesimp>不能跳跃：因为超重</Chinesesimp>
+            <Chinesesimp>不能跳跃:因为超重</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_CantJumpStamina">
             <English>CAN'T JUMP: NOT ENOUGH STAMINA</English>
             <Japanese>ジャンプできません: スタミナ不足</Japanese>
             <German>KANN NICHT SPRINGEN: NICHT GENUG AUSDAUER</German>
-            <Chinesesimp>不能跳跃：耐力不足</Chinesesimp>
+            <Chinesesimp>不能跳跃:耐力不足</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_CantDropTooHigh">
             <English>CAN'T DROP: TOO HIGH</English>
             <Japanese>降りられません: 高すぎます</Japanese>
             <German>KANN NICHT HERUNTER KLETTERN: ZU HOCH</German>
-            <Chinesesimp>不能下降：因为太高</Chinesesimp>
+            <Chinesesimp>不能下降:因为太高</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_CantClimbOverweight">
             <English>CAN'T CLIMB: OVERWEIGHT</English>
             <Japanese>登れません: 重量過多</Japanese>
             <German>KANN NICHT KLETTERN: ÜBERGEWICHT</German>
-            <Chinesesimp>不能攀爬：因为超重</Chinesesimp>
+            <Chinesesimp>不能攀爬:因为超重</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_CantClimbStamina">
             <English>CAN'T CLIMB: NOT ENOUGH STAMINA</English>
             <Japanese>登れません: スタミナ不足</Japanese>
             <German>KANN NICHT KLETTERN: NICHT GENUG AUSDAUER</German>
-            <Chinesesimp>不能攀爬：耐力不足</Chinesesimp>
+            <Chinesesimp>不能攀爬:耐力不足</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_CantAssistStamina">
             <English>CAN'T ASSIST: NOT ENOUGH STAMINA</English>
             <Japanese>アシストできません: スタミナ不足</Japanese>
             <German>KANN NICHT HELFEN: KEINE AUSDAUER</German>
-            <Chinesesimp>不能辅助： 耐力不足</Chinesesimp>
+            <Chinesesimp>不能辅助: 耐力不足</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_AssistUnnecessary">
             <English>ASSIST UNNECESSARY</English>
@@ -487,7 +487,7 @@
             <English>Hint (silent)</English>
             <Japanese>ヒント (通知音なし)</Japanese>
             <German>Hinweis (stumm)</German>
-            <Chinesesimp>提示（静音）</Chinesesimp>
+            <Chinesesimp>提示(静音)</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_HintType_TitleEffect">
             <English>Title effect</English>
@@ -519,11 +519,11 @@
         </Key>
         <Key ID="STR_EMR_Main_interactBehaviorInVehicle_Engine">
             <English>Toggle engine (must be driver)</English>
-            <Chinesesimp>切换发动机（必须是驾驶员）</Chinesesimp>
+            <Chinesesimp>切换发动机(必须是驾驶员)</Chinesesimp>
         </Key>
         <Key ID="STR_EMR_Main_keybindWarning">
             <English>Ensure you have no conflicts with default CBA keybinds (Configure Addons)</English>
-            <Chinesesimp>确保与默认的CBA键绑定没有冲突（配置Addons）</Chinesesimp>
+            <Chinesesimp>确保与默认的CBA键绑定没有冲突(配置Addons)</Chinesesimp>
         </Key>
     </Package>
 </Project>
