@@ -1,3 +1,8 @@
+v1.0.4
+- Added Simplified Chinese Translations (Thanks Augustakit!)
+- Minor optimization for walkable surface when standing on terrain
+- Updated HEMTT build system
+
 v1.0.1
 - Fixed: Possible server-side script errors
 - Changed: Walkable surface will now be ignored in climbing checks
