@@ -9,8 +9,7 @@
 private _unit = call CBA_fnc_currentUnit;
 private _helper = GVAR(walkableSurface);
 
-if (
-	!GVAR(enableWalkableSurface) ||
+if (!GVAR(enableWalkableSurface) ||
 	alive objectParent _unit ||
 	_unit getVariable [QGVAR(isClimbing),false] ||
 	{GVAR(WSExitConditions) findIf {_unit call _x} != -1}
@@ -26,9 +25,10 @@ if (_ix isEqualTo []) exitWith {
 
 (_ix # 0) params ["_posASL","_normal","_obj"];
 
-private _model = toLower ((getModelInfo _obj) # 0);
-
-if (isNull _obj || {!(_model in GVAR(whitelist)) && _model in GVAR(blacklist)}) exitWith {
+if (isNull _obj || {
+	private _model = toLower ((getModelInfo _obj) # 0);
+	!(_model in GVAR(whitelist)) && _model in GVAR(blacklist)}
+) exitWith {
 	_helper setPosASL [0,0,0];
 };
 
