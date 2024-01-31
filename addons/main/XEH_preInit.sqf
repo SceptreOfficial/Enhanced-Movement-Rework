@@ -3,8 +3,6 @@ ADDON = false;
 #include "XEH_PREP.hpp"
 #include "cba_settings.sqf"
 
-GVAR(debug) = false;
-
 GVAR(WSExitConditions) = [
 	{!isNil {_this getVariable "ace_sitting_sittingStatus"}},
 	{animationState _this isEqualTo "ace_fastroping"}
