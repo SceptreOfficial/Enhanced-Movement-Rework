@@ -6,158 +6,185 @@
             <Japanese>Enhanced Movement Rework</Japanese>
             <German>Enhanced Movement Rework</German>
             <Chinesesimp>Enhanced Movement重做</Chinesesimp>
+            <French>Enhanced Movement Rework</French>
         </Key>
         <Key ID="STR_EMR_Main_Keybind_AIOAction">
             <English>All-in-one action</English>
             <Japanese>全ての動作を行う</Japanese>
             <German>Option für alles in einem</German>
             <Chinesesimp>全身动作</Chinesesimp>
+            <French>Action tout-en-un</French>
         </Key>
         <Key ID="STR_EMR_Main_Keybind_ClimbDropOnly">
             <English>Climb/drop only</English>
             <Japanese>よじ登りのみを行う</Japanese>
             <German>Nur klettern/fallen</German>
             <Chinesesimp>仅限攀爬/下降</Chinesesimp>
+            <French>Grimper/chute uniquement</French>
         </Key>
         <Key ID="STR_EMR_Main_Keybind_JumpOnly">
             <English>Jump only</English>
             <Japanese>ジャンプのみを行う</Japanese>
             <German>Nur Springen</German>
             <Chinesesimp>仅跳跃</Chinesesimp>
+            <French>Sauter seulement</French>
         </Key>
         <Key ID="STR_EMR_Main_Keybind_HolsterWeapon">
             <English>Holster weapon</English>
             <Japanese>武器をしまう</Japanese>
             <German>Waffe Holstern</German>
             <Chinesesimp>收起武器</Chinesesimp>
+            <French>Arme à feu</French>
         </Key>
         <Key ID="STR_EMR_Main_Keybind_Interact">
             <English>Interact</English>
             <Japanese>インタラクション</Japanese>
             <German>Interagieren</German>
             <Chinesesimp>互动</Chinesesimp>
+            <French>Interagir</French>
         </Key>
         <Key ID="STR_EMR_Main_Keybind_Assist">
             <English>Assist</English>
             <Japanese>アシストする</Japanese>
             <German>Unterstützen</German>
             <Chinesesimp>辅助</Chinesesimp>
+            <French>Assister</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingCategory_Core">
             <English>Core</English>
             <Japanese>基礎設定</Japanese>
             <German>Core</German>
             <Chinesesimp>核心</Chinesesimp>
+            <French>Core</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingCategory_Preferences">
             <English>Preferences</English>
             <Japanese>環境設定</Japanese>
             <German>Einstellungen</German>
             <Chinesesimp>偏好</Chinesesimp>
+            <French>Préférences</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingCategory_Stamina">
             <English>Stamina</English>
             <Japanese>スタミナ設定</Japanese>
             <German>Ausdauer</German>
             <Chinesesimp>耐力</Chinesesimp>
+            <French>Endurance</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingCategory_Weight">
             <English>Weight</English>
             <Japanese>重量設定</Japanese>
             <German>Gewicht</German>
             <Chinesesimp>重量</Chinesesimp>
+            <French>Poids</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_climbingEnabled">
             <English>Enable climbing/dropping</English>
             <Japanese>よじ登り機能の有効化</Japanese>
             <German>Klettern / Fallenlassen aktivieren</German>
             <Chinesesimp>启用攀爬/下降</Chinesesimp>
+            <French>Permettre de grimper/descendre</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_climbingEnabled">
             <English>Global toggle for climbing and dropping actions</English>
             <Japanese>よじ登ったり、とび降りたりするアクションを可能にします。</Japanese>
             <German>Globale Einstellung zum Klettern und Fallenlassen</German>
             <Chinesesimp>切换全局攀爬和下降操作的开关</Chinesesimp>
+            <French>Attitude globale face à l'escalade et à la chute</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_jumpingEnabled">
             <English>Enable jumping</English>
             <Japanese>ジャンプ機能の有効化</Japanese>
             <German>Springen aktivieren</German>
             <Chinesesimp>启用跳跃</Chinesesimp>
+            <French>Activer le saut</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_jumpingEnabled">
             <English>Global toggle for the jump action</English>
             <Japanese>ジャンプするアクションを可能にします。</Japanese>
             <German>Globale Einstellung für Sprungaktion</German>
             <Chinesesimp>切换全局跳跃动作的开关</Chinesesimp>
+            <French>Paramètre global pour l'action de saut</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_maxClimbHeight">
             <English>Maximum climb height</English>
             <Japanese>よじ登り可能な高さの限界</Japanese>
             <German>Maximale Höhe zum Klettern</German>
             <Chinesesimp>最大攀爬高度</Chinesesimp>
+            <French>Hauteur maximale pour l'escalade</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_maxClimbHeight">
             <English>Maximum height that a player can reach to climb on/over objects</English>
             <Japanese>プレイヤーがよじ登ることができるオブジェクトの高さを制限します。</Japanese>
             <German>Maximale Höhe, die ein Spieler erreichen kann, um auf/über Objekte zu klettern</German>
             <Chinesesimp>玩家攀爬/越过物体的最大高度</Chinesesimp>
+            <French>Hauteur maximale qu'un joueur peut atteindre pour grimper sur/par-dessus des objets</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_maxDropHeight">
             <English>Maximum drop height</English>
             <Japanese>とび降り可能な高さの限界</Japanese>
             <German>Maximale Fallhöhe</German>
             <Chinesesimp>最大下降高度</Chinesesimp>
+            <French>Hauteur de chute maximale</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_maxDropHeight">
             <English>Maximum height that a player can drop from</English>
             <Japanese>プレイヤーがとび降りることができるオブジェクトの高さを制限します。</Japanese>
             <German>Maximale Höhe, aus der ein Spieler fallen kann</German>
             <Chinesesimp>玩家从某一物体下降的最大高度</Chinesesimp>
+            <French>Hauteur maximale à partir de laquelle un joueur peut tomber</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_minClimbTerrain">
             <English>Minimum terrain climb height</English>
             <Chinesesimp>最小地形攀爬高度</Chinesesimp>
+            <French>Hauteur minimale pour grimper sur le terrain</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_minClimbTerrain">
             <English>Relative height the terrain must be to be considered an obstacle (e.g. to prevent climbing on steep hills)</English>
             <Chinesesimp>地形必须达到一定的相对高度才能被视为障碍物(例如,防止在陡峭的山坡上攀爬)。</Chinesesimp>
+            <French>Hauteur relative à laquelle le terrain doit se trouver pour être considéré comme un obstacle (par exemple, pour empêcher de grimper sur des collines escarpées).</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_assistHeight">
             <English>Assist height</English>
             <Japanese>アシストされる高さ</Japanese>
             <German>Unterstützungshöhe</German>
             <Chinesesimp>辅助高度</Chinesesimp>
+            <French>Hauteur d'assistance</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_assistHeight">
             <English>Additional climbing height achievable with assistance</English>
             <Japanese>アシストで追加されるよじ登り可能な高さの値を設定します。</Japanese>
             <German>Überwindbare Höhe, die durch Unterstützung erreicht werden kann.</German>
             <Chinesesimp>在辅助下可达到更高的攀爬高度</Chinesesimp>
+            <French>Hauteur d'escalade supplémentaire réalisable avec de l'aide</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_jumpVelocity">
             <English>Jump velocity</English>
             <Japanese>ジャンプの加速度</Japanese>
             <German>Sprunggeschwindigkeit</German>
             <Chinesesimp>跳跃速度</Chinesesimp>
+            <French>Vitesse de saut</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_jumpVelocity">
             <English>Super saiyan simulator</English>
             <Japanese>スーパーサイヤ人シミュレーター! \n(訳注:これはジャンプ時にどれだけ跳ねるかを設定します)</Japanese>
             <German>Super Saiyajin-Simulator</German>
             <Chinesesimp>超级赛亚人模拟器</Chinesesimp>
+            <French>Simulateur de Super Saiyan ! \n (ceci définit le niveau de rebond lorsque vous sautez).</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_jumpForwardVelocity">
             <English>Jump forward velocity</English>
             <Japanese>ジャンプの前方の加速度</Japanese>
             <German>Vorwärts Sprunggeschwindigkeit</German>
             <Chinesesimp>向前跳跃速度</Chinesesimp>
+            <French>Vitesse de saut en avant</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_jumpForwardVelocity">
             <English>Additional forward velocity added depending on speed</English>
             <Japanese>ジャンプをした際に前方へどのくらい進むかを設定します。</Japanese>
             <German>Zusätzliche vorwärts Geschwindigkeit, die je nach Geschwindigkeit hinzugefügt wird</German>
             <Chinesesimp>根据速度增加额外的前进速度</Chinesesimp>
+            <French>Vitesse avant supplémentaire ajoutée en fonction de la vitesse</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_yeetCoefficient">
             <English>Yeet coefficient</English>
@@ -166,18 +193,21 @@
         <Key ID="STR_EMR_Main_SettingDescription_yeetCoefficient">
             <English>Velocity multiplier when standing on another unit</English>
             <Chinesesimp>站在另一个单位上时的速度倍数</Chinesesimp>
+            <French>Multiplicateur de vitesse lorsque l'on se tient sur une autre unité</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_allowMidairClimbing">
             <English>Allow mid-air climbing</English>
             <Japanese>空中でのよじ登りの許可</Japanese>
             <German>Erlaube Klettern in der Luft</German>
             <Chinesesimp>允许在空中攀爬</Chinesesimp>
+            <French>Permission de grimper dans l'air</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_allowMidairClimbing">
             <English>Allows using the climb action while falling or jumping up towards a ledge</English>
             <Japanese>落下中やジャンプ中に崖につかまってよじ登ることができるようにします。</Japanese>
             <German>Ermöglicht die Verwendung der Kletteraktion beim Fallen oder Springen zu einem Felsvorsprung</German>
             <Chinesesimp>允许在向窗台下落或跳跃时使用攀爬动作</Chinesesimp>
+            <French>Permet d'utiliser l'action grimper en tombant ou en sautant vers un rebord.</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_allowClimbOnStandingUnits">
             <English>Allow climbing on standing units</English>
@@ -192,84 +222,98 @@
             <Japanese>オブジェクトのブラックリスト</Japanese>
             <German>Objekttypen Blacklist </German>
             <Chinesesimp>物体类型黑名单</Chinesesimp>
+            <French>Liste noire de types d'objets</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_blacklistStr">
             <English>List of object classes or models (example.p3d) that cannot be climbed on</English>
             <Japanese>登ることのできないオブジェクトのクラス名またはモデル名(例- example.p3d)を指定できます。</Japanese>
             <German>Liste von Objektklassen oder Modellen (beispiel.p3d), die nicht bestiegen werden können</German>
             <Chinesesimp>无法攀爬的物体或模型(例如.p3d)的列表</Chinesesimp>
+            <French>Liste des classes d'objets ou des modèles (exemple.p3d) qui ne peuvent pas être escaladés.</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_whitelistStr">
             <English>Object type whitelist</English>
             <Japanese>オブジェクトのホワイトリスト</Japanese>
             <German>Objekttyp-Whitelist</German>
             <Chinesesimp>物体类型白名单</Chinesesimp>
+            <French>Liste blanche de types d'objets</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_whitelistStr">
             <English>Use to override config level blacklisting</English>
             <Japanese>アドオンのデフォルトで指定されているブラックリストを上書きすることができます。</Japanese>
             <German>Option aktivieren, um die Blacklist auf Konfigurationsebene zu überschreiben</German>
             <Chinesesimp>用于覆盖配置文件的黑名单</Chinesesimp>
+            <French>A utiliser pour remplacer la liste noire au niveau de la configuration</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_animSpeedCoef">
             <English>Animation speed coefficient</English>
             <Japanese>アニメーション再生速度</Japanese>
             <German>Koeffizient der Animationsgeschwindigkeit</German>
             <Chinesesimp>动画速度系数</Chinesesimp>
+            <French>Coefficient de vitesse d'animation</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_animSpeedCoef">
             <English>Changes the speed multiplier of climbing animations</English>
             <Japanese>よじ登るアニメーション速度の倍率を変更します。</Japanese>
             <German>Ändert den Geschwindigkeitsmultiplikator von Kletteranimationen</German>
             <Chinesesimp>更改攀爬动画的速度倍数</Chinesesimp>
+            <French>Modifie le multiplicateur de vitesse des animations d'escalade</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_preventHighVaulting">
             <English>Prevent high edge vaulting</English>
             <Japanese>崖での'越す'アクションの防止</Japanese>
             <German>Verhindert das Überklettern hoher Kanten</German>
             <Chinesesimp>防止在高的物体边缘处翻越</Chinesesimp>
+            <French>Prévenir les sauts en hauteur</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_preventHighVaulting">
             <English>When the player is above the max drop height, the vanilla vault action will be ignored. \n(Only works if 'vault' keybind is the same as 'climb/drop only')</English>
             <Japanese>プレイヤーがとび降りられる高さよりも高い位置にいる場合、Arma3デフォルトの '越す' アクションを実行しないようにします。 \n(これは '越す' アクションが 'よじ登りのみを行う' アクションと同じキーに割り当てられている場合に限り動作します)</Japanese>
             <German>Wenn sich der Spieler über der maximalen Fallhöhe befindet, wird die Vanilla Überspringen-Aktion ignoriert. \n(Funktioniert nur, wenn die Tastenbelegung von 'Klettern' mit 'Nur klettern/fallen' identisch ist)</German>
             <Chinesesimp>当玩家的高度超过最大下降高度时,原始翻越动作将被忽视。\n(只有当"跳跃"键与"仅攀爬/下降"键绑定相同时才生效)</Chinesesimp>
+            <French>Si le joueur se trouve au-dessus de la hauteur de chute maximale, l'action de saut vanille est ignorée.\n(Ne fonctionne que si l'affectation des touches 'Grimper' est identique à 'Grimper/chuter uniquement')</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_enableWalkableSurface">
             <English>Enable walkable surface</English>
             <Japanese>オブジェクト上を歩行可能にする</Japanese>
             <German>Begehbare Oberfläche aktivieren</German>
             <Chinesesimp>启用可步行的地表</Chinesesimp>
+            <French>Permettre des surfaces praticables</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_enableWalkableSurface">
             <English>Spawns an invisible walkable surface object underneath the player when on top of an object</English>
             <Japanese>プレイヤーがオブジェクトの上にいる際、不可視なオブジェクトを召喚し、歩行可能にします。</Japanese>
             <German>Erzeugt ein unsichtbares begehbares Oberflächenobjekt unter dem Spieler, wenn er sich auf einem Objekt befindet</German>
             <Chinesesimp>当玩家位于物体上方时会在其下方生成一个不可见但可行走的表面物体</Chinesesimp>
+            <French>Crée un objet invisible de surface marchable sous le joueur lorsqu'il se trouve au-dessus d'un objet.</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_hintType">
             <English>Hint type</English>
             <Japanese>注意表示の種類</Japanese>
             <German>Hinweistyp</German>
             <Chinesesimp>提示类型</Chinesesimp>
+            <French>Type d'indice</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_hintType">
             <English>What type of hint should be displayed when an action isn't possible</English>
             <Japanese>アクションが不可能な場合に注意する表示の種類。</Japanese>
             <German>Welche Art von Hinweis soll angezeigt werden, wenn eine Aktion nicht möglich ist</German>
             <Chinesesimp>无法执行操作时应显示哪种类型的提示</Chinesesimp>
+            <French>Quel type d'indication doit être affiché lorsqu'une action n'est pas possible ?</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_DropViewElevation">
             <English>Drop view elevation</English>
             <Japanese>とび降りの判定角度</Japanese>
             <German>Sprungbeurteilungswinkel</German>
             <Chinesesimp>下降时视角的高度</Chinesesimp>
+            <French>Hauteur du point de vue lors de la descente</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_DropViewElevation">
             <English>How far down you need to look for the all-in-one action to trigger dropping</English>
             <Japanese>とび降りるアクションを実行するのにどのくらい下を向けばよいかの角度。</Japanese>
             <German>Wie weit nach unten geschaut werden muss, mit der Alles in einem Funktion um das Fallen auszulösen.</German>
             <Chinesesimp>玩家触发下降所需的向下看(全身动作)的距离</Chinesesimp>
+            <French>Jusqu'où faut-il regarder pour que l'action « tout-en-un » se déclenche ?</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_interactBehaviorInVehicle">
             <English>Interact behavior in vehicles</English>
@@ -284,24 +328,28 @@
             <Japanese>スタミナ係数</Japanese>
             <German>Ausdauerkoeffizient</German>
             <Chinesesimp>耐力系数</Chinesesimp>
+            <French>Coefficient d'endurance</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_staminaCoefficient">
             <English>Stamina drain multiplier for all actions</English>
             <Japanese>すべてのアクションに掛かるスタミナ消費の係数。</Japanese>
             <German>Ausdauerverlust-Multiplikator für alle Aktionen</German>
             <Chinesesimp>所有行动的体力消耗倍率</Chinesesimp>
+            <French>Multiplicateur de consommation d'endurance pour toutes les actions</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_jumpDuty">
             <English>Jump duty</English>
             <Japanese>ジャンプ時の負荷</Japanese>
             <German>Sprungpflicht</German>
             <Chinesesimp>跳跃时的负荷</Chinesesimp>
+            <French>Saut obligatoire</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_jumpDuty">
             <English>Base stamina cost for jumping</English>
             <Japanese>ジャンプでの消費スタミナの基礎値です。</Japanese>
             <German>Grundlegender Ausdauerverlust beim Springen</German>
             <Chinesesimp>跳跃时的基础体力消耗</Chinesesimp>
+            <French>Perte d'endurance de base lors du saut</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_climbOnDuty">
             <English>Climb on duty</English>
@@ -314,208 +362,244 @@
             <Japanese>よじ登りでの消費スタミナの基礎値です。高さで乗算されます。</Japanese>
             <German>Basis-Ausdauerkosten für das Klettern AUF Objekten, die mit der Höhe des Aufstiegs multipliziert werden</German>
             <Chinesesimp>攀爬物体的基本体力消耗,乘以攀爬高度</Chinesesimp>
+            <French>Coût d'endurance de base pour l'escalade d'objets ON, multiplié par la hauteur de l'escalade.</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_climbOverDuty">
             <English>Climb over duty</English>
             <Japanese>乗り越え時の負荷</Japanese>
             <German>Belastung beim Klettern über Objekte</German>
             <Chinesesimp>攀爬时的负荷</Chinesesimp>
+            <French>Grimper par obligations</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_climbOverDuty">
             <English>Base stamina cost for climbing OVER objects, multiplied by the height of the climb</English>
             <Japanese>乗り越えでの消費スタミナの基礎値です。高さで乗算されます。</Japanese>
             <German>Basis-Ausdauerkosten für das Klettern ÜBER Objekten, die mit der Höhe des Aufstiegs multipliziert werden</German>
             <Chinesesimp>攀爬物体的基本体力消耗乘以攀爬高度</Chinesesimp>
+            <French>Coût d'endurance de base pour grimper SUR des objets, multiplié par la hauteur de l'ascension</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_dropDuty">
             <English>Drop duty</English>
             <Japanese>とび降り時の負荷</Japanese>
             <German>Abstiegspflicht</German>
             <Chinesesimp>下降时的负荷</Chinesesimp>
+            <French>Obligation de descendre</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_dropDuty">
             <English>Base stamina cost for dropping down from an object, multiplied by the depth of the drop</English>
             <Japanese>とび降りでの消費スタミナの基礎値です。高さで乗算されます。</Japanese>
             <German>Basis-Ausdauerkosten für das Herunterklettern von einem Objekt, die mit der Höhe des Herunterkletterns multipliziert wird</German>
             <Chinesesimp>从物体由上向下坠落的基本体力消耗,乘以下降深度</Chinesesimp>
+            <French>Coût de base de l'endurance pour tomber d'un objet, multiplié par la profondeur de la chute.</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_assistDuty">
             <English>Assist duty</English>
             <Japanese>アシスト時の負荷</Japanese>
             <German>Unterstützungspflicht</German>
             <Chinesesimp>辅助时的负荷</Chinesesimp>
+            <French>Obligation d'assistance</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_assistDuty">
             <English>Base stamina cost to assist another player in climbing a high edge</English>
             <Japanese>他プレイヤーをより高い所へ登らせるアシストでの消費スタミナの基礎値です。</Japanese>
             <German>Basis-Ausdauer kosten, um einem anderen Spieler beim Erklimmen einer hohen Kante zu helfen</German>
             <Chinesesimp>协助其他玩家攀爬高处边缘的基本体力消耗</Chinesesimp>
+            <French>Coût d'endurance de base pour aider un autre joueur à escalader un bord élevé</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_animSpeedStaminaCoef">
             <English>Stamina animation speed modifier</English>
             <Japanese>アニメーション速度へのスタミナの影響倍率</Japanese>
             <German>Modifikator für die Ausdauer der Animationsgeschwindigkeit</German>
             <Chinesesimp>耐力动画速度修改</Chinesesimp>
+            <French>Modificateur de la vitesse d'animation de l'endurance</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_animSpeedStaminaCoef">
             <English>Controls how much stamina affects climbing animation speed</English>
             <Japanese>スタミナがよじ登りのアニメーション速度にどの程度影響するかの倍率。</Japanese>
             <German>Steuert, wie viel die Ausdauer die Geschwindigkeit der Kletteranimation beeinflusst</German>
             <Chinesesimp>控制耐力对攀爬动画速度的影响程度</Chinesesimp>
+            <French>Contrôle l'influence de l'endurance sur la vitesse d'animation de l'escalade</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_jumpingLoadCoefficient">
             <English>Jumping velocity load coefficient</English>
             <Japanese>ジャンプ加速度への重量の影響係数</Japanese>
             <German>Lastkoeffizient der Sprunggeschwindigkeit</German>
             <Chinesesimp>跳跃速度荷载系数</Chinesesimp>
+            <French>Coefficient de charge de la vitesse de saut</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_jumpingLoadCoefficient">
             <English>Multiplier for how much player load reduces jump velocity</English>
             <Japanese>プレイヤーの重量がジャンプ加速度にどの程度影響するかの係数。</Japanese>
             <German>Multiplikator dafür, wie viel das Spielergewicht die Sprunggeschwindigkeit reduziert</German>
             <Chinesesimp>玩家负载时降低跳跃速度的乘数</Chinesesimp>
+            <French>Multiplicateur de la réduction de la vitesse de saut due à la charge du joueur</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_enableWeightCheck">
             <English>Enable max weight checking</English>
             <Japanese>重量制限の有効化</Japanese>
             <German>Maximalgewichtsprüfung aktivieren</German>
             <Chinesesimp>启用最大重量检查</Chinesesimp>
+            <French>Activer le contrôle du poids maximal</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_enableWeightCheck">
             <English>If enabled, players will have to be under the specified weights to perform certain actions</English>
             <Japanese>有効化した場合、特定のアクションをする際に装備重量による制限が付きます。</Japanese>
             <German>Wenn diese Option aktiviert ist, müssen die Spieler unter den angegebenen Gewichten sein, um bestimmte Aktionen ausführen zu können</German>
             <Chinesesimp>如果启用玩家必须低于指定体重才能执行某些操作</Chinesesimp>
+            <French>Si cette option est activée, les joueurs devront avoir un poids inférieur au poids spécifié pour effectuer certaines actions.</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_maxWeightJump">
             <English>Max Weight - Jumping</English>
             <Japanese>ジャンプ可能な最大重量</Japanese>
             <German>Max. Gewicht - Springen</German>
             <Chinesesimp>最大重量--跳跃</Chinesesimp>
+            <French>Poids max. - Sauts</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_maxWeightJump">
             <English>Maximum jumping weight</English>
             <Japanese>ジャンプすることができる最大装備重量。</Japanese>
             <German>Maximales Sprunggewicht</German>
             <Chinesesimp>跳跃所能承载的最大重量</Chinesesimp>
+            <French>Poids maximum pour le saut</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_maxWeightClimb1">
             <English>Max Weight - Climb 1m</English>
             <Japanese>よじ登り可能な最大重量 - 1メートル時</Japanese>
             <German>Max. Gewicht - Klettern 1m</German>
             <Chinesesimp>最大重量 - 攀爬1米</Chinesesimp>
+            <French>Poids max. - Montée 1m</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_maxWeightClimb1">
             <English>Interpolated max player weight allowed to climb 1 meter</English>
             <Japanese>1メートルの高さをよじ登ることができる最大装備重量。</Japanese>
             <German>Interpoliertes maximales Spielergewicht, das 1 Meter klettern darf</German>
             <Chinesesimp>玩家攀爬1米所允许的最大重量数值</Chinesesimp>
+            <French>Poids maximal de l'équipement pouvant grimper à une hauteur de 1 mètre.</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_maxWeightClimb2">
             <English>Max Weight - Climb 2m</English>
             <Japanese>よじ登り可能な最大重量 - 2メートル時</Japanese>
             <German>Maximales Gewicht - Klettern 2m</German>
             <Chinesesimp>最大重量 - 攀爬2米</Chinesesimp>
+            <French>Poids max. - Montée 2m</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_maxWeightClimb2">
             <English>Interpolated max player weight allowed to climb 2 meters</English>
             <Japanese>2メートルの高さをよじ登ることができる最大装備重量。</Japanese>
             <German>Interpoliertes maximales Spielergewicht, das 2 Meter klettern darf</German>
             <Chinesesimp>玩家攀爬2米所允许的最大重量数值</Chinesesimp>
+            <French>Poids maximal de l'équipement pouvant grimper à une hauteur de 2 mètres.</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDisplayName_maxWeightClimb3">
             <English>Max Weight - Climb 3m</English>
             <Japanese>よじ登り可能な最大重量 - 3メートル時</Japanese>
             <German>Maximales Gewicht - Klettern 3m</German>
             <Chinesesimp>最大重量 - 攀爬3米</Chinesesimp>
+            <French>Poids max. - Montée 3m</French>
         </Key>
         <Key ID="STR_EMR_Main_SettingDescription_maxWeightClimb3">
             <English>Interpolated max player weight allowed to climb 3 meters</English>
             <Japanese>3メートルの高さをよじ登ることができる最大装備重量。</Japanese>
             <German>Interpoliertes maximales Spielergewicht, das 3 Meter klettern darf</German>
             <Chinesesimp>玩家攀爬3米所允许的最大重量数值</Chinesesimp>
+            <French>Poids maximal de l'équipement pouvant grimper à une hauteur de 3 mètres.</French>
         </Key>
         <Key ID="STR_EMR_Main_CantJumpOverweight">
             <English>CAN'T JUMP: OVERWEIGHT</English>
             <Japanese>ジャンプできません: 重量過多</Japanese>
             <German>KANN NICHT SPRINGEN: ÜBERGEWICHT</German>
             <Chinesesimp>不能跳跃:因为超重</Chinesesimp>
+            <French>NE PEUT PAS SAUTER : SURPOIDS</French>
         </Key>
         <Key ID="STR_EMR_Main_CantJumpStamina">
             <English>CAN'T JUMP: NOT ENOUGH STAMINA</English>
             <Japanese>ジャンプできません: スタミナ不足</Japanese>
             <German>KANN NICHT SPRINGEN: NICHT GENUG AUSDAUER</German>
             <Chinesesimp>不能跳跃:耐力不足</Chinesesimp>
+            <French>NE PEUT PAS SAUTER : MANQUE D'ENDURANCE</French>
         </Key>
         <Key ID="STR_EMR_Main_CantDropTooHigh">
             <English>CAN'T DROP: TOO HIGH</English>
             <Japanese>降りられません: 高すぎます</Japanese>
             <German>KANN NICHT HERUNTER KLETTERN: ZU HOCH</German>
             <Chinesesimp>不能下降:因为太高</Chinesesimp>
+            <French>NE PEUT PAS TOMBER : TROP HAUT</French>
         </Key>
         <Key ID="STR_EMR_Main_CantClimbOverweight">
             <English>CAN'T CLIMB: OVERWEIGHT</English>
             <Japanese>登れません: 重量過多</Japanese>
             <German>KANN NICHT KLETTERN: ÜBERGEWICHT</German>
             <Chinesesimp>不能攀爬:因为超重</Chinesesimp>
+            <French>NE PEUT PAS GRIMPER : SURPOIDS</French>
         </Key>
         <Key ID="STR_EMR_Main_CantClimbStamina">
             <English>CAN'T CLIMB: NOT ENOUGH STAMINA</English>
             <Japanese>登れません: スタミナ不足</Japanese>
             <German>KANN NICHT KLETTERN: NICHT GENUG AUSDAUER</German>
             <Chinesesimp>不能攀爬:耐力不足</Chinesesimp>
+            <French>NE PEUT PAS GRIMPER : MANQUE D'ENDURANCE</French>
         </Key>
         <Key ID="STR_EMR_Main_CantAssistStamina">
             <English>CAN'T ASSIST: NOT ENOUGH STAMINA</English>
             <Japanese>アシストできません: スタミナ不足</Japanese>
             <German>KANN NICHT HELFEN: KEINE AUSDAUER</German>
             <Chinesesimp>不能辅助: 耐力不足</Chinesesimp>
+            <French>NE PEUT PAS ASSISTER : PAS ASSEZ D'ENDURANCE</French>
         </Key>
         <Key ID="STR_EMR_Main_AssistUnnecessary">
             <English>ASSIST UNNECESSARY</English>
             <Japanese>アシストは不要です</Japanese>
             <German>UNTERSTÜTZUNG NICHT NOTWENDIG</German>
             <Chinesesimp>不必要的辅助</Chinesesimp>
+            <French>AIDE INUTILE</French>
         </Key>
         <Key ID="STR_EMR_Main_HintType_Hint">
             <English>Hint</English>
             <Japanese>ヒント</Japanese>
             <German>Hinweis</German>
             <Chinesesimp>提示</Chinesesimp>
+            <French>Note</French>
         </Key>
         <Key ID="STR_EMR_Main_HintType_HintSilent">
             <English>Hint (silent)</English>
             <Japanese>ヒント (通知音なし)</Japanese>
             <German>Hinweis (stumm)</German>
             <Chinesesimp>提示(静音)</Chinesesimp>
+            <French>Note (silencieuse)</French>
         </Key>
         <Key ID="STR_EMR_Main_HintType_TitleEffect">
             <English>Title effect</English>
             <Japanese>タイトルエフェクト</Japanese>
             <German>Titeleffekt</German>
             <Chinesesimp>标题效果</Chinesesimp>
+            <French>Effet de titre
+</French>
         </Key>
         <Key ID="STR_EMR_Main_HintType_SystemChat">
             <English>System chat</English>
             <Japanese>システムチャットメッセージ</Japanese>
             <German>Systemchat</German>
             <Chinesesimp>系统聊天</Chinesesimp>
+            <French>System chat</French>
         </Key>
         <Key ID="STR_EMR_Main_HintType_Disabled">
             <English>Disabled</English>
             <Japanese>無効</Japanese>
             <German>Deaktiviert</German>
             <Chinesesimp>禁用</Chinesesimp>
+            <French>Désactivé</French>
         </Key>
         <Key ID="STR_EMR_Main_VehicleFull">
             <English>VEHICLE FULL</English>
             <Japanese>車両は満員です</Japanese>
             <German>FAHRZEUG IST VOLL</German>
             <Chinesesimp>载具满员</Chinesesimp>
+            <French>VEHICULE PLEIN</French>
         </Key>
         <Key ID="STR_EMR_Main_interactBehaviorInVehicle_Dismount">
             <English>Dismount</English>
             <Chinesesimp>下车</Chinesesimp>
+            <French>Démontage</French>
         </Key>
         <Key ID="STR_EMR_Main_interactBehaviorInVehicle_Engine">
             <English>Toggle engine (must be driver)</English>
@@ -524,6 +608,7 @@
         <Key ID="STR_EMR_Main_keybindWarning">
             <English>Ensure you have no conflicts with default CBA keybinds (Configure Addons)</English>
             <Chinesesimp>确保与默认的CBA键绑定没有冲突(配置Addons)</Chinesesimp>
+            <French>Assurez-vous qu'il n'y a pas de conflit avec les raccourcis clavier par défaut de CBA (Configure Addons).</French>
         </Key>
     </Package>
 </Project>
